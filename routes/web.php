@@ -13,6 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group([
+    'namespace' => 'App\Http\Controllers\User',
+    'as' => 'user.',
+    'middleware' => ['set.web.language'],
+], function () {
+    Route::get('/', 'IndexController@index')->name('index');
 });
+//Route::get('/', function () {
+//    return view('welcome');
+//});
