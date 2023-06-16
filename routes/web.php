@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('google/login','User/GoogleDriveController@googleLogin')->name('google.login');
+Route::get('google-drive/file-upload','User/GoogleDriveController@googleDriveFilePpload')->name('google.drive.file.upload');
