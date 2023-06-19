@@ -18,7 +18,7 @@ class UploadToGoogleDrive
         "created" => 1686887911,
     ];
 
-    public static function upload($file)
+    public static function upload($uploadFile, $folderName, $fileName)
     {
         $client = new Google_Client();
         $client->setAuthConfig(public_path('google/google_client_secret.json'));
@@ -34,19 +34,19 @@ class UploadToGoogleDrive
         $service = new \Google_Service_Drive($client);
 
         $fileMetadata = new \Google_Service_Drive_DriveFile([
-            'name' => '訂單1',             // ADD YOUR GOOGLE DRIVE FOLDER NAME
+            'name' => $folderName,             // ADD YOUR GOOGLE DRIVE FOLDER NAME
             'mimeType' => 'application/vnd.google-apps.folder'
         ]);
 
         $folder = $service->files->update(self::GOOGLE_DRIVE_FILE_ID, $fileMetadata, ['fields' => 'id']);
 
         $file = new \Google_Service_Drive_DriveFile([
-            'name' => 'pdf1.pdf',
+            'name' => $fileName,
             'parents' => [$folder->id]
         ]);
 
         $result = $service->files->create($file, [
-            'data' => file_get_contents($file),
+            'data' => $uploadFile,
             'mimeType' => 'application/pdf',
             'uploadType' => 'media'
         ]);

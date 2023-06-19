@@ -3,14 +3,14 @@
 <html class="no-js" lang="zh-TW">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>MysoreTaipei</title>
+    <title>YahSin</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="Ashtanga,Yoga,瑜伽,mysoretaipei,mysore,台北瑜珈,阿斯坦加瑜珈,阿斯坦加瑜珈台北" />
-    <meta name="description" content="致力於Ashtanga Yoga練習、傳承的瑜伽學院" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui" />
     <!-- Facebook share og meta /begin -->
-    <meta property="og:title" content="MysoreTaipei">
+    <meta property="og:title" content="YahSin">
     <meta property="og:type" content="website" />
     <meta property="og:url" content="" />
     <meta property="og:image" content="{{ asset("images/user/og-image.jpg") }}" />

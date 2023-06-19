@@ -16,7 +16,7 @@ class SetUserLanguage
      *
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
         $language = config('lang.user.default_locale');
 

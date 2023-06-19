@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Services\UploadToGoogleDrive;
+use Illuminate\Http\Request;
 
 class IndexController extends BasicController
 {
@@ -17,10 +18,12 @@ class IndexController extends BasicController
         return view('user.index');
     }
 
-    public function uploadPdf(Request $request)
+    public function uploadPDF(Request $request)
     {
-        $file = $request->file('pdf_file');
+        $uploadFile = $request->file('pdf_file');
 
-        $this->uploadToGoogleDrive->upload($file);
+        $this->uploadToGoogleDrive->upload($uploadFile, 'order-000001', 'pdf-2');
+
+        return view('user.result');
     }
 }

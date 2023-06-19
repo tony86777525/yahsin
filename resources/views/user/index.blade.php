@@ -7,15 +7,21 @@
 @endsection
 
 @section('main')
-    <section class="landing">
-        {{ __('user.index.title') }}
-        {{ $mainPresenter->title() }}
-
-        <form action="{{ route('user.upload') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <input type="file" name="pdf_file">
-            <button type="submit">Upload</button>
-        </form>
+    <section class="main">
+        <section class="landing">
+            <div class="landing__content">
+                <h1 class="siteName">
+                    {{ __('user.index.title') }}
+                </h1>
+                <h2 class="slogan">
+                    <form action="{{ route('user.uploadPDF') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="file" name="pdf_file">
+                        <button type="submit">Upload</button>
+                    </form>
+                </h2>
+            </div>
+        </section>
     </section>
 @endsection
 

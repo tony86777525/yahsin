@@ -21,12 +21,12 @@ Route::group([
 ], function () {
     Route::get('/', 'IndexController@index')->name('index');
 
-    Route::post('/upload-pdf', [IndexController::class, 'upload'])->name('upload');
+    Route::post('/upload-pdf', [IndexController::class, 'uploadPDF'])->name('uploadPDF');
 
-    Route::get('google/login','GoogleDriveController@googleLogin')->name('google.login');
     Route::get('google-drive/file-upload','GoogleDriveController@googleDriveFilePpload')->name('google.drive.file.upload');
 });
 
+Route::get('google/login','GoogleDriveController@googleLogin')->name('google.login');
 
 //Route::get('/', function () {
 //    return view('welcome');
