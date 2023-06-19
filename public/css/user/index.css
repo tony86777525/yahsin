@@ -1,0 +1,124 @@
+.landing {
+  width: 100%;
+  height: 100vh;
+  background-image: url("/images/user/bg-cover.jpg");
+  background-position: 50% 50%;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+.landing:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.16);
+}
+.landing__content {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(130, 130, 130, 0.5);
+}
+.landing .siteName {
+  width: 574px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.landing .slogan {
+  font-size: 22px;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 40px;
+}
+.landing .sns {
+  margin-top: 40px;
+}
+.landing .commingsoon {
+  margin-top: 40px;
+}
+
+.sns__link .title:after {
+  background-color: #fff;
+}
+.sns .snsGroup__text {
+  color: #fff;
+}
+
+.icon__sns:before, .icon__sns:after {
+  background-color: #fff;
+}
+
+.commingsoon {
+  color: #fff;
+  text-align: center;
+}
+.commingsoon .en {
+  display: inline-block;
+  font-family: 'Copperplate Gothic Light', Copperplate;
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: 0.53px;
+  position: relative;
+  line-height: 2;
+}
+.commingsoon .en:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 75%;
+  height: 1px;
+  background-color: #fff;
+}
+.commingsoon .ch {
+  margin-top: 10px;
+  font-size: 18px;
+  letter-spacing: 4.5px;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+@media screen and (max-width: 480px) {
+  .landing .siteName {
+    width: 300px;
+  }
+  .landing .slogan {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .landing .slogan {
+    font-size: 14px;
+  }
+
+  .sns .snsGroup__text {
+    font-size: 16px;
+  }
+  .sns .snsGroup__text .name {
+    font-size: 12px;
+  }
+
+  .commingsoon .en {
+    font-size: 16px;
+  }
+  .commingsoon .ch {
+    font-size: 16px;
+  }
+}

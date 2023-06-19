@@ -7,7 +7,16 @@
 @endsection
 
 @section('main')
-    {{ __('user.index.title') }}
+    <section class="landing">
+        {{ __('user.index.title') }}
+        {{ $mainPresenter->title() }}
+
+        <form action="{{ route('user.upload') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <input type="file" name="pdf_file">
+            <button type="submit">Upload</button>
+        </form>
+    </section>
 @endsection
 
 <!-- Page js /begin -->

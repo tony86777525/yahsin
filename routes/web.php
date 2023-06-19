@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\User\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,11 +20,14 @@ Route::group([
     'middleware' => ['set.web.language'],
 ], function () {
     Route::get('/', 'IndexController@index')->name('index');
+
+    Route::post('/upload-pdf', [IndexController::class, 'upload'])->name('upload');
+
+    Route::get('google/login','GoogleDriveController@googleLogin')->name('google.login');
+    Route::get('google-drive/file-upload','GoogleDriveController@googleDriveFilePpload')->name('google.drive.file.upload');
 });
+
+
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-
-
-Route::get('google/login','User/GoogleDriveController@googleLogin')->name('google.login');
-Route::get('google-drive/file-upload','User/GoogleDriveController@googleDriveFilePpload')->name('google.drive.file.upload');
