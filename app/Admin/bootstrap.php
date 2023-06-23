@@ -19,3 +19,27 @@
  */
 
 Encore\Admin\Form::forget(['map', 'editor']);
+
+
+$script = <<<JS
+$( document ).ready(function() {
+    $('input').attr('autocomplete','off');
+
+    $('.modal').on('hidden.bs.modal', function (e) {
+        $('iframe').each(function (e) {
+            var src = $(this).attr('src');
+            $(this).attr('src', src);
+        });
+    });
+});
+JS;
+
+$style = <<<CSS
+.modal.grid-modal.fade img {
+    max-width: 100%;
+    max-height: 100%;
+}
+CSS;
+
+Admin::script($script);
+Admin::style($style);

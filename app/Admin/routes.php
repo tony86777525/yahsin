@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Routing\Router;
+use App\Admin\Controllers\Ys\OrderController;
 
 Admin::routes();
 
@@ -13,4 +14,5 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('home');
 
+    $router->resource('orders', OrderController::class);
 });

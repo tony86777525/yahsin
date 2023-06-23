@@ -19,6 +19,8 @@ Route::group([
     'as' => 'user.',
     'middleware' => ['set.web.language'],
 ], function () {
+    Route::get('/', [IndexController::class, 'index'])->name('index');
+
     Route::get('/', 'IndexController@index')->name('index');
 
     Route::post('/upload-pdf', [IndexController::class, 'uploadPDF'])->name('uploadPDF');
@@ -26,6 +28,7 @@ Route::group([
     Route::get('google-drive/file-upload','GoogleDriveController@googleDriveFilePpload')->name('google.drive.file.upload');
 });
 
+// 第一次需要拿KEY
 Route::get('google/login','GoogleDriveController@googleLogin')->name('google.login');
 
 //Route::get('/', function () {
