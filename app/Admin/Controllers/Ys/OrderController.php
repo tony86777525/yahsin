@@ -33,11 +33,16 @@ class OrderController extends AdminController
 
 //        $grid->column('id', __('Id'));
         $grid->column('number', __('Number'));
-        $grid->column('status', __('Status'))->display(function($status) {
-            return Order::STATUS_OPTIONS[$status];
-        });
+        $grid->column('status', __('Status'))
+            ->display(function($status) {
+                return Order::STATUS_OPTIONS[$status];
+            });
         $grid->column('name', __('Name'));
         $grid->column('email', __('Email'));
+        $grid->column('country', __('Country'))
+            ->display(function($country) {
+                return Order::COUNTRY_OPTIONS[$country];
+            });
         $grid->column('address', __('Address'))
             ->display(function () {
                 return Str::limit($this->address, 20);
@@ -60,6 +65,14 @@ class OrderController extends AdminController
 //                    "<div style='$style'>$model->name</div>"
 //                    . "<div style='$style'>$model->email</div>"
                     "<div style='$style'>$model->address</div>";
+            });
+        $grid->column('google_drive_folder_id', __('Google Drive Folder Id'))
+            ->display(function($google_drive_folder_id) {
+                if (!empty($google_drive_folder_id)) {
+                    return "<a href='https://drive.google.com/drive/folders/$google_drive_folder_id' target='_blank'>查看檔案</a>";
+                } else {
+                    return "無檔案";
+                }
             });
         $grid->column('created_at', __('Created at'));
 //        $grid->column('updated_at', __('Updated at'));
@@ -99,7 +112,9 @@ class OrderController extends AdminController
         $show->field('status', __('Status'));
         $show->field('name', __('Name'));
         $show->field('email', __('Email'));
+        $show->field('country', __('Country'));
         $show->field('address', __('Address'));
+        $show->field('google_drive_folder_id', __('Google Drive Folder Id'));
         $show->field('created_at', __('Created at'));
 //        $show->field('updated_at', __('Updated at'));
 
@@ -117,9 +132,11 @@ class OrderController extends AdminController
 
         $form->display('number', __('Number'));
         $form->radio('status', __('Status'))->options(Order::STATUS_OPTIONS);
-        $form->email('name', __('Name'));
+        $form->text('name', __('Name'));
         $form->email('email', __('Email'));
+        $form->select('country', __('Country'))->options(Order::COUNTRY_OPTIONS);
         $form->text('address', __('Address'));
+        $form->text('google_drive_folder_id', __('Google Drive Folder Id'));
 
         $form->saving(function (Form $form) {
             $form->number = OrderService::getNewNumber();

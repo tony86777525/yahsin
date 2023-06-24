@@ -18,7 +18,7 @@ class UploadToGoogleDrive
         "created" => 1686887911,
     ];
 
-    public static function upload($uploadFile, $folderName, $fileName)
+    public static function upload($uploadFiles, $folderName, $filesName)
     {
         $client = new Google_Client();
         $client->setAuthConfig(public_path('google/google_client_secret.json'));
@@ -34,23 +34,35 @@ class UploadToGoogleDrive
         $service = new \Google_Service_Drive($client);
 
         $fileMetadata = new \Google_Service_Drive_DriveFile([
-            'name' => $folderName,             // ADD YOUR GOOGLE DRIVE FOLDER NAME
-            'mimeType' => 'application/vnd.google-apps.folder'
+            'name' => $folderName,
+            'mimeType' => 'application/vnd.google-apps.folder',
+            'driveId' => self::GOOGLE_DRIVE_FILE_ID,
+            'parents' => array(self::GOOGLE_DRIVE_FILE_ID)
         ]);
 
-        $folder = $service->files->update(self::GOOGLE_DRIVE_FILE_ID, $fileMetadata, ['fields' => 'id']);
+        $optParams = array(
+            'fields' => 'id',
+//            'supportsAllDrives' => true,
+        );
 
-        $file = new \Google_Service_Drive_DriveFile([
-            'name' => $fileName,
-            'parents' => [$folder->id]
-        ]);
+        $folder = $service->files->create($fileMetadata, $optParams);
 
-        $result = $service->files->create($file, [
-            'data' => $uploadFile,
-            'mimeType' => 'application/pdf',
-            'uploadType' => 'media'
-        ]);
+        $result = [];
 
-        return $result;
+        foreach ($uploadFiles as $key => $uploadFile) {
+            $fileName = $filesName . '-' . ($key + 1);
+            $file = new \Google_Service_Drive_DriveFile([
+                'name' => $fileName,
+                'parents' => [$folder->id]
+            ]);
+
+            $result[] = $service->files->create($file, [
+                'data' => $uploadFile,
+                'mimeType' => 'application/pdf',
+                'uploadType' => 'media'
+            ]);
+        }
+
+        return $folder->id;
     }
 }

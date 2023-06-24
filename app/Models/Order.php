@@ -61,6 +61,21 @@ class Order extends Model
     // default value
     protected $attributes = [];
 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'number',
+        'status',
+        'name',
+        'email',
+        'country',
+        'address',
+        'google_drive_folder_id',
+    ];
+
     const STATUS_UNPAID = 0;
     const STATUS_PAID = 1;
     const STATUS_CLOSED = 2;
@@ -71,12 +86,27 @@ class Order extends Model
         self::STATUS_CLOSED => '已結單'
     ];
 
+    const COUNTRY_CHINESE_CIRCLE = 0;
+    const COUNTRY_ASIA = 1;
+    const COUNTRY_OTHER = 2;
+
+    const COUNTRY_OPTIONS = [
+        self::COUNTRY_CHINESE_CIRCLE => '台港澳中',
+        self::COUNTRY_ASIA => '亞洲',
+        self::COUNTRY_OTHER => '其他',
+    ];
+
     public function getCreatedAtAttribute($value)
     {
 //        $d = new \DateTime();
 //        $d->setTime(0,0, 0, strtotime($value));
 //        return $d->format('Y-m-d H:i:s');
         return date('Y-m-d H:i:s', strtotime($value));
+    }
+
+    public function getCountryDisplayAttribute()
+    {
+        return self::COUNTRY_OPTIONS[$this->country];
     }
 
     public function getStatusOptionsAttribute($value)

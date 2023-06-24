@@ -29,7 +29,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset("css/user/common.css") }}">
     <!-- Common CSS file /end -->
     <!-- Page CSS file /begin -->
-    <link rel="stylesheet" type="text/css" href="{{ asset("css/user/about.css") }}">
+{{--    <link rel="stylesheet" type="text/css" href="{{ asset("css/user/about.css") }}">--}}
     <!-- Page CSS file /end -->
     <script src="{{ asset("js/user/vendor/modernizr-2.7.1.min.js") }}"></script>
     <!-- Google Tag Manager -->
@@ -39,19 +39,20 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-ID');</script>-->
     <!-- End Google Tag Manager -->
+    @yield('csrf_token')
     @yield('css')
 </head>
 <body>
 <div class="container">
-    <div class="burger burger--idx" data-id="open-nav">
-        <div class="burger__content">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <span class="burger__text">menu</span>
-    </div>
+{{--    <div class="burger burger--idx" data-id="open-nav">--}}
+{{--        <div class="burger__content">--}}
+{{--            <span></span>--}}
+{{--            <span></span>--}}
+{{--            <span></span>--}}
+{{--            <span></span>--}}
+{{--        </div>--}}
+{{--        <span class="burger__text">menu</span>--}}
+{{--    </div>--}}
 
     <nav class="nav">
         @include('user.basic.header.navbar')
