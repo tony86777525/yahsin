@@ -2,6 +2,10 @@
 
 @extends('user.basic.main.top')
 
+@section('csrf_token')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+@endsection
+
 @section('css')
 {{--    <link rel="stylesheet" type="text/css" href="{{ asset("css/user/index.css") }}">--}}
 @endsection
@@ -15,6 +19,16 @@
                 </h1>
                 <table>
                     <tbody>
+                    <tr>
+                        <td>
+                            <label>number:{{ $orderData->number }}</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>amount:{{ $orderData->amount }}</label>
+                        </td>
+                    </tr>
                     <tr>
                         <td>
                             <label>name:{{ $orderData->name }}</label>
@@ -39,6 +53,26 @@
                     <tfoot>
                     </tfoot>
                 </table>
+
+                <form
+                    method="POST"
+                    action="{{ route('user.api.order.pay.ecpay.credit') }}"
+                    class="orderForm"
+                    data-js-pay="ecpay"
+                >
+                    <input type="hidden" name="number" value="{{ $orderData->number }}">
+                    <button type="submit">ECPay付款</button>
+                </form>
+                <form
+                    method="POST"
+                    action="{{ route('user.api.order.pay.ecpay.search') }}"
+                    class="orderForm"
+                    data-js-search="ecpay"
+                >
+                    <input type="hidden" name="number" value="{{ $orderData->number }}">
+                    <button type="submit">ECPay查詢訂單</button>
+                </form>
+                <div data-js-pay="result"></div>
             </div>
         </section>
     </section>

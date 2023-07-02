@@ -5,8 +5,10 @@ namespace App\Http\Controllers\User;
 use App\Http\Requests\StoreOrderFirstRequest;
 use App\Http\Requests\StoreOrderSecondRequest;
 use App\Models\Order;
+use App\Services\ECPayService;
 use App\Services\OrderService;
 use App\Services\UploadToGoogleDrive;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class OrderController extends BasicController
@@ -79,6 +81,7 @@ class OrderController extends BasicController
 
                 try {
                     $orderData->address = $inputData['address'];
+                    $orderData->status = Order::STATUS_UNPAID;
 
                     $orderData->save();
 
@@ -108,5 +111,15 @@ class OrderController extends BasicController
         }
 
         return view('user.order.pay', compact('orderData'));
+    }
+
+    public function payByECPayCreditResult(Request $request)
+    {
+        $data = $request->all();
+
+        $ECPayService = new ECPayService;
+        $result = $ECPayService->checkoutResponse($data);
+
+        return view('user.order.pay.result.ecpay', compact('result'));
     }
 }

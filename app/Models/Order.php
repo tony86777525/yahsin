@@ -69,6 +69,7 @@ class Order extends Model
     protected $fillable = [
         'number',
         'status',
+        'amount',
         'name',
         'email',
         'country',
@@ -76,12 +77,14 @@ class Order extends Model
         'google_drive_folder_id',
     ];
 
-    const STATUS_UNPAID = 0;
-    const STATUS_PAID = 1;
-    const STATUS_CLOSED = 2;
+    const STATUS_NEW = 0;
+    const STATUS_UNPAID = 1;
+    const STATUS_PAID = 2;
+    const STATUS_CLOSED = 3;
 
     const STATUS_OPTIONS = [
-        self::STATUS_UNPAID => '未付款',
+        self::STATUS_NEW => '新訂單',
+        self::STATUS_UNPAID => '待付款',
         self::STATUS_PAID => '已付款',
         self::STATUS_CLOSED => '已結單'
     ];

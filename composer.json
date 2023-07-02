@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "ecpay/sdk": "^1.2",
         "encore/laravel-admin": "1.*",
         "google/apiclient": "^2.15",
         "guzzlehttp/guzzle": "^7.2",
