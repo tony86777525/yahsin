@@ -4,3 +4,7 @@
 .title a {
   font-size: 10px;
 }
+
+.test {
+  background-image: url(/images/deco-notify-error.png?7caf79282ff4a1b1eb0be9a756de293f);
+}

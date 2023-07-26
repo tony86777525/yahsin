@@ -25,19 +25,19 @@ const ignoreFiles = {
     'js': [],
 };
 
-glob.sync('resources/js/**/*.js', {
+glob.sync('resources/assets/js/**/*.js', {
     ignore: ignoreFiles['js']
 }).map(function (file) {
-    let output = file.replace(/resources\/js/, 'public\/js');
+    let output = file.replace(/resources\/assets\/js/, 'public\/js');
 
     mix.js(file, output)
 });
 
 // sass compile
-glob.sync('resources/sass/**/*.scss', {
+glob.sync('resources/assets/sass/**/*.scss', {
     ignore: ignoreFiles['sass']
 }).map(function (file) {
-    let output = file.replace(/resources\/sass/, 'public\/css');
+    let output = file.replace(/resources\/assets\/sass/, 'public\/css');
 
     mix.sass(file, output.replace(/\.scss/, '.css'));
 });
