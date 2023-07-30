@@ -81,6 +81,63 @@
 <!-- Page js /begin -->
 @section('js')
     <script>
+        $('form[data-js-pay="ecpay"]').on('submit', function (event) {
+            event.preventDefault();
+            let form = $(this);
+            let url = form.attr('action');
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: 'POST',
+                url: url,
+                dataType: "JSON",
+                data: form.serialize(),
+                beforeSend : function() {},
+                success: function (res) {
+                    if (res.success === true) {
+                        $('[data-js-pay="result"]').html(res.result);
+                    }
+                },
+                complete: function () {
+                },
+                error: function(res) {
+                    console.log(res);
+                }
+            });
+        });
+
+        $('form[data-js-search="ecpay"]').on('submit', function (event) {
+            event.preventDefault();
+
+            let form = $(this);
+            let url = form.attr('action');
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                type: 'POST',
+                url: url,
+                dataType: "JSON",
+                data: form.serialize(),
+                beforeSend : function() {},
+                success: function (res) {
+                    if (res.success === true) {
+                        let result = $.map(res.result, function(v, k){
+                            return `${k}:${v}`;
+                        }).join('\n');
+                        alert(result);
+                    }
+                },
+                complete: function () {
+                },
+                error: function(res) {
+                    console.log(res);
+                }
+            });
+        });
     </script>
 @endsection
 <!-- Page js /end -->
