@@ -1,18 +1,12 @@
-@inject('mainPresenter', 'App\Presenters\MainPresenter')
-
-@extends('user.basic.main.top')
-
-@section('css')
-    /*<link rel="stylesheet" type="text/css" href="*/{{ asset("css/user/index.css") }}">
-@endsection
+@extends('user.basic.wrapper')
 
 @section('main')
     success
 @endsection
 
 <!-- Page js /begin -->
-@section('js')
+@push('page_js')
     <script>
     </script>
-@endsection
+@endPush
 <!-- Page js /end -->
