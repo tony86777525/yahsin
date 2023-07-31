@@ -12,7 +12,7 @@
     付款結果
 @endsection
 <!-- Page js /begin -->
-@section('page_js')
+@section('page_script')
     <script>
     </script>
 @endsection

@@ -1,6 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/bootstrap.js": "/js/bootstrap.js",
+    "/js/user/common.js": "/js/user/common.js",
     "/js/user/index.js": "/js/user/index.js",
     "/css/user/common.css": "/css/user/common.css",
     "/css/user/utils/_variables.css": "/css/user/utils/_variables.css",
