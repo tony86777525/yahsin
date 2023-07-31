@@ -76,7 +76,7 @@
 @endsection
 
 <!-- Page js /begin -->
-@push('page_js')
+@push('page_script')
     <script>
         $('form[data-js-pay="ecpay"]').on('submit', function (event) {
             event.preventDefault();

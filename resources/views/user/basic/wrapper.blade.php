@@ -42,13 +42,17 @@
 <body>
 <div class="container">
     @include('user.basic.header')
+    
     <section class="main">
         @yield('main')
     </section>
+
     @include('user.basic.footer')
-    <div class="overlay" data-id="overlay"></div>
+
 </div>
+
 @include('user.basic.common_js')
+
 @stack('page_script')
 </body>
 </html>

@@ -55,7 +55,7 @@
 @endsection
 
 <!-- Page js /begin -->
-@push('page_js')
+@push('page_script')
     <script>
     </script>
 @endPush
