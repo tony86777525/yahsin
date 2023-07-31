@@ -1,14 +1,11 @@
-@inject('mainPresenter', 'App\Presenters\MainPresenter')
+@extends('user.basic.wrapper')
 
-@extends('user.basic.main.top')
-
-@section('csrf_token')
+@push('csrf_token')
     <meta name="csrf-token" content="{{ csrf_token() }}">
-@endsection
+@endPush
 
-@section('css')
-{{--    <link rel="stylesheet" type="text/css" href="{{ asset("css/user/index.css") }}">--}}
-@endsection
+@push('page_css')
+@endPush
 
 @section('main')
     <section class="main">
@@ -79,7 +76,7 @@
 @endsection
 
 <!-- Page js /begin -->
-@section('js')
+@push('page_js')
     <script>
         $('form[data-js-pay="ecpay"]').on('submit', function (event) {
             event.preventDefault();
@@ -139,5 +136,5 @@
             });
         });
     </script>
-@endsection
+@endPush
 <!-- Page js /end -->

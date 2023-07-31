@@ -1,0 +1,109 @@
+@import "utils/variables",
+		"utils/mixin";
+        
+$path: '../../images/';
+
+.form {
+
+}
+
+.fancyInput {}
+
+
+.fancySelectWrap {
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 0;
+        background-image: url('#{$path}/deco-select.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+} 
+
+.fancySelect {
+    @include appearance(none);
+    
+    &--language {
+        border: none;
+        background-color: #e4e4ea;
+    }
+
+    &--country {
+
+    }
+}
+
+
+// ========== Media Queries ==========
+//Small devices (portrait phones, 320 and up)
+@media only screen and (min-width: 320px) {
+
+    .fancySelectWrap {
+
+        &:after {
+            right: 0.3rem;
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+    }
+
+    .fancySelect {
+        &--language {
+            padding: 0.3rem 0 0.3rem 0.5rem;
+            width: 6.6rem;
+            font-size: 1rem;
+            border-radius: 0.8rem;
+        }
+    }
+
+}
+//Large devices (laptops, 1025 and up)
+@media only screen and (min-width: 1025px) {
+    .fancySelectWrap {
+
+        &:after {
+            right: 4px;
+            width: 42px;
+            height: 42px;
+        }
+    } 
+
+    .fancySelect {
+        cursor: pointer;
+        
+        &--language {
+            padding: 11px 0 11px 16px;
+            width: 140px;
+            font-size: 20px;
+            border-radius: 25px;
+        }
+
+        &:active,
+        &:focus-visible {
+            outline: none;
+        }
+    }
+}
+
+//Large devices (laptops, 1441 and up)
+@media only screen and (min-width: 1441px) {
+    .fancySelectWrap {
+
+        &:after {
+            right: 10px;
+            width: 50px;
+            height: 50px;
+        }
+    } 
+
+    .fancySelect {
+        &--language {
+            font-size: 28px;
+            width: 200px;
+        }
+    }
+}

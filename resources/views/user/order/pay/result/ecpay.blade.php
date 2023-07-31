@@ -1,11 +1,4 @@
-@inject('mainPresenter', 'App\Presenters\MainPresenter')
-
-@extends('user.basic.main.top')
-
-@section('css')
-{{--    <link rel="stylesheet" type="text/css" href="{{ asset("css/user/index.css") }}">--}}
-@endsection
-
+@extends('user.basic.wrapper')
 @section('main')
     @foreach($result as $title => $value)
         <table>
@@ -16,10 +9,10 @@
         </table>
     @endforeach
     success
+    付款結果
 @endsection
-
 <!-- Page js /begin -->
-@section('js')
+@section('page_js')
     <script>
     </script>
 @endsection

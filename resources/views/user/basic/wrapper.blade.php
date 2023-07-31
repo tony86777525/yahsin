@@ -3,7 +3,7 @@
 <html class="no-js" lang="zh-TW">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>YahSin</title>
+    <title>Yahsin</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords" content="" />
     <meta name="description" content="" />
@@ -25,13 +25,11 @@
     -->
     <!-- Common CSS file /begin -->
     <link rel="shortcut icon" href="{{ asset("images/user/favicon.ico") }}" />
-    <link rel="stylesheet" type="text/css" href="{{ asset("js/user/swal2/sweetalert2.min.css") }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset("css/user/common.css") }}">
+    @include('user.basic.common_css')
     <!-- Common CSS file /end -->
     <!-- Page CSS file /begin -->
-{{--    <link rel="stylesheet" type="text/css" href="{{ asset("css/user/about.css") }}">--}}
+    @stack('page_css')
     <!-- Page CSS file /end -->
-    <script src="{{ asset("js/user/vendor/modernizr-2.7.1.min.js") }}"></script>
     <!-- Google Tag Manager -->
     <!--<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -39,43 +37,18 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-ID');</script>-->
     <!-- End Google Tag Manager -->
-    @yield('csrf_token')
-    @yield('css')
+    @stack('csrf_token')
 </head>
 <body>
 <div class="container">
-{{--    <div class="burger burger--idx" data-id="open-nav">--}}
-{{--        <div class="burger__content">--}}
-{{--            <span></span>--}}
-{{--            <span></span>--}}
-{{--            <span></span>--}}
-{{--            <span></span>--}}
-{{--        </div>--}}
-{{--        <span class="burger__text">menu</span>--}}
-{{--    </div>--}}
-
-    <nav class="nav">
-        @include('user.basic.header.navbar')
-    </nav>
-
+    @include('user.basic.header')
     <section class="main">
         @yield('main')
     </section>
-
-    <footer class="footer">
-        @include('user.basic.footer.common')
-    </footer>
-
-    @include('user.basic.footer.other')
-
+    @include('user.basic.footer')
     <div class="overlay" data-id="overlay"></div>
 </div>
-
-<script src="{{ asset("js/user/vendor/jquery-2.1.0.min.js") }}"></script>
-<script src="{{ asset("js/user/helper.js") }}"></script>
-<script src="{{ asset("js/user/plugins.js") }}"></script>
-<script src="{{ asset("js/user/swal2/sweetalert2.min.js") }}"></script>
-<script src="{{ asset("js/user/main.js") }}"></script>
-@yield('js')
+@include('user.basic.common_js')
+@stack('page_script')
 </body>
 </html>
