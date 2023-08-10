@@ -1,9 +1,14 @@
 $(function(){
-    $('[data-input-id="hiddenFile"]').on('change', function(e){
-        console.log(e)
-        var fileName = this.files[0].name;
-        console.log(fileName);
-        $(this).siblings('[data-input-id="uploadFile"]').text(fileName);
+    $('[data-input-id="hiddenFile"]').on('change', function(e){        
+        var fileLength = e.currentTarget.files.length;
+        if(fileLength !== 0) {
+            var fileName = e.currentTarget.files[0].name;
+            $(this).siblings('[data-input-id="uploadFile"]').text(fileName);
+            $(this).closest('[data-input-id="elWrap"]').addClass('active');
+        } else {
+            $(this).siblings('[data-input-id="uploadFile"]').text('選擇檔案');
+            $(this).closest('[data-input-id="elWrap"]').removeClass('active');
+        }
     });
 
     $('[data-js="refresh-captcha"]').on('click', function(){
@@ -90,4 +95,29 @@ $(function(){
             }
         });
     });
+    
+    
+    var elementTop = $('.landing__board').offset().top;
+    var elementBottom = elementTop + $('.landing__board').height();
+
+    $(window).on('scroll', function(){
+        var pageTop = $(this).scrollTop();
+        var pageBottom = pageTop + $(window).height();
+
+        if ((pageTop < elementTop) && (pageBottom > elementBottom)) {
+        } else if ((elementTop <= pageBottom) && (elementBottom >= pageTop)) {
+            $('[data-js-count="true"]').each(function () {
+                $(this).find('span').prop('Counter',0).animate({
+                    Counter: $(this).data('count')
+                }, {
+                    duration: 3000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+        }
+    });
+    
 });

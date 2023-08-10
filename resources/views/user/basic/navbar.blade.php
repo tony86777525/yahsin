@@ -10,7 +10,7 @@
         </ul>
     </div>
     <div class="navigation__language">
-        <div class="fancySelectWrap">
+        <div class="fancyWrap fancyWrap--language">
             <select name="language" id="language" class="fancySelect fancySelect--language">
                 <option value="">繁體中文</option>
                 <option value="">简体中文</option>
