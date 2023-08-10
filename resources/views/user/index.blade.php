@@ -293,6 +293,16 @@
         </div>
     </div>
 </section>
+<section class="faq">
+    <div class="faq__title">
+        <div class="boxShadow">
+            <div class="boxShadow__content">
+                <div class="sub">雅信【海牙認證】線上服務</div>
+                <div class="title">常見問題QA</div>
+            </div>
+        </div>
+    </div>
+</section>
 @endsection
 
 @push('page_script')
