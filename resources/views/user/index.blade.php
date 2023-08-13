@@ -182,7 +182,7 @@
                         <td colspan="2"><span>不限任何形式、語言、國家文件均可辦理</span></td>
                     </tr>
                 </table>
-                <div class="benefit__deco">
+                <div class="benefit__deco wow fadeIn">
                     <img src="/img/bg-benefit.svg" alt="" class="image">
                 </div>
             </div>
@@ -257,7 +257,7 @@
             <div class="intro">文件副本認證加簽在國際上普遍被接受，認證程序與原始正本極為相似，主要區别是副本加簽為公證員宣誓該文件與正本相符且真實，但我們不針對文件內容真實性查證或公證，以提供您更優質、快速、便利的線上服務。</div>
             <div class="quite boxShadow">
                 <div class="boxShadow__content">
-                    <table class="quiteTable">
+                    <table class="quiteTable wow fadeInRight">
                         <thead>
                             <tr>
                                 <th class="label"></th>
@@ -293,13 +293,66 @@
         </div>
     </div>
 </section>
+<section class="sns">
+    <div class="wrapper">
+        <ul class="snsList">
+            <li><div class="btnWrap btnWrap--originSite"><a href="https://yahsin888.com/taiwan-apostille/" target="_blank" class="btn btn--originSite"><span class="btn__text">原始正本-海牙認證服務連結</span></a></div></li>
+            <li><div class="btnWrap btnWrap--line"><a href="https://line.me/ti/p/QBRHoFJqrT#~" target="_blank" class="btn btn--line"><span class="btn__text">加入我們官方LINE好友</span></a></div></li>
+        </ul>
+    </div>
+</section>
 <section class="faq">
     <div class="faq__title">
         <div class="boxShadow">
             <div class="boxShadow__content">
-                <div class="sub">雅信【海牙認證】線上服務</div>
-                <div class="title">常見問題QA</div>
+                <div class="sub wow fadeInLeft">雅信【海牙認證】線上服務</div>
+                <div class="topic wow fadeInLeft">常見問題QA</div>
             </div>
+        </div>
+    </div>
+    <div class="faq__content">
+        <ul class="faqList">
+            <li class="faqList__item wow fadeInUp">
+                <div class="question">Q1.非本國證明書或外國文件能否辦理海牙認證?</div>
+                <div class="anwser">A:可以，僅須上傳文件數位檔，<span>【不限任何國家、語言、形式之文件】均可辦理。</span></div>
+            </li>
+            <li class="faqList__item wow fadeInUp">
+                <div class="question">Q2.海牙認證需要本人親自到場辦理嗎?</div>
+                <div class="anwser">A:不需要，電腦或手機拍照上傳文件數位檔即可辦理。</div>
+            </li>
+            <li class="faqList__item wow fadeInUp">
+                <div class="question">Q3.委託辦理海牙認證需要多長時間?</div>
+                <div class="anwser">A:【10-12個工作天】(不含郵寄)。</div>
+            </li>
+            <li class="faqList__item wow fadeInUp">
+                <div class="question">Q4. 託『雅信翻譯』辦理線上-海牙認證，<span>有甚麼優勢?</span></div>
+                <div class="anwser">
+                    A:我們提供:
+                    <ul class="serviceList">
+                        <li>彩色文件列印</li>
+                        <li>附公證員英文宣誓書(香港民政局用印)</li>
+                        <li>香港高等法院書記官簽章及海牙認證加簽(Apostille)</li>
+                        <li>DHL /SF EXPRESS【免運費】全球送達加值服務。</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="cooperation">
+    <div class="wrapper">
+        <h3 class="cooperation__title">合作單位</h3>
+        <div class="cooperation__content">
+            <ul class="coopList">
+                <li class="wow fadeInUp" data-wow-delay="0s"><img src="/img/img-cooperation-boca.png" alt="" class="image"></li>
+                <li class="wow fadeInUp" data-wow-delay="0.1s"><img src="/img/img-cooperation-judicial.png" alt="" class="image"></li>
+                <li class="wow fadeInUp" data-wow-delay="0.2s"><img src="/img/img-cooperation-notaries_hk.png" alt="" class="image"></li>
+                <li class="wow fadeInUp" data-wow-delay="0.3s"><img src="/img/img-cooperation-vtkcyc.png" alt="" class="image"></li>
+                <li class="wow fadeInUp" data-wow-delay="0.4s"><img src="/img/img-cooperation-office_hk.png" alt="" class="image"></li>
+                <li class="wow fadeInUp" data-wow-delay="0.5s"><img src="/img/img-cooperation-judiciary_hk.png" alt="" class="image"></li>
+                <li class="wow fadeInUp" data-wow-delay="0.6s"><img src="/img/img-cooperation-sf.png" alt="" class="image"></li>
+                <li class="wow fadeInUp" data-wow-delay="0.7s"><img src="/img/img-cooperation-hcch.png" alt="" class="image"></li>
+            </ul>
         </div>
     </div>
 </section>

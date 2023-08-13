@@ -4,6 +4,7 @@
 @import "utils/variables",
 		"utils/mixin";
 @import "form";
+@import '/node_modules/wow.js/css/libs/animate.css';
 
 $path: '../../images/';
 
@@ -34,6 +35,15 @@ html {
 		background-image: url('#{$path}/logo.png');
 		background-repeat: no-repeat;
 		background-size: contain;
+	}
+}
+
+//=============== footer ===============//
+.footer {
+	&__copyright {
+		text-align: center;
+		background-color: #333333;
+		color: #ffffff;
 	}
 }
 
@@ -92,6 +102,13 @@ html {
 			height: 1.7rem;
 		}
 
+	}
+
+	.footer {
+		&__copyright {
+			padding: 0.6rem 0;
+			font-size: 1rem;
+		}
 	}
 
 	.navigation {
@@ -164,6 +181,13 @@ html {
 
 		.navigation {
 			float: right;
+		}
+	}
+
+	.footer {
+		&__copyright {
+			padding: 12px 0;
+			font-size: 20px;
 		}
 	}
 
@@ -253,6 +277,14 @@ html {
 	.header {
 		padding: 70px 60px 70px 100px;
 	}
+
+	.footer {
+		&__copyright {
+			padding: 20px 0;
+			font-size: 28px;
+		}
+	}
+
 	.navigation {
 		&__menu {
 			

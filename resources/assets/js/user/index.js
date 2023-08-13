@@ -11,6 +11,28 @@ $(function(){
         }
     });
 
+    var elementTop = $('.feature').offset().top;
+    var elementBottom = elementTop + $('.feature').height();
+
+    $(window).on('scroll', function(){
+        var pageTop = $(this).scrollTop();
+        var pageBottom = pageTop + $(window).height();
+
+        if ((elementTop <= pageBottom) && (elementBottom >= pageTop)) {
+            $('[data-js-count="true"]').each(function () {
+                $(this).find('span').prop('Counter',0).animate({
+                    Counter: $(this).data('count')
+                }, {
+                    duration: 3000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+        }
+    });
+
     $('[data-js="refresh-captcha"]').on('click', function(){
         let button = $(this);
         let url = button.data('js-url');
@@ -94,30 +116,7 @@ $(function(){
                 console.log(res);
             }
         });
-    });
+    });   
     
-    
-    var elementTop = $('.landing__board').offset().top;
-    var elementBottom = elementTop + $('.landing__board').height();
-
-    $(window).on('scroll', function(){
-        var pageTop = $(this).scrollTop();
-        var pageBottom = pageTop + $(window).height();
-
-        if ((pageTop < elementTop) && (pageBottom > elementBottom)) {
-        } else if ((elementTop <= pageBottom) && (elementBottom >= pageTop)) {
-            $('[data-js-count="true"]').each(function () {
-                $(this).find('span').prop('Counter',0).animate({
-                    Counter: $(this).data('count')
-                }, {
-                    duration: 3000,
-                    easing: 'swing',
-                    step: function (now) {
-                        $(this).text(Math.ceil(now));
-                    }
-                });
-            });
-        }
-    });
-    
+    new WOW().init();
 });
