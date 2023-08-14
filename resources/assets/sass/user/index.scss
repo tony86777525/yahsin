@@ -280,6 +280,23 @@ $path: '../../images/';
         }
     }
 
+    .quite {
+        &__title {
+            letter-spacing: 5px;
+            color: $main;
+            text-align: center;
+            font-weight: bold;
+
+            &:after {
+                content: '';
+                display: block;
+                background-color: $main;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+
     .quiteTable {
         width: 100%;
         table-layout: fixed;
@@ -738,6 +755,19 @@ $path: '../../images/';
             }
         }
 
+        .quite {
+            &__title {
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+
+                &:after {
+                    width: 13.3rem;
+                    height: 0.3rem;
+                    margin-top: 1.8rem;
+                }
+            }
+        }
+
         .quiteTable {
             thead {
                 th {
@@ -941,7 +971,6 @@ $path: '../../images/';
             }
         }
     }
-
 
     .feature {
         margin-top: -100px;
@@ -1292,6 +1321,19 @@ $path: '../../images/';
             }
         }
 
+        .quite {
+            &__title {
+                font-size: 24px;
+                margin-bottom: 50px;
+    
+                &:after {
+                    width: 280px;
+                    height: 5px;
+                    margin-top: 25px;
+                }
+            }
+        }
+
         .quiteTable {
 
             thead {
@@ -1620,6 +1662,17 @@ $path: '../../images/';
 
             &__content {
                 padding: 140px 75px 15px;
+            }
+        }
+
+        .quite {
+            &__title {
+                font-size: 35px;
+    
+                &:after {
+                    width: 400px;
+                    margin-top: 50px;
+                }
             }
         }
 
