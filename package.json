@@ -20,6 +20,7 @@
         "sass-loader": "^12.1.0"
     },
     "dependencies": {
-        "country-region-dropdown-menu": "^2.4.0"
+        "country-region-dropdown-menu": "^2.4.0",
+        "wow.js": "^1.2.2"
     }
 }

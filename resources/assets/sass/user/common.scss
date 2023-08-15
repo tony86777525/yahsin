@@ -4,11 +4,16 @@
 @import "utils/variables",
 		"utils/mixin";
 @import "form";
+@import '/node_modules/wow.js/css/libs/animate.css';
 
 $path: '../../images/';
 
 html {
 	font-family: 'Noto Sans TC', sans-serif;
+}
+
+.image {
+	width: 100%;
 }
 
 //=============== header ===============//
@@ -18,6 +23,7 @@ html {
 	align-items: center;
 	justify-content: space-between;
 	position: sticky;
+	z-index: 9999;
 	top: 0;
 	left: 0;
 	border-bottom: 2px solid #000000;
@@ -29,6 +35,15 @@ html {
 		background-image: url('#{$path}/logo.png');
 		background-repeat: no-repeat;
 		background-size: contain;
+	}
+}
+
+//=============== footer ===============//
+.footer {
+	&__copyright {
+		text-align: center;
+		background-color: #333333;
+		color: #ffffff;
 	}
 }
 
@@ -50,7 +65,7 @@ html {
 
 		&__link {
 			display: block;
-			color: #4d4d4d;
+			color: $sub;
 		}
 	}
 
@@ -89,6 +104,13 @@ html {
 
 	}
 
+	.footer {
+		&__copyright {
+			padding: 0.6rem 0;
+			font-size: 1rem;
+		}
+	}
+
 	.navigation {
 
 		&__menu {
@@ -100,7 +122,7 @@ html {
 			right: -100%;
 			z-index: 100;
 			@include transition(right, 0.3s, ease-in);
-			background-color: #e4e4ea;
+			background-color: $bg-light;
 			box-shadow: -0.5rem 0 0.5rem rgba(52,50,98,.5);
 
 			&.active {
@@ -142,8 +164,8 @@ html {
 	
 }
 
-//Large devices (laptops, 1025 and up)
-@media only screen and (min-width: 1025px) {
+//Large devices (laptops, 1280 and up)
+@media only screen and (min-width: 1280px) {
 
 	html {
 		font-size: 12px;
@@ -159,6 +181,13 @@ html {
 
 		.navigation {
 			float: right;
+		}
+	}
+
+	.footer {
+		&__copyright {
+			padding: 12px 0;
+			font-size: 20px;
 		}
 	}
 
@@ -191,7 +220,7 @@ html {
 				vertical-align: middle;
 				border-bottom: none;
 				overflow: hidden;
-				margin-right: 10px;
+				margin-right: 16px;
 				-webkit-transform: perspective(1px) translateZ(0);
     			transform: perspective(1px) translateZ(0);
 
@@ -206,7 +235,7 @@ html {
 					left: 51%;
 					right: 51%;
 					bottom: 0;
-					background: #343262;
+					background: $main;
 					height: 4px;
 					-webkit-transition-property: left, right;
 					transition-property: left, right;
@@ -238,11 +267,24 @@ html {
 }
 
 
-//Extra Large devices (laptops and desktop, 1441 and up)
-@media only screen and (min-width: 1441px) {
-	.header {
-		padding: 70px 60px;
+//Extra Large devices (laptops and desktop, 1600 and up)
+@media only screen and (min-width: 1600px) {
+	html {
+		font-size: 20px;
+		line-height: 1;
 	}
+	
+	.header {
+		padding: 70px 60px 70px 100px;
+	}
+
+	.footer {
+		&__copyright {
+			padding: 20px 0;
+			font-size: 28px;
+		}
+	}
+
 	.navigation {
 		&__menu {
 			
