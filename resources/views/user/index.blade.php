@@ -359,6 +359,7 @@
         </div>
     </div>
 </section>
+<div class="docking"></div>
 @endsection
 
 @push('page_script')
