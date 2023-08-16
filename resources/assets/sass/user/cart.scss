@@ -4,3 +4,138 @@
 
 $path: '../../images/';
 
+.cart {
+	display: flex;
+
+	&__content {
+		text-align: center;
+
+		.title {
+			color: $main;
+			font-weight: bold;
+		}
+
+		.price {
+			&__bill {
+				.billSelect {
+					display: inline-block;
+				}
+				.priceShow {
+					display: inline-block;
+					color: $main;
+				}
+			}
+
+			&__note {
+				color: $sub;
+			}
+		}
+
+		.paragraph {
+			color: $sub;
+		}
+
+		.amount {
+			&__text {
+				color: $sub;
+			}
+
+			&__manual {
+				.insert,
+				.action {
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+
+
+// ========== Media Queries ==========
+//Small devices (portrait phones, 320 and up)
+@media only screen and (min-width: 320px) {
+	.wrapper {
+        padding: 0 2.5rem;
+    }
+
+	.form {
+		&__cart {
+			padding: 2.5rem 0;
+		}
+	}
+
+	.cart {
+		flex-direction: column;
+
+		&__content {
+			.title {
+				font-size: 1.6rem;
+			}
+		}
+	}
+}
+
+//Medium devices (portrait tablets,landscape phone, 768px and up)
+@media only screen and (min-width: 768px) {
+	
+}
+
+//Large devices (laptops, 1280 and up)
+@media only screen and (min-width: 1280px) {
+	.wrapper {
+        padding: 0 50px;
+    }
+
+	.form {
+		&__cart {
+			padding: 50px 0;
+		}
+	}
+
+	.cart {
+		flex-direction: row;
+
+		&__sample {
+			flex: 0 0 (500/1820)*100%;
+		}
+
+		&__content {
+			.title {
+				font-size: 35px;
+			}
+		}
+	}
+}
+
+//Extra Large devices (laptops and desktop, 1600 and up)
+@media only screen and (min-width: 1600px) {
+	.wrapper {
+        padding: 0 100px;
+    }
+
+	.form {
+		&__cart {
+			padding: 100px 0;
+		}
+	}
+
+	.cart {
+
+		&__sample {
+			flex: 0 0 (500/1720)*100%;
+		}
+
+		&__content {
+			.title {
+				font-size: 50px;
+			}
+		}
+	}
+}
+
+
+@media only screen and (min-width: 1700px) {
+}
+
+@media only screen and (min-width: 1920px) {
+}

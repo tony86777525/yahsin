@@ -1468,14 +1468,6 @@ $path: '../../images/';
     }
 
     .cooperation {
-        .coopList {
-            & > li {
-                flex: 0 0 25%;
-            }
-        }
-    }
-
-    .cooperation {
         padding: 100px 0 80px;
 
         &__title {
@@ -1484,11 +1476,18 @@ $path: '../../images/';
         &__content {
             padding-top: 60px;
         }
+
         .coopList {
             & > li {
+                flex: 0 0 25%;
                 height: 180px;
                 padding: 0 40px;
                 margin-bottom: 20px;
+                border-left: none;
+
+                &:nth-child(4n+1) {
+                    border-left: 1px solid #e6e6e6;
+                }
             }
         }
     }
@@ -1756,10 +1755,6 @@ $path: '../../images/';
                 padding: 0 60px;
                 border-left: none;
                 margin-bottom: 40px;
-
-                &:nth-child(4n+1) {
-                    border-left: 1px solid #e6e6e6;
-                }
             }
         }
     }
