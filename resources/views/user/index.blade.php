@@ -115,12 +115,12 @@
             <div class="landingText">
                 <h3>{{ __('user.side.1.title') }}</h3>
                 <ul>
-                    <li>{{ __('user.side.1.description.paragraph.1') }}</li>
-                    <li>{{ __('user.side.1.description.paragraph.2') }}</li>
-                    <li>{{ __('user.side.1.description.paragraph.3') }}</li>
-                    <li>{{ __('user.side.1.description.paragraph.4') }}</li>
-                    <li>{{ __('user.side.1.description.paragraph.5') }}</li>
-                    <li>{{ __('user.side.1.description.paragraph.6') }}</li>
+                    <li>{{ __('user.landingText.description.paragraph.1') }}</li>
+                    <li>{{ __('user.landingText.description.paragraph.2') }}</li>
+                    <li>{{ __('user.landingText.description.paragraph.3') }}</li>
+                    <li>{{ __('user.landingText.description.paragraph.4') }}</li>
+                    <li>{{ __('user.landingText.description.paragraph.5') }}</li>
+                    <li>{{ __('user.landingText.description.paragraph.6') }}</li>
                 </ul>
             </div>
         </div>
