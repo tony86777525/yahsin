@@ -27,8 +27,14 @@ class SetUserLanguage
                 case 'zh-TW':
                     $language = config('lang.available_locales.zh-TW');
                     break;
+                case 'zh-CN':
+                    $language = config('lang.available_locales.zh-CN');
+                    break;
                 case 'en':
                     $language = config('lang.available_locales.en');
+                    break;
+                case 'es':
+                    $language = config('lang.available_locales.es');
                     break;
                 default:
                     $language = config('lang.available_locales.en');

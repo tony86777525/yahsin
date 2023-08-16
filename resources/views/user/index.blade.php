@@ -113,14 +113,14 @@
                 </form>
             </div>
             <div class="landingText">
-                <h3>海牙認證線上服務</h3>
+                <h3>{{ __('user.side.1.title') }}</h3>
                 <ul>
-                    <li>我們針對【文件副本】快速辦理海牙認證</li>
-                    <li>您無須提供文件正本</li>
-                    <li>上傳您的文件電子檔，任何數位格式即可完成</li>
-                    <li>48小時內確認，辦理時間【10-12工作天】</li>
-                    <li>固定費用【NTD8800元】</li>
-                    <li>完成後國際快遞 SF/DHL EXPRESS 全球寄送【免運費】</li>
+                    <li>{{ __('user.side.1.description.paragraph.1') }}</li>
+                    <li>{{ __('user.side.1.description.paragraph.2') }}</li>
+                    <li>{{ __('user.side.1.description.paragraph.3') }}</li>
+                    <li>{{ __('user.side.1.description.paragraph.4') }}</li>
+                    <li>{{ __('user.side.1.description.paragraph.5') }}</li>
+                    <li>{{ __('user.side.1.description.paragraph.6') }}</li>
                 </ul>
             </div>
         </div>
