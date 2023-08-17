@@ -21,11 +21,13 @@
                     <div class="price">
                         <div class="price__bill">
                             <div class="billSelect">
-                                <select name="bill">
-                                    <option value="NT$"></option>
-                                    <option value="USD"></option>
-                                    <option value="RMB￥"></option>
-                                </select>
+                                <div class="fancyWrap fancyWrap--bill">
+                                    <select name="bill" class="fancySelect fancySelect--bill">
+                                        <option value="twd">NT$</option>
+                                        <option value="usd">USD</option>
+                                        <option value="rmb">RMB￥</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="priceShow">8800 / 件</div>
                         </div>
@@ -41,8 +43,18 @@
                     <div class="amount">
                         <div class="amount__text">如果您上傳了不止一份文件，請手動更新以下文件數量</div>
                         <div class="amount__manual">
-                            <div class="insert"><input type="number"></div>
-                            <div class="action"><button type="button" class="btn btn--check"><span class="btn__text">變更</span></button></div>
+                            <div class="insert">
+                                <div class="fancyWrap fancyWrap--inputTxt">
+                                    <label>
+                                        <input name="amount" type="number" value="" class="fancyInput fancyInput--inputTxt">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="action">
+                                <div class="btnWrap btnWrap--submit">
+                                    <button type="button" class="btn btn--submit"><span class="btn__text">變更</span></button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -52,8 +64,8 @@
     <div class="form__payment">
         <div class="wrapper">
             <ul class="payList">
-                <li><input id="payment_creditcard" type="radio" name="payment" value="creditcard"><label for="payment_creditcard">信用卡</label></li>
-                <li><input id="payment_paypal" type="radio" name="payment" value="paypal"><label for="payment_paypal">PayPal</label></li>
+                <li><input id="payment_creditcard" type="radio" name="payment" value="creditcard" class="fancyInput fancyInput--hidden  fancyInput--radio"><label for="payment_creditcard">信用卡</label></li>
+                <li><input id="payment_paypal" type="radio" name="payment" value="paypal" class="fancyInput fancyInput--hidden fancyInput--radio"><label for="payment_paypal">PayPal</label></li>
             </ul>
         </div>
     </div>

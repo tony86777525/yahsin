@@ -55,7 +55,8 @@ $path: "../../images/";
 		background-size: contain;
 		overflow: hidden;
 	}
-	&--country {
+	&--country,
+	&--bill {
 		background-color: $bg-main;
 		background-image: url("#{$path}/deco-select.svg");
 		background-repeat: no-repeat;
@@ -90,12 +91,6 @@ $path: "../../images/";
 	border: none;
 	background-color: transparent;
 	@include appearance(none);
-
-	&--language {
-	}
-
-	&--country {
-	}
 }
 
 .fancyInput {
@@ -113,6 +108,44 @@ $path: "../../images/";
 	&:focus,
 	&:focus-visible {
 		outline: none;
+	}
+
+	&--radio {
+		& + label {
+			display: block;
+			position: relative;
+			line-height: 1;
+
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 50%;
+				display: block;
+				background-color: #ffffff;
+				border: 1px solid $main;
+				border-radius: 50%;
+				@include translateY(-50%);
+			}
+
+			&:after {
+				content: '';
+				position: absolute;
+				display: none;
+				top: 50%;
+				border-radius: 50%;
+				background-color: $main;
+				@include translateY(-50%);
+			}
+		}
+
+		&:checked {
+			& + label {
+				&:after {
+					display: block;
+				}
+			}
+		}
 	}
 }
 
@@ -219,9 +252,10 @@ $path: "../../images/";
 		}
 
 		&--country,
+		&--bill,
 		&--inputTxt,
 		&--inputFile {
-			border: 1px solid $sub;
+			border: 0.1rem solid $sub;
 		}
 	}
 
@@ -236,7 +270,8 @@ $path: "../../images/";
 			font-size: 1rem;
 		}
 
-		&--country {
+		&--country,
+		&--bill {
 			padding: 0.1rem 0 0.1rem 0.5rem;
 			font-size: 1rem;
 		}
@@ -247,6 +282,24 @@ $path: "../../images/";
 		&--inputTxt {
 			padding: 0.1rem 0.5rem;
 			font-size: 1rem;
+		}
+
+		&--radio {
+			& + label {
+				font-size: 1rem;
+				padding-left: 1.5rem;
+	
+				&:before {
+					width: 1rem;
+					height: 1rem;
+				}
+	
+				&:after {
+					width: 0.6rem;
+					height: 0.6rem;
+					left: 0.2rem;
+				}
+			}
 		}
 	}
 
@@ -319,6 +372,7 @@ $path: "../../images/";
 		}
 
 		&--country,
+		&--bill,
 		&--inputTxt,
 		&--inputFile {
 			border: 1px solid $sub;
@@ -338,7 +392,8 @@ $path: "../../images/";
 			font-size: 20px;
 		}
 
-		&--country {
+		&--country,
+		&--bill {
 			padding: 12px 0 12px 16px;
 			font-size: 20px;
 		}
@@ -359,6 +414,24 @@ $path: "../../images/";
 		&--inputTxt {
 			padding: 12px 16px;
 			font-size: 20px;
+		}
+
+		&--radio {
+			& + label {
+				padding-left: 16;
+				font-size: 20px;
+	
+				&:before {
+					width: 16px;
+					height: 16px;
+				}
+	
+				&:after {
+					width: 10px;
+					height: 10px;
+					left: 3px;
+				}
+			}
 		}
 	}
 
@@ -451,7 +524,8 @@ $path: "../../images/";
 			padding: 11px 16px;
 			font-size: 28px;
 		}
-		&--country {
+		&--country,
+		&--bill {
 			padding: 10px 16px;
 			font-size: 28px;
 		}
@@ -462,6 +536,22 @@ $path: "../../images/";
 			line-height: 1;
 			padding: 4px 16px;
 			font-size: 28px;
+		}
+
+		&--radio {
+			& + label {
+				font-size: 28px;
+	
+				&:before {
+					width: 20px;
+					height: 20px;
+				}
+	
+				&:after {
+					width: 14px;
+					height: 14px;
+				}
+			}
 		}
 	}
 
