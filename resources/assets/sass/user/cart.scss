@@ -4,7 +4,7 @@
 
 $path: '../../images/';
 
-.form {
+.trolley {
 	&__payment {
 		background-color: $bg-light;
 	}
@@ -15,11 +15,6 @@ $path: '../../images/';
 
 	&__content {
 		text-align: center;
-
-		.title {
-			color: $main;
-			font-weight: bold;
-		}
 
 		.price {
 			&__bill {
@@ -61,12 +56,14 @@ $path: '../../images/';
 	}
 }
 
-.payList {
-	@include list-reset;
-	text-align: center;
-
-	& > li {
-		display: inline-block;
+.pay {
+	.payList {
+		@include list-reset;
+		text-align: center;
+	
+		& > li {
+			display: inline-block;
+		}
 	}
 }
 
@@ -78,12 +75,10 @@ $path: '../../images/';
         padding: 0 2.5rem;
     }
 
-	.form {
-		&__cart {
-			padding: 2.5rem 0;
-		}
-
-		&__payment {
+	.trolley {
+		&__cart,
+		&__payment,
+		&__delivery {
 			padding: 2.5rem 0;
 		}
 	}
@@ -96,10 +91,6 @@ $path: '../../images/';
 		}
 
 		&__content {
-			.title {
-				font-size: 1.6rem;
-				margin-bottom: 1.6rem;
-			}
 
 			.price {
 				&__bill {
@@ -143,10 +134,12 @@ $path: '../../images/';
 		}
 	}
 
-	.payList {
-		& > li {
-			width: 5rem;
-			margin: 0 1rem;
+	.pay {
+		.payList {
+			& > li {
+				width: 5rem;
+				margin: 0 1rem;
+			}
 		}
 	}
 }
@@ -162,9 +155,14 @@ $path: '../../images/';
         padding: 0 50px;
     }
 
-	.form {
-		&__cart {
+	.trolley {
+		&__cart,
+		&__payment {
 			padding: 50px 0;
+		}
+
+		&__delivery {
+			padding: 50px 0 80px;
 		}
 	}
 
@@ -178,11 +176,6 @@ $path: '../../images/';
 
 		&__content {
 			flex: 0 0 calc(100% - ((500/1820)*100%));
-
-			.title {
-				font-size: 35px;
-				margin-bottom: 20px;
-			}
 
 			.price {
 				&__bill {
@@ -226,11 +219,17 @@ $path: '../../images/';
 		}
 	}
 
-	.payList {
-		& > li {
-			width: 100px;
-			margin: 0 12px;
+	.pay {
+		.payList {
+			& > li {
+				width: 100px;
+				margin: 0 12px;
+			}
 		}
+	}
+
+	.delivery {
+		padding: 0 100px;
 	}
 }
 
@@ -240,9 +239,14 @@ $path: '../../images/';
         padding: 0 100px;
     }
 
-	.form {
-		&__cart {
+	.trolley {
+		&__cart,
+		&__payment {
 			padding: 100px 0;
+		}
+
+		&__delivery {
+			padding: 100px 0 130px;
 		}
 	}
 
@@ -254,11 +258,6 @@ $path: '../../images/';
 
 		&__content {
 			flex: 0 0 calc(100% - ((500/1720)*100%));
-			
-			.title {
-				font-size: 50px;
-				margin-bottom: 30px;
-			}
 
 			.price {
 				&__bill {
@@ -302,12 +301,17 @@ $path: '../../images/';
 		}
 	}
 
-
-	.payList {
-		& > li {
-			width: 150px;
-			margin: 0 20px;
+	.pay {
+		.payList {
+			& > li {
+				width: 150px;
+				margin: 0 20px;
+			}
 		}
+	}
+
+	.delivery {
+		padding: 0 210px;
 	}
 }
 
