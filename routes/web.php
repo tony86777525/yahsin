@@ -23,6 +23,8 @@ Route::group([
     'middleware' => ['set.web.language'],
 ], function () {
     Route::get('/', [IndexController::class, 'index'])->name('index');
+    Route::view('/cart', 'user.cart')
+            ->name('user.cart');
 
     Route::post('/api/captcha/reload', [CaptchaController::class, 'getCaptchaImageSrc'])->name('api.captcha.reload');
     Route::post('/api/order/pay/ecpay/credit', [ECPayController::class, 'credit'])->name('api.order.pay.ecpay.credit');

@@ -55,7 +55,8 @@ $path: "../../images/";
 		background-size: contain;
 		overflow: hidden;
 	}
-	&--country {
+	&--country,
+	&--bill {
 		background-color: $bg-main;
 		background-image: url("#{$path}/deco-select.svg");
 		background-repeat: no-repeat;
@@ -90,12 +91,6 @@ $path: "../../images/";
 	border: none;
 	background-color: transparent;
 	@include appearance(none);
-
-	&--language {
-	}
-
-	&--country {
-	}
 }
 
 .fancyInput {
@@ -113,6 +108,44 @@ $path: "../../images/";
 	&:focus,
 	&:focus-visible {
 		outline: none;
+	}
+
+	&--radio {
+		& + label {
+			display: block;
+			position: relative;
+			line-height: 1;
+
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 50%;
+				display: block;
+				background-color: #ffffff;
+				border: 1px solid $sub;
+				border-radius: 50%;
+				@include translateY(-50%);
+			}
+
+			&:after {
+				content: '';
+				position: absolute;
+				display: none;
+				top: 50%;
+				border-radius: 50%;
+				background-color: $main;
+				@include translateY(-50%);
+			}
+		}
+
+		&:checked {
+			& + label {
+				&:after {
+					display: block;
+				}
+			}
+		}
 	}
 }
 
@@ -210,6 +243,26 @@ $path: "../../images/";
 				}
 			}
 		}
+
+		&--delivery {
+			
+			.form__row {
+				flex-direction: column;
+				margin-bottom: 1.2rem;
+
+				.formLabel {
+					margin-bottom: 0.6rem;
+				}
+
+				.formCol {
+					margin-bottom: 1.2rem;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
 	}
 
 	.fancyWrap {
@@ -219,9 +272,10 @@ $path: "../../images/";
 		}
 
 		&--country,
+		&--bill,
 		&--inputTxt,
 		&--inputFile {
-			border: 1px solid $sub;
+			border: 0.1rem solid $sub;
 		}
 	}
 
@@ -236,7 +290,8 @@ $path: "../../images/";
 			font-size: 1rem;
 		}
 
-		&--country {
+		&--country,
+		&--bill {
 			padding: 0.1rem 0 0.1rem 0.5rem;
 			font-size: 1rem;
 		}
@@ -247,6 +302,24 @@ $path: "../../images/";
 		&--inputTxt {
 			padding: 0.1rem 0.5rem;
 			font-size: 1rem;
+		}
+
+		&--radio {
+			& + label {
+				font-size: 1rem;
+				padding-left: 1.5rem;
+	
+				&:before {
+					width: 1rem;
+					height: 1rem;
+				}
+	
+				&:after {
+					width: 0.6rem;
+					height: 0.6rem;
+					left: 0.2rem;
+				}
+			}
 		}
 	}
 
@@ -287,6 +360,8 @@ $path: "../../images/";
 @media only screen and (min-width: 1280px) {
 	.form {
 		&__title {
+			margin-bottom: 16px;
+
 			h2 {
 				font-size: 36px;
 			}
@@ -310,6 +385,69 @@ $path: "../../images/";
 				}
 			}
 		}
+
+		&--delivery {
+			.form__title {
+				margin-bottom: 50px;
+			}
+
+			.form__row {
+				align-items: center;
+				flex-direction: row;
+				justify-content: space-between;
+				margin-bottom: 30px;
+
+				.formLabel {
+					margin-bottom: 10px;
+				}
+
+				.formCol {
+					margin-bottom: 0;
+				}
+
+				&--default {
+					.formCol {
+						flex: 0 0 50%;
+
+						&:nth-child(odd) {
+							padding-right: 12px;
+						}
+						&:nth-child(even) {
+							padding-left: 12px;
+						}
+					}
+				}
+
+				&--area {
+					.formCol {
+						flex: 0 0 (100%/3);
+
+						&:nth-child(3n+1) {
+							padding-right: 12px;
+						}
+						&:nth-child(3n+2) {
+							padding-left: 12px;
+							padding-right: 12px;
+						}
+						&:nth-child(3n) {
+							padding-left: 12px;
+						}
+					}
+				}
+
+				&--address {
+					.formCol {
+						flex: 0 0 100%;
+						padding: 0;
+					}
+				}
+			}
+
+			.form__action {
+				width: 650px;
+				margin: 35px auto 0;
+			}
+		}
 	}
 
 	.fancyWrap {
@@ -319,6 +457,7 @@ $path: "../../images/";
 		}
 
 		&--country,
+		&--bill,
 		&--inputTxt,
 		&--inputFile {
 			border: 1px solid $sub;
@@ -338,7 +477,8 @@ $path: "../../images/";
 			font-size: 20px;
 		}
 
-		&--country {
+		&--country,
+		&--bill {
 			padding: 12px 0 12px 16px;
 			font-size: 20px;
 		}
@@ -359,6 +499,25 @@ $path: "../../images/";
 		&--inputTxt {
 			padding: 12px 16px;
 			font-size: 20px;
+		}
+
+		&--radio {
+			& + label {
+				padding-left: 16;
+				font-size: 20px;
+				cursor: pointer;
+	
+				&:before {
+					width: 16px;
+					height: 16px;
+				}
+	
+				&:after {
+					width: 10px;
+					height: 10px;
+					left: 3px;
+				}
+			}
 		}
 	}
 
@@ -427,6 +586,51 @@ $path: "../../images/";
 				}
 			}
 		}
+
+		&--delivery {
+
+			.form__title {
+				margin-bottom: 80px;
+			}
+
+			.form__row {
+				margin-bottom: 40px;
+
+				&--default {
+					.formCol {
+
+						&:nth-child(odd) {
+							padding-right: 24px;
+						}
+						&:nth-child(even) {
+							padding-left: 24px;
+						}
+					}
+				}
+
+				&--area {
+					.formCol {
+
+						&:nth-child(3n+1) {
+							padding-right: 24px;
+						}
+						&:nth-child(3n+2) {
+							padding-left: 24px;
+							padding-right: 24px;
+						}
+						&:nth-child(3n) {
+							padding-left: 24px;
+						}
+					}
+				}
+
+				&--address {
+					.formCol {
+						padding: 0;
+					}
+				}
+			}
+		}
 	}
 	.fancyWrap {
 		&:after {
@@ -451,7 +655,8 @@ $path: "../../images/";
 			padding: 11px 16px;
 			font-size: 28px;
 		}
-		&--country {
+		&--country,
+		&--bill {
 			padding: 10px 16px;
 			font-size: 28px;
 		}
@@ -462,6 +667,22 @@ $path: "../../images/";
 			line-height: 1;
 			padding: 4px 16px;
 			font-size: 28px;
+		}
+
+		&--radio {
+			& + label {
+				font-size: 28px;
+	
+				&:before {
+					width: 20px;
+					height: 20px;
+				}
+	
+				&:after {
+					width: 14px;
+					height: 14px;
+				}
+			}
 		}
 	}
 

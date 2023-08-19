@@ -1,0 +1,323 @@
+@charset "utf-8";
+@import "utils/variables",
+		"utils/mixin";
+
+$path: '../../images/';
+
+.trolley {
+	&__payment {
+		background-color: $bg-light;
+	}
+}
+
+.cart {
+	display: flex;
+
+	&__content {
+		text-align: center;
+
+		.price {
+			&__bill {
+				.billSelect {
+					display: inline-block;
+					vertical-align: middle;
+				}
+				.priceShow {
+					display: inline-block;
+					vertical-align: middle;
+					font-weight: bold;
+					color: $main;
+				}
+			}
+
+			&__note {
+				color: $sub;
+			}
+		}
+
+		.paragraph {
+			color: $sub;
+			line-height: 1.5;
+		}
+
+		.amount {
+			&__text {
+				color: $sub;
+			}
+
+			&__manual {
+				.insert,
+				.action {
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+}
+
+.pay {
+	.payList {
+		@include list-reset;
+		text-align: center;
+	
+		& > li {
+			display: inline-block;
+		}
+	}
+}
+
+
+// ========== Media Queries ==========
+//Small devices (portrait phones, 320 and up)
+@media only screen and (min-width: 320px) {
+	.wrapper {
+        padding: 0 2.5rem;
+    }
+
+	.trolley {
+		&__cart,
+		&__payment,
+		&__delivery {
+			padding: 2.5rem 0;
+		}
+	}
+
+	.cart {
+		flex-direction: column;
+
+		&__sample {
+			margin-bottom: 3rem;
+		}
+
+		&__content {
+
+			.price {
+				&__bill {
+					.billSelect {
+						width: 5rem;
+					}
+					.priceShow {
+						margin-left: 2.5rem;
+						font-size: 1.2rem;
+					}
+				}
+
+				&__note {
+					margin-top: 1.6rem;
+					font-size: 1rem;
+				}
+			}
+
+			.paragraph {
+				margin: 3rem 0;
+				font-size: 1rem;
+			}
+
+			.amount {
+				&__text {
+					margin-bottom: 1.6rem;
+					font-size: 1rem;
+				}
+
+				&__manual {
+					.insert {
+						width: 5rem;
+					}
+
+					.action {
+						width: 5rem;
+						margin-left: 2.5rem;
+					}
+				}
+			}
+		}
+	}
+
+	.pay {
+		.payList {
+			& > li {
+				width: 5rem;
+				margin: 0 1rem;
+			}
+		}
+	}
+}
+
+//Medium devices (portrait tablets,landscape phone, 768px and up)
+@media only screen and (min-width: 768px) {
+	
+}
+
+//Large devices (laptops, 1280 and up)
+@media only screen and (min-width: 1280px) {
+	.wrapper {
+        padding: 0 50px;
+    }
+
+	.trolley {
+		&__cart,
+		&__payment {
+			padding: 50px 0;
+		}
+
+		&__delivery {
+			padding: 50px 0 80px;
+		}
+	}
+
+	.cart {
+		flex-direction: row;
+
+		&__sample {
+			margin-bottom: 0;
+			flex: 0 0 (500/1820)*100%;
+		}
+
+		&__content {
+			flex: 0 0 calc(100% - ((500/1820)*100%));
+
+			.price {
+				&__bill {
+					.billSelect {
+						width: 120px;
+					}
+					.priceShow {
+						font-size: 28px;
+						margin-left: 30px;
+					}
+				}
+
+				&__note {
+					margin-top: 20px;
+					font-size: 20px;
+				}
+			}
+
+			.paragraph {
+				margin: 100px 0;
+				font-size: 20px;
+			}
+
+			.amount {
+				&__text {
+					margin-bottom: 20px;
+					font-size: 20px;
+				}
+
+				&__manual {
+					.insert {
+						width: 120px;
+					}
+
+					.action {
+						width: 120px;
+						margin-left: 30px;
+					}
+				}
+			}
+		}
+	}
+
+	.pay {
+		.payList {
+			& > li {
+				width: 100px;
+				margin: 0 12px;
+			}
+		}
+	}
+
+	.delivery {
+		padding: 0 100px;
+	}
+}
+
+//Extra Large devices (laptops and desktop, 1600 and up)
+@media only screen and (min-width: 1600px) {
+	.wrapper {
+        padding: 0 100px;
+    }
+
+	.trolley {
+		&__cart,
+		&__payment {
+			padding: 100px 0;
+		}
+
+		&__delivery {
+			padding: 100px 0 130px;
+		}
+	}
+
+	.cart {
+
+		&__sample {
+			flex: 0 0 (500/1720)*100%;
+		}
+
+		&__content {
+			flex: 0 0 calc(100% - ((500/1720)*100%));
+
+			.price {
+				&__bill {
+					.billSelect {
+						width: 150px;
+					}
+					.priceShow {
+						font-size: 35px;
+						margin-left: 50px;
+					}
+				}
+
+				&__note {
+					margin-top: 30px;
+					font-size: 28px;
+				}
+			}
+
+			.paragraph {
+				margin: 130px 0;
+				font-size: 28px;
+			}
+
+			.amount {
+				&__text {
+					margin-bottom: 30px;
+					font-size: 28px;
+				}
+
+				&__manual {
+					.insert {
+						width: 150px;
+					}
+
+					.action {
+						width: 150px;
+						margin-left: 50px;
+					}
+				}
+			}
+		}
+	}
+
+	.pay {
+		.payList {
+			& > li {
+				width: 150px;
+				margin: 0 20px;
+			}
+		}
+	}
+
+	.delivery {
+		padding: 0 210px;
+	}
+}
+
+
+@media only screen and (min-width: 1700px) {
+}
+
+@media only screen and (min-width: 1920px) {
+}

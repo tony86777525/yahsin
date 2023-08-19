@@ -23,7 +23,7 @@
 <section class="landing">
     <div class="wrapper">
         <div class="landing__content">
-            <div class="landingForm">
+            <div class="landingForm wow fadeIn" data-wow-delay="0s">
                 <form
                     method="POST"
                     action="{{ route('user.order.store.first') }}"
@@ -112,7 +112,7 @@
                     </div>
                 </form>
             </div>
-            <div class="landingText">
+            <div class="landingText wow fadeIn" data-wow-delay="0.5s">
                 <h3>{{ __('user.side.1.title') }}</h3>
                 <ul>
                     <li>{{ __('user.landingText.description.paragraph.1') }}</li>
@@ -257,37 +257,40 @@
             <div class="intro">文件副本認證加簽在國際上普遍被接受，認證程序與原始正本極為相似，主要區别是副本加簽為公證員宣誓該文件與正本相符且真實，但我們不針對文件內容真實性查證或公證，以提供您更優質、快速、便利的線上服務。</div>
             <div class="quite boxShadow">
                 <div class="boxShadow__content">
-                    <table class="quiteTable wow fadeInRight">
-                        <thead>
-                            <tr>
-                                <th class="label"></th>
-                                <th class="original">正本認證</th>
-                                <th class="copy">副本認證</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th class="label"><span>公證</span><span>方式</span></th>
-                                <td class="original"><span>香港國際律師查證</span>及公證其真實性<span></span></td>
-                                <td class="copy"><span>公證員宣誓其</span><span>內容與正本相符</span></td>
-                            </tr>
-                            <tr>
-                                <th class="label"><span>適用</span><span>文件</span></th>
-                                <td class="original"><span>受限當地機關限制</span></td>
-                                <td class="copy"><span>任何文件均可</span></td>
-                            </tr>
-                            <tr>
-                                <th class="label"><span>形式</span></th>
-                                <td class="original"><span>須提供正本紙本</span></td>
-                                <td class="copy"><span>永久有效</span></td>
-                            </tr>
-                            <tr>
-                                <th class="label"><span>法律</span><span>效力</span></th>
-                                <td class="original"><span>上傳數位電子檔</span></td>
-                                <td class="copy"><span>永久有效</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="quite__title wow fadeInRight">原始正本認證 VS. 數位副本認證</div>
+                    <div class="quite__table wow fadeInRight">
+                        <table class="quiteTable">
+                            <thead>
+                                <tr>
+                                    <th class="label"></th>
+                                    <th class="original">正本認證</th>
+                                    <th class="copy">副本認證</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="label"><span>公證</span><span>方式</span></th>
+                                    <td class="original"><span>香港國際律師查證</span>及公證其真實性<span></span></td>
+                                    <td class="copy"><span>公證員宣誓其</span><span>內容與正本相符</span></td>
+                                </tr>
+                                <tr>
+                                    <th class="label"><span>適用</span><span>文件</span></th>
+                                    <td class="original"><span>受限當地機關限制</span></td>
+                                    <td class="copy"><span>任何文件均可</span></td>
+                                </tr>
+                                <tr>
+                                    <th class="label"><span>形式</span></th>
+                                    <td class="original"><span>須提供正本紙本</span></td>
+                                    <td class="copy"><span>永久有效</span></td>
+                                </tr>
+                                <tr>
+                                    <th class="label"><span>法律</span><span>效力</span></th>
+                                    <td class="original"><span>上傳數位電子檔</span></td>
+                                    <td class="copy"><span>永久有效</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -356,6 +359,7 @@
         </div>
     </div>
 </section>
+<div class="docking"></div>
 @endsection
 
 @push('page_script')
