@@ -1,0 +1,173 @@
+@charset "utf-8";
+@import "utils/variables",
+		"utils/mixin";
+
+$path: '../../images/';
+
+.complete {
+
+	&__title {
+		text-align: center;
+
+		h2 {
+			font-weight: bold;
+			color: $main;
+		}
+	}
+
+	&__content {
+		text-align: center;
+
+		.orderNum {
+			font-weight: bold;
+
+			.text {
+				color: $main;
+			}
+
+			.num {
+				display: inline-block;
+				color: #e86b59;
+				border: 1px solid #e86b59;
+			}
+		}
+
+		.note {
+			color: $sub;
+
+			.highlight {
+				color: #e86b59;
+			}
+		}
+	}
+}
+
+// ========== Media Queries ==========
+//Small devices (portrait phones, 320 and up)
+@media only screen and (min-width: 320px) {	
+	.complete {
+		padding: 6rem 0;
+
+		.wrapper {
+			padding: 0 2rem;
+		}
+
+		&__title {
+			margin-bottom: 2rem;
+			
+			h2 {
+				font-size: 1.6rem;
+			}
+		}
+
+		&__content {
+			.orderNum {
+				margin-bottom: 2rem;
+				font-size: 1.2rem;
+
+				.num {
+					margin-left: 1rem;
+					padding: 0.4rem 0.8rem 0.8rem 0.8rem;
+				}
+			}
+
+			.note {
+				margin-bottom: 4rem;
+				font-size: 1rem;
+			}
+		}
+	}
+}
+
+//Medium devices (portrait tablets,landscape phone, 768px and up)
+@media only screen and (min-width: 768px) {
+	
+}
+
+//Large devices (laptops, 1280 and up)
+@media only screen and (min-width: 1280px) {
+	.complete {
+		padding: 75px 0;
+
+		.wrapper {
+			padding: 0 50px;
+		}
+
+		&__title {
+			margin-bottom: 20px;
+			
+			h2 {
+				font-size: 35px;
+			}
+		}
+
+		&__content {
+			.orderNum {
+				margin-bottom: 20px;
+				font-size: 28px;
+
+				.num {
+					margin-left: 35px;
+					padding: 4px 18px 8px 18px;
+				}
+			}
+
+			.note {
+				margin-bottom: 80px;
+				font-size: 20px;
+			}
+
+			.decoImg {
+				width: 880px;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+//Extra Large devices (laptops and desktop, 1600 and up)
+@media only screen and (min-width: 1600px) {
+	.complete {
+		padding: 100px 0;
+
+		.wrapper {
+			padding: 0 100px;
+		}
+
+		&__title {
+			margin-bottom: 30px;
+			
+			h2 {
+				font-size: 35px;
+			}
+		}
+
+		&__content {
+			.orderNum {
+				margin-bottom: 30px;
+				font-size: 35px;
+
+				.num {
+					margin-left: 50px;
+					padding: 8px 24px 12px 24px;
+				}
+			}
+
+			.note {
+				margin-bottom: 100px;
+				font-size: 28px;
+			}
+
+			.decoImg {
+				width: 1100px;
+			}
+		}
+	}
+}
+
+
+@media only screen and (min-width: 1700px) {
+}
+
+@media only screen and (min-width: 1920px) {
+}
