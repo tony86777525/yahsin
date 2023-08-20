@@ -1,6 +1,6 @@
 @inject('mainPresenter', 'App\Presenters\MainPresenter')
 <!DOCTYPE html>
-<html class="no-js" lang="zh-TW">
+<html class="no-js" lang="{{ session()->get('webLanguage') }}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Yahsin</title>
@@ -10,7 +10,7 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui" />
     <!-- Facebook share og meta /begin -->
-    <meta property="og:title" content="MysoreTaipei">
+    <meta property="og:title" content="Yahsin">
     <meta property="og:type" content="website" />
     <meta property="og:url" content="" />
     <meta property="og:image" content="{{ asset("images/user/og-image.jpg") }}" />
@@ -42,7 +42,7 @@
 <body>
 <div class="container">
     @include('user.basic.header')
-    
+
     <section class="main">
         @yield('main')
     </section>
