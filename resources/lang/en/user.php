@@ -48,10 +48,10 @@ return [
     'flow.content.benefit.5'              => 'No limitation of Forms, Languages, Countries',
 
     'flow.steps'                          => 'Step. :step',
-    'flow.step.1'                         => 'Fill out online form',
-    'flow.step.2'                         => 'Upload document',
+    'flow.step.1'                         => 'Fill out<br>online form',
+    'flow.step.2'                         => 'Upload<br>document',
     'flow.step.3'                         => 'Make order',
-    'flow.step.4'                         => 'We process Apostille',
+    'flow.step.4'                         => 'We process<br>Apostille',
     'flow.step.5'                         => 'Receive Apostille',
     'flow.steps.line'                     => 'business days',
 

@@ -26,7 +26,7 @@ class StoreOrderFirstRequest extends FormRequest
             'name' => 'required|min:3|max:255',
             'email' => 'required|email',
             'country' => 'required|integer|min:0',
-            'captcha' => 'required|captcha',
+//            'captcha' => 'required|captcha',
             'files' => 'required|array',
             'files.*' => 'required_without_all:files|file|max:102400|mimes:pdf',
         ];
@@ -44,7 +44,7 @@ class StoreOrderFirstRequest extends FormRequest
             'files.*.file' => 'Invalid file.',
             'files.*.max' => 'The file size should not exceed :max KB.',
             'files.*.mimes' => 'The file must be a PDF.',
-            'captcha' => '驗證碼錯誤, 請重新輸入',
+//            'captcha' => '驗證碼錯誤, 請重新輸入',
         ];
     }
 }

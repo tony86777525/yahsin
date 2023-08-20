@@ -48,10 +48,10 @@ return [
     'flow.content.benefit.5'              => 'Sin limitación de Formas, Idiomas, Paises',
 
     'flow.steps'                          => 'Paso :step',
-    'flow.step.1'                         => 'Llena el formulario online',
-    'flow.step.2'                         => 'Sube su documento',
+    'flow.step.1'                         => 'Llena el<br>formulario online',
+    'flow.step.2'                         => 'Sube su<br>documento',
     'flow.step.3'                         => 'Haga su pedido',
-    'flow.step.4'                         => 'Iniciamos el proceso de la Apostilla',
+    'flow.step.4'                         => 'Iniciamos el<br>proceso de<br>la Apostilla',
     'flow.step.5'                         => 'Recibir la Apostilla',
     'flow.steps.line'                     => 'días hábiles',
 

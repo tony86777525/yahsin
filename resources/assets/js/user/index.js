@@ -1,12 +1,13 @@
 $(function(){
-    $('[data-input-id="hiddenFile"]').on('change', function(e){        
+    $('[data-input-id="hiddenFile"]').on('change', function(e){
         var fileLength = e.currentTarget.files.length;
+        let fileText = $(this).data('file-text');
         if(fileLength !== 0) {
             var fileName = e.currentTarget.files[0].name;
             $(this).siblings('[data-input-id="uploadFile"]').text(fileName);
             $(this).closest('[data-input-id="elWrap"]').addClass('active');
         } else {
-            $(this).siblings('[data-input-id="uploadFile"]').text('選擇檔案');
+            $(this).siblings('[data-input-id="uploadFile"]').text(fileText);
             $(this).closest('[data-input-id="elWrap"]').removeClass('active');
         }
     });
@@ -116,7 +117,7 @@ $(function(){
                 console.log(res);
             }
         });
-    });   
-    
+    });
+
     new WOW().init();
 });

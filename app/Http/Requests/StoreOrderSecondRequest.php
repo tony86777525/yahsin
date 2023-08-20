@@ -23,15 +23,23 @@ class StoreOrderSecondRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'number' => 'required|min:17|max:17',
-            'address' => 'required|min:10|max:255',
+            'payment' => 'required',
+            'recipient_name' => 'required',
+            'recipient_company_name' => 'min:2|max:50',
+            'recipient_address_nation' => 'required',
+            'recipient_address_country' => 'required',
+            'recipient_address_code' => 'required',
+            'recipient_address' => 'required|min:10|max:255',
+            'recipient_tel' => 'required',
+            'recipient_email' => 'required',
         ];
     }
 
     public function messages(): array
     {
         return [
-            'address.required' => 'We need to know your address.',
+            'required' => 'We need to know your :attribute.',
+            'between' => 'The :attribute must be between :min - :max.',
         ];
     }
 }

@@ -13,5 +13,5 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('home');
 
-    $router->resource('orders', Ys\OrderController::class);
+    $router->resource('orders', Yh\OrderController::class);
 });

@@ -1,1 +1,1 @@
-<link rel="stylesheet" href="css/user/common.css" />
+<link rel="stylesheet" href="/css/user/common.css" />

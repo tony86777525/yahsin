@@ -179,5 +179,5 @@
 @endsection
 
 @push('page_script')
-<script src="js/user/cart.js"></script>
+<script src="/js/user/cart.js"></script>
 @endPush

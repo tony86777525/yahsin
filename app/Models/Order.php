@@ -56,7 +56,7 @@ class Order extends Model
     const UPDATED_AT = 'updated_at';
 
     // database name
-    protected $connection = 'ys';
+    protected $connection = 'yh';
 
     // default value
     protected $attributes = [];
@@ -73,7 +73,14 @@ class Order extends Model
         'name',
         'email',
         'country',
-        'address',
+        'recipient_name',
+        'recipient_company_name',
+        'recipient_address_nation',
+        'recipient_address_country',
+        'recipient_address_code',
+        'recipient_address',
+        'recipient_tel',
+        'recipient_email',
         'google_drive_folder_id',
     ];
 

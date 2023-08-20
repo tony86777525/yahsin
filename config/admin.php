@@ -11,7 +11,7 @@ return [
     | login page.
     |
     */
-    'name' => 'YahSin',
+    'name' => 'YaHsin',
 
     /*
     |--------------------------------------------------------------------------
@@ -22,7 +22,7 @@ return [
     | `img` tag, eg '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo' => '<b>YahSin</b> admin',
+    'logo' => '<b>YaHsin</b> admin',
 
     /*
     |--------------------------------------------------------------------------
@@ -34,7 +34,7 @@ return [
     | '<img src="http://logo-url" alt="Admin logo">'.
     |
     */
-    'logo-mini' => '<b>YS</b>',
+    'logo-mini' => '<b>YH</b>',
 
     /*
     |--------------------------------------------------------------------------

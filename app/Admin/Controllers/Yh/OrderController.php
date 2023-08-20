@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Admin\Controllers\Ys;
+namespace App\Admin\Controllers\Yh;
 
 use App\Models\Order;
 use Encore\Admin\Controllers\AdminController;
@@ -43,7 +43,7 @@ class OrderController extends AdminController
             ->display(function($country) {
                 return Order::COUNTRY_OPTIONS[$country];
             });
-        $grid->column('address', __('Address'))
+        $grid->column('recipient_address', __('Recipient'))
             ->display(function () {
                 return Str::limit($this->address, 20);
             })->expand(function ($model) {
@@ -113,7 +113,14 @@ class OrderController extends AdminController
         $show->field('name', __('Name'));
         $show->field('email', __('Email'));
         $show->field('country', __('Country'));
-        $show->field('address', __('Address'));
+        $show->field('recipient_name', __('Recipient Name'));
+        $show->field('recipient_company_name', __('Recipient Company Name'));
+        $show->field('recipient_address_nation', __('Recipient Address Nation'));
+        $show->field('recipient_address_country', __('Recipient Address Country'));
+        $show->field('recipient_address_code', __('Recipient Address Code'));
+        $show->field('recipient_address', __('Recipient Address'));
+        $show->field('recipient_tel', __('Recipient Tel'));
+        $show->field('recipient_email', __('Recipient Email'));
         $show->field('google_drive_folder_id', __('Google Drive Folder Id'));
         $show->field('created_at', __('Created at'));
 //        $show->field('updated_at', __('Updated at'));
@@ -135,7 +142,14 @@ class OrderController extends AdminController
         $form->text('name', __('Name'));
         $form->email('email', __('Email'));
         $form->select('country', __('Country'))->options(Order::COUNTRY_OPTIONS);
-        $form->text('address', __('Address'));
+        $form->text('recipient_name', __('Recipient Name'));
+        $form->text('recipient_company_name', __('Recipient Company Name'));
+        $form->text('recipient_address_nation', __('Recipient Address Nation'));
+        $form->text('recipient_address_country', __('Recipient Address Country'));
+        $form->text('recipient_address_code', __('Recipient Address Code'));
+        $form->text('recipient_address', __('Recipient Address'));
+        $form->text('recipient_tel', __('Recipient Tel'));
+        $form->text('recipient_email', __('Recipient Email'));
         $form->text('google_drive_folder_id', __('Google Drive Folder Id'));
 
         $form->saving(function (Form $form) {

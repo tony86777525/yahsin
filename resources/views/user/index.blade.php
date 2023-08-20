@@ -5,7 +5,7 @@
 @endPush
 
 @push('page_css')
-<link rel="stylesheet" href="css/user/index.css" />
+<link rel="stylesheet" href="/css/user/index.css" />
     <style>
         .captcha .refresh {
             display: inline-block;
@@ -49,7 +49,7 @@
                             <div class="fancyWrap fancyWrap--inputFile" data-input-id="elWrap">
                                 <label>
                                     <span class="fancyInput fancyInput--inputFile" data-input-id="uploadFile">{{ __('user.landingForm.file.select') }}</span>
-                                    <input type="file" name="files[]" value="{{ old("files.0") ?? '' }}" class="fancyInput fancyInput--hidden" data-input-id="hiddenFile">
+                                    <input type="file" name="files[]" value="{{ old("files.0") ?? '' }}" class="fancyInput fancyInput--hidden" data-input-id="hiddenFile" data-file-text="{{ __('user.landingForm.file.select') }}">
                                 </label>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                             <div class="fancyWrap fancyWrap--inputFile" data-input-id="elWrap">
                                 <label>
                                     <span class="fancyInput fancyInput--inputFile" data-input-id="uploadFile">{{ __('user.landingForm.file.select') }}</span>
-                                    <input type="file" name="files[]" value="{{ old("files.1") ?? '' }}" class="fancyInput fancyInput--hidden" data-input-id="hiddenFile">
+                                    <input type="file" name="files[]" value="{{ old("files.1") ?? '' }}" class="fancyInput fancyInput--hidden" data-input-id="hiddenFile" data-file-text="{{ __('user.landingForm.file.select') }}">
                                 </label>
                             </div>
                         </div>
@@ -89,7 +89,7 @@
                             <div class="fancyWrap fancyWrap--inputFile" data-input-id="elWrap">
                                 <label>
                                     <span class="fancyInput fancyInput--inputFile" data-input-id="uploadFile">{{ __('user.landingForm.file.select') }}</span>
-                                    <input type="file" name="files[]" value="{{ old("files.2") ?? '' }}" class="fancyInput fancyInput--hidden" data-input-id="hiddenFile">
+                                    <input type="file" name="files[]" value="{{ old("files.2") ?? '' }}" class="fancyInput fancyInput--hidden" data-input-id="hiddenFile" data-file-text="{{ __('user.landingForm.file.select') }}">
                                 </label>
                             </div>
                         </div>
@@ -203,19 +203,19 @@
             <ul class="steps">
                 <li>
                     <div class="stepsItem">
-                        <div class="stepsItem__image"><img src="/img/img-flow-1.svg" alt="{{ __('user.flow.step.1') }}" class="fitImg"></div>
+                        <div class="stepsItem__image"><img src="/img/img-flow-1.svg" alt="{!! __('user.flow.step.1') !!}" class="fitImg"></div>
                         <div class="stepsItem__text">
                             <div class="num">{{ __('user.flow.steps', ['step' => 1]) }}</div>
-                            <p class="intro">{{ __('user.flow.step.1') }}</p>
+                            <p class="intro">{!! __('user.flow.step.1') !!}</p>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="stepsItem">
-                        <div class="stepsItem__image"><img src="/img/img-flow-2.svg" alt="{{ __('user.flow.step.2') }}" class="fitImg"></div>
+                        <div class="stepsItem__image"><img src="/img/img-flow-2.svg" alt="{!! __('user.flow.step.2') !!}" class="fitImg"></div>
                         <div class="stepsItem__text">
                             <div class="num">{{ __('user.flow.steps', ['step' => 2]) }}</div>
-                            <p class="intro">{{ __('user.flow.step.2') }}</p>
+                            <p class="intro">{!! __('user.flow.step.2') !!}</p>
                         </div>
                     </div>
                 </li>
@@ -230,10 +230,10 @@
                 </li>
                 <li>
                     <div class="stepsItem">
-                        <div class="stepsItem__image"><img src="/img/img-flow-4.svg" alt="{{ __('user.flow.step.4') }}" class="fitImg"></div>
+                        <div class="stepsItem__image"><img src="/img/img-flow-4.svg" alt="{!! __('user.flow.step.4') !!}" class="fitImg"></div>
                         <div class="stepsItem__text">
                             <div class="num">{{ __('user.flow.steps', ['step' => 4]) }}</div>
-                            <p class="intro">{{ __('user.flow.step.4') }}</p>
+                            <p class="intro">{!! __('user.flow.step.4') !!}</p>
                         </div>
                     </div>
                 </li>

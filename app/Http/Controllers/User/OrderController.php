@@ -80,7 +80,14 @@ class OrderController extends BasicController
                 DB::beginTransaction();
 
                 try {
-                    $orderData->address = $inputData['address'];
+                    $orderData->recipient_name = $inputData['recipient_name'];
+                    $orderData->recipient_company_name = $inputData['recipient_company_name'];
+                    $orderData->recipient_address_natio = $inputData['recipient_address_natio'];
+                    $orderData->recipient_address_country = $inputData['recipient_address_country'];
+                    $orderData->recipient_address_code = $inputData['recipient_address_code'];
+                    $orderData->recipient_address = $inputData['recipient_address'];
+                    $orderData->recipient_tel = $inputData['recipient_tel'];
+                    $orderData->recipient_email = $inputData['recipient_email'];
                     $orderData->status = Order::STATUS_UNPAID;
 
                     $orderData->save();
