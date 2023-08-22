@@ -10,6 +10,7 @@ window.axios = require('axios');
 
 try {
     window.$ = window.jQuery = require('jquery');
+    window.select2=require('select2');
 } catch (e) {}
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';

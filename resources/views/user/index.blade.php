@@ -365,7 +365,9 @@
         </div>
     </div>
 </section>
-<div class="docking"></div>
+<div class="docking">
+    <a href="#landing"></a>
+</div>
 @endsection
 
 @push('page_script')

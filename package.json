@@ -21,6 +21,7 @@
     },
     "dependencies": {
         "country-region-dropdown-menu": "^2.4.0",
+        "select2": "^4.0.2",
         "wow.js": "^1.2.2"
     }
 }

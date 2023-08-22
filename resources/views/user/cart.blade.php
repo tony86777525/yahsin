@@ -105,8 +105,19 @@
                         <div class="formCol">
                             <span class="formLabel">國家</span>
                             <div class="fancyWrap fancyWrap--country">
-                                <select name="address_country" class="fancySelect fancySelect--country">
-                                    <option value=""></option>
+                                <select name="address_country" class="fancySelect fancySelect--country select2">
+                                    <option value="">123</option>
+                                    <option value="">456</option>
+                                    <option value="">789</option>
+                                    <option value="">123</option>
+                                    <option value="">456</option>
+                                    <option value="">789</option>
+                                    <option value="">123</option>
+                                    <option value="">456</option>
+                                    <option value="">789</option>
+                                    <option value="">123</option>
+                                    <option value="">456</option>
+                                    <option value="">789</option>
                                 </select>
                             </div>
                         </div>
