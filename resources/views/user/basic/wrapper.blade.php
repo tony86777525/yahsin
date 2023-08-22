@@ -8,7 +8,7 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui, user-scalable=no" />
     <!-- Facebook share og meta /begin -->
     <meta property="og:title" content="Yahsin">
     <meta property="og:type" content="website" />

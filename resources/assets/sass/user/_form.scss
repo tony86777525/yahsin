@@ -35,6 +35,7 @@ $path: "../../images/";
 
 			.formCol {
 				flex: 0 0 50%;
+				overflow: hidden;
 			}
 		}
 	}
@@ -108,6 +109,12 @@ $path: "../../images/";
 	&:focus,
 	&:focus-visible {
 		outline: none;
+	}
+
+	&--inputFile {
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
 
 	&--radio {
@@ -290,7 +297,10 @@ $path: "../../images/";
 			font-size: 1rem;
 		}
 
-		&--country,
+		&--country {
+			padding: 0.1rem 1.1rem 0.1rem 0.45rem;
+			font-size: 1rem;
+		}
 		&--bill {
 			padding: 0.1rem 0 0.1rem 0.5rem;
 			font-size: 1rem;
@@ -477,7 +487,10 @@ $path: "../../images/";
 			font-size: 20px;
 		}
 
-		&--country,
+		&--country {
+			padding: 12px 42px 12px 16px;
+			font-size: 20px;
+		}
 		&--bill {
 			padding: 12px 0 12px 16px;
 			font-size: 20px;
@@ -546,7 +559,7 @@ $path: "../../images/";
 		}
 		&--originSite,
 		&--line {
-			padding: 20px 16px;
+			padding: 20px 0;
 
 			.btn__text {
 				font-size: 24px;
@@ -649,20 +662,28 @@ $path: "../../images/";
 	}
 
 	.fancySelect {
-		line-height: 1;
+		line-height: normal;
 
 		&--language {
-			padding: 11px 16px;
+			padding: 7px 16px;
 			font-size: 28px;
 		}
-		&--country,
+		&--country {
+			padding: 4px 46px 4px 16px;
+			font-size: 28px;
+		}
 		&--bill {
-			padding: 10px 16px;
+			padding: 4px 16px;
 			font-size: 28px;
 		}
 	}
 
 	.fancyInput {
+		&--inputFile {
+			padding: 4px 16px;
+			font-size: 28px;
+		}
+
 		&--inputTxt {
 			line-height: 1;
 			padding: 4px 16px;
@@ -696,7 +717,7 @@ $path: "../../images/";
 		}
 		&--originSite,
 		&--line {
-			padding: 26px 16px;
+			padding: 26px 0;
 
 			.btn__text {
 				font-size: 35px;
