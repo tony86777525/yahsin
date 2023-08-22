@@ -5,7 +5,7 @@
 @endPush
 
 @push('page_css')
-    <link rel="stylesheet" href="css/user/complete.css" />
+    <link rel="stylesheet" href="/css/user/complete.css" />
 @endPush
 @section('main')
     <section class="complete">
