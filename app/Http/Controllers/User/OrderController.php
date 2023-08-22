@@ -80,9 +80,11 @@ class OrderController extends BasicController
                 DB::beginTransaction();
 
                 try {
+                    $orderData->amount = $inputData['amount'];
+                    $orderData->price = $orderData->amount * Order::PRICE;
                     $orderData->recipient_name = $inputData['recipient_name'];
                     $orderData->recipient_company_name = $inputData['recipient_company_name'];
-                    $orderData->recipient_address_natio = $inputData['recipient_address_natio'];
+                    $orderData->recipient_address_nation = $inputData['recipient_address_nation'];
                     $orderData->recipient_address_country = $inputData['recipient_address_country'];
                     $orderData->recipient_address_code = $inputData['recipient_address_code'];
                     $orderData->recipient_address = $inputData['recipient_address'];
@@ -94,10 +96,18 @@ class OrderController extends BasicController
 
                     DB::commit();
 
-                    return redirect()
-                        ->route('user.order.pay', [
-                            'orderNumber' => $orderData->number
-                        ]);
+                    if ($inputData['payment'] === 'creditcard') {
+                        if (!empty($inputData['number'])) {
+                            $orderData = Order::firstWhere('number', $inputData['number']);
+
+                            $ECPayService = new ECPayService;
+
+                            $result = $ECPayService->payByCredit($orderData);
+
+                            return $result;
+                        }
+                    }
+
                 } catch (\Exception $e) {
                     DB::rollback();
                 }
@@ -108,25 +118,29 @@ class OrderController extends BasicController
             ->route('user.index');
     }
 
-    public function pay($orderNumber)
-    {
-        $orderData = Order::firstWhere('number', $orderNumber);
-
-        if (empty($orderData)) {
-            return redirect()
-                ->route('user.index');
-        }
-
-        return view('user.order.pay', compact('orderData'));
-    }
+//    public function pay($orderNumber)
+//    {
+//        $orderData = Order::firstWhere('number', $orderNumber);
+//
+//        if (empty($orderData)) {
+//            return redirect()
+//                ->route('user.index');
+//        }
+//
+//        return view('user.order.pay', compact('orderData'));
+//    }
 
     public function payByECPayCreditResult(Request $request)
     {
         $data = $request->all();
 
         $ECPayService = new ECPayService;
-        $result = $ECPayService->checkoutResponse($data);
+        $payResult = $ECPayService->checkoutResponse($data);
 
-        return view('user.order.pay.result.ecpay', compact('result'));
+        $orderNumber = $payResult['MerchantTradeNo'];
+
+        $orderData = Order::firstWhere('number', $orderNumber);
+
+        return view('user.order.pay.result.ecpay', compact('orderData'));
     }
 }

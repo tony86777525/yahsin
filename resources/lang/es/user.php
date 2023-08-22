@@ -1,6 +1,7 @@
 <?php
 
 return [
+    // Navi
     'web_name'                            => 'YA HSIN TRANSLATION SERVICE',
     'navigation.1'                        => 'YAHSIN',
     'navigation.2'                        => 'PROCESO',
@@ -8,6 +9,7 @@ return [
     'navigation.4'                        => 'PREGUNTA FRECUENTE',
     'navigation.5'                        => 'CONTACTENOS',
 
+    // index
     'landingText.title'                   => 'Servicio Online de Apostilla',
     'landingText.description.paragraph.1' => 'Servicio rápido para la Apostilla de【Copia del Documento】.',
     'landingText.description.paragraph.2' => 'No es necesario el documento original.',
@@ -33,7 +35,7 @@ return [
 
     'featureBoard.1.paragraph.1'          => '+<span>:number</span><em>/ documento</em>',
     'featureBoard.1.paragraph.2'          => 'Servicio de Apostilla',
-    'featureBoard.2.paragraph.1'          => '<em>NTD</em><span>:number</span>',
+    'featureBoard.2.paragraph.1'          => '<em>NTD</em><span>:price</span>',
     'featureBoard.2.paragraph.2'          => 'Costo Fijo',
     'featureBoard.3'                      => 'Sin Pago Extra Para Enviar a Todo el Mundo',
     'featureBoard.4.paragraph.1'          => 'Declaración Jurada por un',
@@ -92,4 +94,27 @@ return [
     'faq.list.a.4.content.4'              => 'Servicio adicional de DHL /SF EXPRESS (sin pago extra) a todo el mundo.',
 
     'cooperation.title'                   => 'Unidad Cooperativa',
+
+    // confirm
+    'cart.title'                          => 'Confirm Order Quantity',
+    'cart.content.price'                  => 'NTD $:price',
+    'cart.content.price.note'             => 'This is an approximate amount. Due to the exchange rate conversion, foreign consumption is still mainly based on the requested amount.',
+    'cart.content.paragraph'              => 'Nuestro servicio de Apostilla:Está incluido la fotocopia en color de su documento,<br>realización de una declaración jurada en inglés por un notario público, y luego enviar al tribunal superior de Hong Kong para sellar la Apostilla.<br>Está inlcuido el pago de Apostilla, tarifa de autoridad pública y otros gastos.<br>Servicio de DHL /SF EXPRESS (sin pago extra) a todo el mundo.<br>No es necesario enviar el documento original, copiamos y escaneamos su documento en color.',
+    'cart.content.amount'                 => 'Si ud. envia más de 1 documento, por favor modifique manualmente la siguiente cantidad de documentos:',
+    'cart.content.amount.button'          => 'Cambiar',
+
+    'payment.title'                       => 'Payment Method',
+    'payment.type.1'                      => 'Credit Cards',
+    'payment.type.2'                      => 'PayPal',
+
+    'delivery.title'                      => 'Recipient information',
+    'delivery.recipient_name'             => 'Name',
+    'delivery.recipient_company_name'     => 'Company name (optional)',
+    'delivery.recipient_address_nation'   => 'Country',
+    'delivery.recipient_address_country'  => 'Region',
+    'delivery.recipient_address_code'     => 'Postcode ',
+    'delivery.recipient_address'          => 'Address',
+    'delivery.recipient_tel'              => 'Phone',
+    'delivery.recipient_email'             => 'Email address',
+    'cart.submit.button'                  => 'Go to payment page',
 ];

@@ -1,6 +1,7 @@
 <?php
 
 return [
+    // Navi
     'web_name'                            => '雅信翻译社',
     'navigation.1'                        => '关于雅信',
     'navigation.2'                        => '办理流程',
@@ -8,6 +9,7 @@ return [
     'navigation.4'                        => '常见质量保证',
     'navigation.5'                        => '联络我们',
 
+    // index
     'landingText.title'                   => '海牙认证线上服务',
     'landingText.description.paragraph.1' => '我们针对【文件副本】快速办理海牙认证。',
     'landingText.description.paragraph.2' => '您无须提供文件正本。',
@@ -33,7 +35,7 @@ return [
 
     'featureBoard.1.paragraph.1'          => '+<span>:number</span>',
     'featureBoard.1.paragraph.2'          => '我们办理海牙认证',
-    'featureBoard.2.paragraph.1'          => '<span>:number</span><em>元</em>',
+    'featureBoard.2.paragraph.1'          => '<span>:price</span><em>元</em>',
     'featureBoard.2.paragraph.2'          => '固定成本',
     'featureBoard.3'                      => '全球免运费',
     'featureBoard.4.paragraph.1'          => '香港公证员',
@@ -92,4 +94,28 @@ return [
     'faq.list.a.4.content.4'              => 'DHL /SF EXPRESS【免运费】全球送达增值服务。',
 
     'cooperation.title'                   => '合作单位',
+
+
+    // confirm
+    'cart.title'                          => '确认订购份数',
+    'cart.content.price'                  => '新台币:price元 / 件',
+    'cart.content.price.note'             => '此为大约金额显示，国外消费因汇率转换，实际仍以请款金额为主。',
+    'cart.content.paragraph'              => '我们的加签服务：我们将彩色打印您的文件<br>由公证员英文公证宣誓后，至香港高等法院海牙认证(Apostille)加签。<br>包括公证费、政府规费及杂支。<br>使用DHL Express / SF Express【免运费】全球快递送到府。<br>我们将扫描及彩色影印您的文件，您无需邮寄原件',
+    'cart.content.amount'                 => '如果您上传了不止一份文件，请手动更新以下文件数量',
+    'cart.content.amount.button'          => '变更',
+
+    'payment.title'                       => '付款方式',
+    'payment.type.1'                      => '信用卡',
+    'payment.type.2'                      => 'PayPal',
+
+    'delivery.title'                      => '收件者资讯',
+    'delivery.recipient_name'             => '收件人姓名',
+    'delivery.recipient_company_name'     => '公司名称（选择性）',
+    'delivery.recipient_address_nation'   => '国家',
+    'delivery.recipient_address_country'  => '地区',
+    'delivery.recipient_address_code'     => '邮递区号',
+    'delivery.recipient_address'          => '地址',
+    'delivery.recipient_tel'              => '收件人联络电话',
+    'delivery.recipient_email'             => '收件人Email',
+    'cart.submit.button'                  => '前往付款页面',
 ];

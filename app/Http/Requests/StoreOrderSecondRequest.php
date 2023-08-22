@@ -23,6 +23,7 @@ class StoreOrderSecondRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'amount' => 'required|min:1',
             'payment' => 'required',
             'recipient_name' => 'required',
             'recipient_company_name' => 'min:2|max:50',

@@ -42,7 +42,7 @@ Route::group([
 
         Route::post('/order/store/second', [OrderController::class, 'storeSecond'])->name('store.second');
 
-        Route::get('/order/pay/{orderNumber}', [OrderController::class, 'pay'])->name('pay');
+//        Route::get('/order/pay/{orderNumber}', [OrderController::class, 'pay'])->name('pay');
 
         Route::post('/order/pay/ecpay/result', [OrderController::class, 'payByECPayCreditResult'])->name('pay.ecpay.result');
     });

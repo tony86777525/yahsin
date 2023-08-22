@@ -1,6 +1,7 @@
 <?php
 
 return [
+    // Navi
     'web_name'                            => 'YA HSIN TRANSLATION SERVICE',
     'navigation.1'                        => 'About YAHSIN',
     'navigation.2'                        => 'PROCESS',
@@ -8,6 +9,7 @@ return [
     'navigation.4'                        => 'FAQ',
     'navigation.5'                        => 'CONTACT US',
 
+    // index
     'landingText.title'                   => 'Apostille Service Online',
     'landingText.description.paragraph.1' => 'Fast Service for Apostille【copies of documents】.',
     'landingText.description.paragraph.2' => 'Not necessary the original document.',
@@ -33,7 +35,7 @@ return [
 
     'featureBoard.1.paragraph.1'          => '+<span>:number</span><em>件</em>',
     'featureBoard.1.paragraph.2'          => 'Apostilles processed',
-    'featureBoard.2.paragraph.1'          => '<em>NT $</em><span>:number</span>',
+    'featureBoard.2.paragraph.1'          => '<em>NT $</em><span>:price</span>',
     'featureBoard.2.paragraph.2'          => 'Service Fee',
     'featureBoard.3'                      => 'International Shipping',
     'featureBoard.4.paragraph.1'          => 'Affidavit by a Hong Kong',
@@ -92,4 +94,27 @@ return [
     'faq.list.a.4.content.4'              => 'Additional service of DHL /SF EXPRESS (without extra payment) to the whole world',
 
     'cooperation.title'                   => 'Cooperative Unit',
+
+    // confirm
+    'cart.title'                          => 'Confirm Order Quantity',
+    'cart.content.price'                  => 'NT $:price',
+    'cart.content.price.note'             => 'This is an approximate amount. Due to the exchange rate conversion, foreign consumption is still mainly based on the requested amount.',
+    'cart.content.paragraph'              => 'Our Apostille service：we will print your documents in color,<br>notarize an affidavit and process the Apostille in Hong Kong High Court.<br>Including the payment of Apostille, public authority fee and other expenses.<br>DHL /SF EXPRESS Service (without extra payment) to the whole world.<br>It is not necessary to send the original document, we copy and scan your document in color.',
+    'cart.content.amount'                 => 'If you have uploaded more than one document, please, update manually the number of documents below:',
+    'cart.content.amount.button'          => 'Update',
+
+    'payment.title'                       => 'Payment Method',
+    'payment.type.1'                      => 'Credit Cards',
+    'payment.type.2'                      => 'PayPal',
+
+    'delivery.title'                      => 'Recipient information',
+    'delivery.recipient_name'             => 'Name',
+    'delivery.recipient_company_name'     => 'Company name (optional)',
+    'delivery.recipient_address_nation'   => 'Country',
+    'delivery.recipient_address_country'  => 'Region',
+    'delivery.recipient_address_code'     => 'Postcode ',
+    'delivery.recipient_address'          => 'Address',
+    'delivery.recipient_tel'              => 'Phone',
+    'delivery.recipient_email'             => 'Email address',
+    'cart.submit.button'                  => 'Go to payment page',
 ];

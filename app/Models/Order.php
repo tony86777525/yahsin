@@ -106,6 +106,8 @@ class Order extends Model
         self::COUNTRY_OTHER => '其他',
     ];
 
+    const PRICE = 8800;
+
     public function getCreatedAtAttribute($value)
     {
 //        $d = new \DateTime();

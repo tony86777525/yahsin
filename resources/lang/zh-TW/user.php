@@ -1,6 +1,7 @@
 <?php
 
 return [
+    // Navi
     'web_name'                            => '雅信翻譯社',
     'navigation.1'                        => '關於雅信',
     'navigation.2'                        => '辦理流程',
@@ -8,6 +9,7 @@ return [
     'navigation.4'                        => '常見QA',
     'navigation.5'                        => '聯絡我們',
 
+    // index
     'landingText.title'                   => '海牙認證線上服務',
     'landingText.description.paragraph.1' => '我們針對【文件副本】快速辦理海牙認證',
     'landingText.description.paragraph.2' => '您無須提供文件正本',
@@ -33,7 +35,7 @@ return [
 
     'featureBoard.1.paragraph.1'          => '+<span>:number</span><em>件</em>',
     'featureBoard.1.paragraph.2'          => '我們辦理海牙認證',
-    'featureBoard.2.paragraph.1'          => '<em>NTD</em><span>:number</span><em>元</em>',
+    'featureBoard.2.paragraph.1'          => '<em>NTD</em><span>:price</span><em>元</em>',
     'featureBoard.2.paragraph.2'          => '固定費用',
     'featureBoard.3'                      => '全球免運費',
     'featureBoard.4.paragraph.1'          => '香港公證員',
@@ -92,4 +94,27 @@ return [
     'faq.list.a.4.content.4'              => 'DHL /SF EXPRESS【免運費】全球送達加值服務。',
 
     'cooperation.title'                   => '合作單位',
+
+    // confirm
+    'cart.title'                          => '確認訂購份數',
+    'cart.content.price'                  => ':price / 件',
+    'cart.content.price.note'             => '此為大約金額顯示，國外消費因匯率轉換，實際仍以請款金額為主。',
+    'cart.content.paragraph'              => '我們的加簽服務：我們將彩色列印您的文件<br>由公證員英文公證宣誓後，至香港高等法院海牙認證(Apostille)加簽。<br>包括公證費、政府規費及雜支。<br>使用DHL Express / SF Express【免運費】全球快遞送到府。<br>我們將掃描及彩色影印您的文件，您無需郵寄原件',
+    'cart.content.amount'                 => '如果您上傳了不止一份文件，請手動更新以下文件數量',
+    'cart.content.amount.button'          => '變更',
+
+    'payment.title'                       => '付款方式',
+    'payment.type.1'                      => '信用卡',
+    'payment.type.2'                      => 'PayPal',
+
+    'delivery.title'                      => '收件者資訊',
+    'delivery.recipient_name'             => '收件人姓名',
+    'delivery.recipient_company_name'     => '公司名稱（選擇性）',
+    'delivery.recipient_address_nation'   => '國家',
+    'delivery.recipient_address_country'  => '地區',
+    'delivery.recipient_address_code'     => '郵遞區號',
+    'delivery.recipient_address'          => '地址',
+    'delivery.recipient_tel'              => '收件人聯絡電話',
+    'delivery.recipient_email'             => '收件人Email',
+    'cart.submit.button'                  => '前往付款頁面',
 ];
