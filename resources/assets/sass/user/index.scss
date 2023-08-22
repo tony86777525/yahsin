@@ -36,6 +36,7 @@ $path: '../../images/';
 
             & > li {
                 position: relative;
+                line-height: 1.2;
                 border-bottom: 1px solid #000;
 
                 &:before {
@@ -83,23 +84,27 @@ $path: '../../images/';
         &__list {
             @include list-reset;
             display: flex;
+
+            & > li {
+                position: relative;
+
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 1px;
+                    height: 100%;
+                    background-color: $sub;
+                }
+            }
         }
 
         .featureItem {
-            position: relative;
             font-weight: bold;
             color: $main;
             text-align: center;
- 
-            &:after {
-                content: '';
-                display: block;
-                position: absolute;
-                top: 0;
-                right: 0;
-                width: 1px;
-                background-color: $sub;
-            }
 
             .featureItem__title {
                 span {
@@ -112,11 +117,17 @@ $path: '../../images/';
             }
 
             .featureItem__content {
-                .img-trans-dhl,
-                .img-trans-sf {
-                    display: inline-block;
-                    vertical-align: middle;
-                    width: auto;
+                
+
+                &--trans {
+                    font-size: 0 !important;
+
+                    .img-trans-dhl,
+                    .img-trans-sf {
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: 50%;
+                    }
                 }
             }
         }
@@ -299,9 +310,9 @@ $path: '../../images/';
 
     .quiteTable {
         width: 100%;
-        table-layout: fixed;
         border-collapse: collapse;
         position: relative;
+        line-height: 1.2;
 
         thead {
             tr {
@@ -321,6 +332,7 @@ $path: '../../images/';
                 }
 
                 td {
+                
                     text-align: center;
                     border-left: 1px solid #666666;
                 }
@@ -510,11 +522,8 @@ $path: '../../images/';
 
                     &:nth-child(even) {
 
-                        .featureItem {
-
-                            &:after {
-                                display: none;
-                            }
+                        &:after {
+                            display: none;
                         }
                     }
 
@@ -526,9 +535,6 @@ $path: '../../images/';
             }
 
             .featureItem {
-                &:after {
-                    height: 5rem;
-                }
 
                 .featureItem__title {
                     font-size: 1.6rem;
@@ -544,14 +550,6 @@ $path: '../../images/';
                 .featureItem__content {
                     font-size: 1.1rem;
                     margin-top: 0.8rem;
-
-                    .img-trans-dhl {
-                        height: 1rem;
-                    }
-
-                    .img-trans-sf {
-                        height: 2rem;
-                    }
                 }
             }
         }
@@ -779,7 +777,7 @@ $path: '../../images/';
             tbody {
                 tr {
                     th,td {
-                        padding: 0.5rem 0;
+                        padding: 0.5rem;
                         font-size: 1rem;
 
                         span {
@@ -941,7 +939,7 @@ $path: '../../images/';
         .landingForm {
             flex: 0 0 (810/1720)*100%;
             border-radius: 50px 50px 0 0;
-            padding: 60px 40px 20px;
+            padding: 60px 40px;
             box-shadow: 10px 10px 10px rgba(52,50,98,.5);
         }
 
@@ -996,7 +994,7 @@ $path: '../../images/';
                 justify-content: center;
 
                 & > li {
-                    flex: 0 0 auto;
+                    flex: 0 0 25%;
                     padding: 0;
 
                     &.trans {
@@ -1006,26 +1004,14 @@ $path: '../../images/';
                     }
 
                     &:nth-child(even) {
-                        .featureItem {
-                            &:after {
-                                display: block;
-                            }
-                        }
-                    }
-
-                    &:first-child {
-                        .featureItem {
-                            padding-left: 0;
+                        &:after {
+                            display: block;
                         }
                     }
 
                     &:last-child {
-                        .featureItem {
-                            padding-right: 0;
-
-                            &:after {
-                                display: none;
-                            }
+                        &:after {
+                            display: none;
                         }
                     }
 
@@ -1038,10 +1024,6 @@ $path: '../../images/';
 
             .featureItem {
                 padding: 0 40px;
-
-                &:after {
-                    height: 136px;
-                }
 
                 .featureItem__title {
                     font-size: 36px;
@@ -1058,14 +1040,6 @@ $path: '../../images/';
                 .featureItem__content {
                     font-size: 30px;
                     margin-top: 25px;
-
-                    .img-trans-dhl {
-                        height: 39px;
-                    }
-
-                    .img-trans-sf {
-                        height: 75px;
-                    }
                 }
             }
         }
@@ -1170,9 +1144,32 @@ $path: '../../images/';
 
                 & > li {
                     display: inline-flex;
+                    flex: 0 0 (100%/3);
                     align-items: center;
                     padding: 0 10px;
                     margin-bottom: 55px;
+
+                    &:after {
+                        display: none;
+                    }
+
+                    .stepsItem {
+                        position: relative;
+
+                        &:after {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            right: 0;
+                            top: 50%;
+                            @include translateY(-50%);
+                            width: 60px;
+                            height: 16.8px;
+                            background-image: url('#{$path}/deco-flow_horizontal.svg');
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                        }
+                    }
 
                     &:nth-child(1) {
                         padding-left: 0;
@@ -1187,14 +1184,11 @@ $path: '../../images/';
                         background-image: none;
 
                         .stepsItem {
+  
                             &:after {
                                 display: none;
                             }
                         }
-                    }
-
-                    &:after {
-                        display: none;
                     }
                 }
             }
@@ -1243,6 +1237,8 @@ $path: '../../images/';
 
         .stepsItem {
             display: block;
+            width: 100%;
+            text-align: left;
 
             &__image {
                 display: inline-block;
@@ -1252,8 +1248,10 @@ $path: '../../images/';
 
             &__text {
                 display: inline-block;
+                position: relative;
                 vertical-align: middle;
                 padding-left: 30px;
+                white-space: inherit;
 
                 .num,
                 .intro {
@@ -1263,18 +1261,6 @@ $path: '../../images/';
                 .intro {
                     margin-top: 10px;
                 }
-            }
-
-            &:after {
-                content: '';
-                display: inline-block;
-                vertical-align: middle;
-                margin-left: 30px;
-                width: 60px;
-                height: 16.8px;
-                background-image: url('#{$path}/deco-flow_horizontal.svg');
-                background-repeat: no-repeat;
-                background-size: contain;
             }
         }
     }
@@ -1317,7 +1303,7 @@ $path: '../../images/';
             }
 
             &__content {
-                padding: 140px 75px 15px;
+                padding: 70px 75px;
             }
         }
 
@@ -1346,7 +1332,7 @@ $path: '../../images/';
             tbody { 
                 tr {
                     th,td {
-                        padding: 18px 0;
+                        padding: 18px 10px;
                         font-size: 20px;
     
                         span {
@@ -1380,7 +1366,7 @@ $path: '../../images/';
 
     .sns {
         background-color: #ffffff;
-        padding: 105px 0 55px;
+        padding: 55px 0;
 
         .snsList {
             flex-direction: row;
@@ -1433,7 +1419,7 @@ $path: '../../images/';
 
         &__content {
             margin-top: 20px;
-            padding: 0 0 0 130px;
+            padding: 0 50px 0 130px;
         }
 
         .faqList {
@@ -1503,7 +1489,7 @@ $path: '../../images/';
 
         .landingForm {
             border-radius: 50px 50px 0 0;
-            padding: 80px 50px 20px;
+            padding: 80px 50px;
         }
 
         .landingText {
@@ -1660,7 +1646,7 @@ $path: '../../images/';
             }
 
             &__content {
-                padding: 140px 75px 15px;
+                padding: 100px 75px;
             }
         }
 
@@ -1686,7 +1672,7 @@ $path: '../../images/';
             tbody {
                 tr {
                     th,td {
-                        padding: 25px 0;
+                        padding: 25px 10px;
                         font-size: 28px;
                     }
                 }
@@ -1805,11 +1791,11 @@ $path: '../../images/';
         .stepsItem {
 
             &__image {
-                width: 180px;
+                width: 160px;
             }
 
             &__text {
-                padding-left: 55px;
+                padding-left: 40px;
             }
 
             &:after {

@@ -20,7 +20,7 @@
 @endPush
 
 @section('main')
-<section class="landing">
+<section id="landing" class="landing">
     <div class="wrapper">
         <div class="landing__content">
             <div class="landingForm wow fadeIn" data-wow-delay="0s">
@@ -152,7 +152,7 @@
                     <li class="trans">
                         <div class="featureItem">
                             <div class="featureItem__title">{{ __('user.featureBoard.3') }}</div>
-                            <div class="featureItem__content">
+                            <div class="featureItem__content featureItem__content--trans">
                                 <img src="/img/img-trans-dhl.png" alt="" class="img-trans-dhl">
                                 <img src="/img/img-trans-sf.png" alt="" class="img-trans-sf">
                             </div>
@@ -169,7 +169,7 @@
         </div>
     </div>
 </section>
-<section class="flow">
+<section id="flow" class="flow">
     <div class="wrapper">
         <h3 class="flow__title">{!! __('user.flow.title') !!}</h3>
         <div class="flow__content">
@@ -310,7 +310,7 @@
         </ul>
     </div>
 </section>
-<section class="faq">
+<section id="faq" class="faq">
     <div class="faq__title">
         <div class="boxShadow">
             <div class="boxShadow__content">
