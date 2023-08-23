@@ -93,7 +93,7 @@
                                     <input
                                         name="recipient_name"
                                         type="text"
-                                        value="{{ old('recipient_name') ?? !empty($orderData->recipient_name) ? $orderData->recipient_name : $orderData->name }}"
+                                        value="{{ old('recipient_name') ?? '' }}"
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
@@ -105,7 +105,7 @@
                                     <input
                                         name="recipient_company_name"
                                         type="text"
-                                        value="{{ old('recipient_company_name') ?? $orderData->recipient_company_name }}"
+                                        value="{{ old('recipient_company_name') ?? '' }}"
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
@@ -135,7 +135,7 @@
                                     <input
                                         name="recipient_address_code"
                                         type="text"
-                                        value="{{ old('recipient_address_code') ?? $orderData->recipient_address_code }}"
+                                        value="{{ old('recipient_address_code') ?? '' }}"
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
@@ -149,7 +149,7 @@
                                     <input
                                         name="recipient_address"
                                         type="text"
-                                        value="{{ old('recipient_address') ?? $orderData->recipient_address }}"
+                                        value="{{ old('recipient_address') ?? '' }}"
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
@@ -163,7 +163,7 @@
                                     <input
                                         name="recipient_tel"
                                         type="text"
-                                        value="{{ old('recipient_tel') ?? $orderData->recipient_tel }}"
+                                        value="{{ old('recipient_tel') ?? '' }}"
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
@@ -175,7 +175,7 @@
                                     <input
                                         name="recipient_email"
                                         type="text"
-                                        value="{{ old('recipient_email') ?? !empty($orderData->recipient_email) ? $orderData->recipient_email : $orderData->email }}"
+                                        value="{{ old('recipient_email') ?? '' }}"
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>

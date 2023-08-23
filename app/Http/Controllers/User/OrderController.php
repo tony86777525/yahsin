@@ -59,7 +59,10 @@ class OrderController extends BasicController
     {
         $orderData = Order::firstWhere('number', $orderNumber);
 
-        if (empty($orderData)) {
+        if (
+            empty($orderData)
+            || !in_array($orderData->status, [Order::STATUS_UNPAID, Order::STATUS_NEW])
+        ) {
             return redirect()
                 ->route('user.index');
         }
@@ -97,15 +100,10 @@ class OrderController extends BasicController
                     DB::commit();
 
                     if ($inputData['payment'] === 'creditcard') {
-                        if (!empty($inputData['number'])) {
-                            $orderData = Order::firstWhere('number', $inputData['number']);
+                        $ECPayService = new ECPayService;
+                        $result = $ECPayService->payByCredit($orderData);
 
-                            $ECPayService = new ECPayService;
-
-                            $result = $ECPayService->payByCredit($orderData);
-
-                            return $result;
-                        }
+                        return $result;
                     }
 
                 } catch (\Exception $e) {
@@ -140,6 +138,15 @@ class OrderController extends BasicController
         $orderNumber = $payResult['MerchantTradeNo'];
 
         $orderData = Order::firstWhere('number', $orderNumber);
+
+        if (empty($orderData)) {
+            return redirect()->route('user.index');
+        }
+
+        if (!empty($orderData)) {
+            $orderData->status = Order::STATUS_PAID;
+            $orderData->save();
+        }
 
         return view('user.order.pay.result.ecpay', compact('orderData'));
     }

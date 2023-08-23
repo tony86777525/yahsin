@@ -40,7 +40,7 @@
                             <span class="formLabel">{{ __('user.landingForm.label.name') }}</span>
                             <div class="fancyWrap fancyWrap--inputTxt">
                                 <label>
-                                    <input name="name" type="text" value="{{ old('name') ?? 'ddd' }}" class="fancyInput fancyInput--inputTxt">
+                                    <input name="name" type="text" value="{{ old('name') ?? '' }}" class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
                         </div>
@@ -59,7 +59,7 @@
                             <span class="formLabel">{{ __('user.landingForm.label.email') }}</span>
                             <div class="fancyWrap fancyWrap--inputTxt">
                                 <label>
-                                    <input name="email" type="text" value="{{ old('email') ?? 'd@gmail.com' }}" class="fancyInput fancyInput--inputTxt">
+                                    <input name="email" type="text" value="{{ old('email') ?? '' }}" class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
                         </div>
