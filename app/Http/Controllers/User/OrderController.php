@@ -6,6 +6,7 @@ use App\Http\Requests\StoreOrderFirstRequest;
 use App\Http\Requests\StoreOrderSecondRequest;
 use App\Models\Order;
 use App\Services\ECPayService;
+use App\Services\MailService;
 use App\Services\OrderService;
 use App\Services\UploadToGoogleDrive;
 use Illuminate\Http\Request;
@@ -146,6 +147,8 @@ class OrderController extends BasicController
         if (!empty($orderData)) {
             $orderData->status = Order::STATUS_PAID;
             $orderData->save();
+
+            MailService::sendMail($orderData);
         }
 
         return view('user.order.pay.result.ecpay', compact('orderData'));

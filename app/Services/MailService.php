@@ -2,19 +2,45 @@
 
 namespace App\Services;
 
-use App\Mail\UserCheck;
-use App\User;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 class MailService
 {
-    public static function send_create_token(User $user)
+    public static function sendMail($data)
     {
+        try {
 
-        Mail::to($user['email'])->send(new UserCheck($user));
-        $message = '驗證信已寄送!'. "\n" . '請至Email驗證!';
+            $postNoticeMailData = self::getPostNoticeMailData($data['email'], $data['name']);
 
-        return $message;
+            Mail::send('email.post', $data->toArray(), function($message) use ($postNoticeMailData) {
+                $message->to($postNoticeMailData['toMail'], $postNoticeMailData['toName'])
+                    ->subject($postNoticeMailData['subject']);
+
+                $message->from($postNoticeMailData['fromMail'], $postNoticeMailData['fromName']);
+            });
+
+            return true;
+        } catch (Exception $e) {}
+
+        return false;
+    }
+
+    private static function getPostNoticeMailData($email, $name)
+    {
+        $subject = 'Yahsin Order';
+        $fromName = 'Yahsin';
+        $fromMail = env('MAIL_USERNAME');
+        $toName = $name;
+        $toMails = [
+            $email
+        ];
+
+        return [
+            'subject' => $subject,
+            'fromMail' => $fromMail,
+            'fromName' => $fromName,
+            'toMail' => $toMails,
+            'toName' => $toName,
+        ];
     }
 }
