@@ -115,7 +115,7 @@
                         <div class="formCol">
                             <span class="formLabel">{{ __('user.delivery.recipient_address_nation') }}</span>
                             <div class="fancyWrap fancyWrap--country">
-                                <select name="recipient_address_nation" class="fancySelect fancySelect--country gds-cr gds-countryflag" id="countrySelection" country-data-region-id="gds-cr-one" data-language="{{ session()->get('webLanguage') }}">
+                                <select name="recipient_address_nation" class="fancySelect fancySelect--country gds-cr gds-countryflag select2" id="countrySelection" country-data-region-id="gds-cr-one" data-language="{{ session()->get('webLanguage') }}">
                                     <option value=""></option>
                                 </select>
                             </div>

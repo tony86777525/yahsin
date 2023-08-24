@@ -39,10 +39,7 @@ class OrderController extends AdminController
             });
         $grid->column('name', __('Name'));
         $grid->column('email', __('Email'));
-        $grid->column('country', __('Country'))
-            ->display(function($country) {
-                return Order::COUNTRY_OPTIONS[$country];
-            });
+        $grid->column('country', __('Country'));
         $grid->column('recipient_address', __('Recipient'))
             ->display(function () {
                 return Str::limit($this->address, 20);
@@ -141,7 +138,7 @@ class OrderController extends AdminController
         $form->radio('status', __('Status'))->options(Order::STATUS_OPTIONS);
         $form->text('name', __('Name'));
         $form->email('email', __('Email'));
-        $form->select('country', __('Country'))->options(Order::COUNTRY_OPTIONS);
+        $form->text('country', __('Country'));
         $form->text('recipient_name', __('Recipient Name'));
         $form->text('recipient_company_name', __('Recipient Company Name'));
         $form->text('recipient_address_nation', __('Recipient Address Nation'));

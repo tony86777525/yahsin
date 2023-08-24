@@ -473,7 +473,7 @@ CREATE TABLE IF NOT EXISTS `yh_orders` (
   `status` tinyint(1) NOT NULL DEFAULT '0',
   `name` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
-  `country` tinyint(1) NOT NULL DEFAULT '0',
+  `country` varchar(100) DEFAULT NULL,
   `amount` int(11) DEFAULT '1',
   `price` int(11) DEFAULT '0',
   `recipient_name` varchar(50) DEFAULT NULL,

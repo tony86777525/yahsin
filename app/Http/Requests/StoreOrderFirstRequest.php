@@ -25,7 +25,7 @@ class StoreOrderFirstRequest extends FormRequest
         return [
             'name' => 'required|min:3|max:255',
             'email' => 'required|email',
-            'country' => 'required|integer|min:0',
+            'country' => 'required',
 //            'captcha' => 'required|captcha',
             'files' => 'required|array',
             'files.*' => 'required_without_all:files|file|max:102400|mimes:pdf',
