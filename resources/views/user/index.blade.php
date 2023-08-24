@@ -77,7 +77,7 @@
                         <div class="formCol">
                             <span class="formLabel">{{ __('user.landingForm.label.country') }}</span>
                             <div class="fancyWrap fancyWrap--country">
-                                <select name="country" class="fancySelect fancySelect--country">
+                                <select name="country" class="fancySelect fancySelect--country select2">
                                     @foreach($countryOptions as $countryId => $countryOption)
                                         <option value="{{ $countryId }}">{{ __("user.landingForm.country.option.$countryId") }}</option>
                                     @endforeach

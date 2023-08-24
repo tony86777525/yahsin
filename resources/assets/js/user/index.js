@@ -1,4 +1,8 @@
 $(function(){
+    $(".select2").select2({
+        language: "zh-TW"
+    });
+    
     $('[data-input-id="hiddenFile"]').on('change', function(e){        
         var fileLength = e.currentTarget.files.length;
         if(fileLength !== 0) {
