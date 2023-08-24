@@ -97,7 +97,7 @@ $path: "../../images/";
 .fancyInput {
 	display: block;
 	width: 100%;
-	line-height: 1.2;
+	line-height: 1.5;
 	border: none;
 	background-color: transparent;
 	@include appearance(none);
@@ -218,6 +218,7 @@ $path: "../../images/";
 		}
 	}
 }
+
 
 // ========== Media Queries ==========
 //Small devices (portrait phones, 320 and up)
@@ -505,12 +506,12 @@ $path: "../../images/";
 	.fancyInput {
 		&--inputFile {
 			cursor: pointer;
-			padding: 12px 16px;
+			padding: 9px 16px;
 			font-size: 20px;
 		}
 
 		&--inputTxt {
-			padding: 12px 16px;
+			padding: 9px 16px;
 			font-size: 20px;
 		}
 
@@ -557,6 +558,7 @@ $path: "../../images/";
 				font-size: 20px;
 			}
 		}
+		
 		&--originSite,
 		&--line {
 			padding: 20px 0;
@@ -645,6 +647,7 @@ $path: "../../images/";
 			}
 		}
 	}
+
 	.fancyWrap {
 		&:after {
 			right: 10px;
@@ -663,6 +666,7 @@ $path: "../../images/";
 
 	.fancySelect {
 		line-height: normal;
+		color: #4d4d4d;
 
 		&--language {
 			padding: 7px 16px;
@@ -725,3 +729,4 @@ $path: "../../images/";
 		}
 	}
 }
+
