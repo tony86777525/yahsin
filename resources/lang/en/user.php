@@ -35,7 +35,7 @@ return [
 
     'featureBoard.1.paragraph.1'          => '+<span>:number</span><em>件</em>',
     'featureBoard.1.paragraph.2'          => 'Apostilles processed',
-    'featureBoard.2.paragraph.1'          => '<em>NT $</em><span>:price</span>',
+    'featureBoard.2.paragraph.1'          => '<em>NT $</em><span data-js="price">:price</span>',
     'featureBoard.2.paragraph.2'          => 'Service Fee',
     'featureBoard.3'                      => 'International Shipping',
     'featureBoard.4.paragraph.1'          => 'Affidavit by a Hong Kong',

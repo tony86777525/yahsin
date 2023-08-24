@@ -31,14 +31,14 @@
                             <div class="price__bill">
                                 <div class="billSelect">
                                     <div class="fancyWrap fancyWrap--bill">
-                                        <select name="bill" class="fancySelect fancySelect--bill">
-                                            <option value="twd">NT$</option>
-                                            <option value="usd">USD</option>
-                                            <option value="rmb">RMB￥</option>
+                                        <select name="bill" class="fancySelect fancySelect--bill" data-default-price="{{ App\Models\Order::PRICE }}">
+                                            <option value="TWD">NT$</option>
+                                            <option value="USD">USD</option>
+                                            <option value="CNY">RMB￥</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="priceShow">{{ __('user.cart.content.price', ['price' => 8800]) }}</div>
+                                <div class="priceShow">{{ __('user.cart.content.price', ['price' => App\Models\Order::PRICE]) }}</div>
                             </div>
                             <div class="price__note">{{ __('user.cart.content.price.note') }}</div>
                         </div>
