@@ -206,6 +206,6 @@
 
 @push('page_script')
     <script src="/js/user/cart.js"></script>
-    <script src="/js/geodatasource-cr.min.js"></script>
-    <script src="/js/gettext.js"></script>
+    <script src="/languages/geodatasource-cr.min.js"></script>
+    <script src="/languages/gettext.js"></script>
 @endPush
