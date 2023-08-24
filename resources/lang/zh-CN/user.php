@@ -35,7 +35,7 @@ return [
 
     'featureBoard.1.paragraph.1'          => '+<span>:number</span>',
     'featureBoard.1.paragraph.2'          => '我们办理海牙认证',
-    'featureBoard.2.paragraph.1'          => '<span data-js="price">:price</span><em>元</em>',
+    'featureBoard.2.paragraph.1'          => '<span>:price</span><em>元</em>',
     'featureBoard.2.paragraph.2'          => '固定成本',
     'featureBoard.3'                      => '全球免运费',
     'featureBoard.4.paragraph.1'          => '香港公证员',
@@ -98,7 +98,7 @@ return [
 
     // confirm
     'cart.title'                          => '确认订购份数',
-    'cart.content.price'                  => '新台币:price元 / 件',
+    'cart.content.price'                  => '<span data-js="price">:price</span>元 / 件',
     'cart.content.price.note'             => '此为大约金额显示，国外消费因汇率转换，实际仍以请款金额为主。',
     'cart.content.paragraph'              => '我们的加签服务：我们将彩色打印您的文件<br>由公证员英文公证宣誓后，至香港高等法院海牙认证(Apostille)加签。<br>包括公证费、政府规费及杂支。<br>使用DHL Express / SF Express【免运费】全球快递送到府。<br>我们将扫描及彩色影印您的文件，您无需邮寄原件',
     'cart.content.amount'                 => '如果您上传了不止一份文件，请手动更新以下文件数量',

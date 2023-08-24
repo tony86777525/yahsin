@@ -51,7 +51,7 @@ class ECPayService
             'MerchantTradeNo' => $data['number'],
             'MerchantTradeDate' => date('Y/m/d H:i:s'),
             'PaymentType' => 'aio',
-            'TotalAmount' => $data['amount'],
+            'TotalAmount' => $data['price'],
             'TradeDesc' => UrlService::ecpayUrlEncode('dcc1'),
             'ItemName' => 'dcc2',
             'ChoosePayment' => 'Credit',

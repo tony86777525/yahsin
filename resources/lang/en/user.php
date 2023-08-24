@@ -35,7 +35,7 @@ return [
 
     'featureBoard.1.paragraph.1'          => '+<span>:number</span><em>件</em>',
     'featureBoard.1.paragraph.2'          => 'Apostilles processed',
-    'featureBoard.2.paragraph.1'          => '<em>NT $</em><span data-js="price">:price</span>',
+    'featureBoard.2.paragraph.1'          => '<em>NT $</em><span>:price</span>',
     'featureBoard.2.paragraph.2'          => 'Service Fee',
     'featureBoard.3'                      => 'International Shipping',
     'featureBoard.4.paragraph.1'          => 'Affidavit by a Hong Kong',
@@ -97,7 +97,7 @@ return [
 
     // confirm
     'cart.title'                          => 'Confirm Order Quantity',
-    'cart.content.price'                  => 'NT $:price',
+    'cart.content.price'                  => '$<span data-js="price">:price</span>',
     'cart.content.price.note'             => 'This is an approximate amount. Due to the exchange rate conversion, foreign consumption is still mainly based on the requested amount.',
     'cart.content.paragraph'              => 'Our Apostille service：we will print your documents in color,<br>notarize an affidavit and process the Apostille in Hong Kong High Court.<br>Including the payment of Apostille, public authority fee and other expenses.<br>DHL /SF EXPRESS Service (without extra payment) to the whole world.<br>It is not necessary to send the original document, we copy and scan your document in color.',
     'cart.content.amount'                 => 'If you have uploaded more than one document, please, update manually the number of documents below:',

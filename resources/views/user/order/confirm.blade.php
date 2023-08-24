@@ -38,7 +38,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="priceShow">{{ __('user.cart.content.price', ['price' => App\Models\Order::PRICE]) }}</div>
+                                <div class="priceShow">{!! __('user.cart.content.price', ['price' => App\Models\Order::PRICE]) !!}</div>
                             </div>
                             <div class="price__note">{{ __('user.cart.content.price.note') }}</div>
                         </div>

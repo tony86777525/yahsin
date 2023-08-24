@@ -35,7 +35,7 @@ return [
 
     'featureBoard.1.paragraph.1'          => '+<span>:number</span><em>/ documento</em>',
     'featureBoard.1.paragraph.2'          => 'Servicio de Apostilla',
-    'featureBoard.2.paragraph.1'          => '<em>NTD</em><span data-js="price">:price</span>',
+    'featureBoard.2.paragraph.1'          => '<em>NTD</em><span>:price</span>',
     'featureBoard.2.paragraph.2'          => 'Costo Fijo',
     'featureBoard.3'                      => 'Sin Pago Extra Para Enviar a Todo el Mundo',
     'featureBoard.4.paragraph.1'          => 'Declaración Jurada por un',
@@ -97,7 +97,7 @@ return [
 
     // confirm
     'cart.title'                          => 'Confirm Order Quantity',
-    'cart.content.price'                  => 'NTD $:price',
+    'cart.content.price'                  => '$<span data-js="price">:price</span>',
     'cart.content.price.note'             => 'This is an approximate amount. Due to the exchange rate conversion, foreign consumption is still mainly based on the requested amount.',
     'cart.content.paragraph'              => 'Nuestro servicio de Apostilla:Está incluido la fotocopia en color de su documento,<br>realización de una declaración jurada en inglés por un notario público, y luego enviar al tribunal superior de Hong Kong para sellar la Apostilla.<br>Está inlcuido el pago de Apostilla, tarifa de autoridad pública y otros gastos.<br>Servicio de DHL /SF EXPRESS (sin pago extra) a todo el mundo.<br>No es necesario enviar el documento original, copiamos y escaneamos su documento en color.',
     'cart.content.amount'                 => 'Si ud. envia más de 1 documento, por favor modifique manualmente la siguiente cantidad de documentos:',
