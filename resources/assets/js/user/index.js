@@ -1,5 +1,9 @@
 $(function(){
-    $('[data-input-id="hiddenFile"]').on('change', function(e){
+    $(".select2").select2({
+        language: "zh-TW"
+    });
+    
+    $('[data-input-id="hiddenFile"]').on('change', function(e){        
         var fileLength = e.currentTarget.files.length;
         let fileText = $(this).data('file-text');
         if(fileLength !== 0) {
