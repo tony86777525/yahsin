@@ -13,7 +13,7 @@ class GoogleDriveController extends Controller
         $this->gClient = new \Google_Client();
 
         $this->gClient->setAuthConfig(public_path('google/google_client_secret.json'));
-        $this->gClient->setAccessToken($this->getAccessToken());
+//        $this->gClient->setAccessToken($this->getAccessToken());
 
 //        $this->gClient->setApplicationName('YahSin upload'); // ADD YOUR AUTH2 APPLICATION NAME (WHEN YOUR GENERATE SECRATE KEY)
 //        $this->gClient->setClientId('923183289387-386nqutpl642ied36ke5vdhmg2hj62tg.apps.googleusercontent.com');
@@ -30,10 +30,8 @@ class GoogleDriveController extends Controller
         $this->gClient->setApprovalPrompt("force");
     }
 
-    public function googleLogin(Request $request)  {
-
-        $google_oauthV2 = new \Google_Service_Oauth2($this->gClient);
-
+    public function googleLogin(Request $request)
+    {
         if ($request->get('code')){
 
             $this->gClient->authenticate($request->get('code'));
@@ -97,12 +95,12 @@ class GoogleDriveController extends Controller
     {
         // 先用 googleLogin 取得一次
         return [
-            "access_token" => "ya29.a0AWY7CklXwZrtD0UjcNmKLE2K9HJxIrh41U8hN_Pbc4DoOsF-OMPEXOnwTiYTK3sWz0C33q7x4B2BtMZ_oA0wyMuRMsgXgZrNWzOusmCEGhKp4u1fHV7dfmzrz8qEqJnpATgYxSRBOfhXedkPgf5w0iQESh81aCgYKAbYSARESFQG1tDrpZFPP1VnkyT1zJoqj4fxhTQ0163",
-            "expires_in" => 3599,
-            "refresh_token" => "1//0emAbqXoaIRcHCgYIARAAGA4SNwF-L9IrKsofXkOzF-XzJ9W7ha15UsAUKQLpe6Yu6skM5E9T4eKpXaLvu_Vgh7dNi4Jc-yTRHcM",
-            "scope" => "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file",
-            "token_type" => "Bearer",
-            "created" => 1686887911,
+//            "access_token" => "ya29.a0AWY7CklXwZrtD0UjcNmKLE2K9HJxIrh41U8hN_Pbc4DoOsF-OMPEXOnwTiYTK3sWz0C33q7x4B2BtMZ_oA0wyMuRMsgXgZrNWzOusmCEGhKp4u1fHV7dfmzrz8qEqJnpATgYxSRBOfhXedkPgf5w0iQESh81aCgYKAbYSARESFQG1tDrpZFPP1VnkyT1zJoqj4fxhTQ0163",
+//            "expires_in" => 3599,
+//            "refresh_token" => "1//0emAbqXoaIRcHCgYIARAAGA4SNwF-L9IrKsofXkOzF-XzJ9W7ha15UsAUKQLpe6Yu6skM5E9T4eKpXaLvu_Vgh7dNi4Jc-yTRHcM",
+//            "scope" => "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file",
+//            "token_type" => "Bearer",
+//            "created" => 1686887911,
         ];
     }
 }

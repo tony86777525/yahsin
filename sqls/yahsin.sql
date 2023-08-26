@@ -470,6 +470,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 CREATE TABLE IF NOT EXISTS `yh_orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `number` varchar(255) NOT NULL,
+  `payment_number` varchar(255) NULL,
   `status` tinyint(1) NOT NULL DEFAULT '0',
   `name` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
@@ -485,14 +486,12 @@ CREATE TABLE IF NOT EXISTS `yh_orders` (
   `recipient_tel` varchar(20) DEFAULT NULL,
   `recipient_email` varchar(50) DEFAULT NULL,
   `google_drive_folder_id` varchar(255) DEFAULT NULL,
+  `payment_times` tinyint(1) NULL DEFAULT '0',
+  `created_at_date`varchar(255) DEFAULT NULL,
   `created_at` varchar(255) DEFAULT NULL,
   `updated_at` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
-
--- 正在傾印表格  yahsin.yh_orders 的資料：~1 rows (近似值)
-INSERT INTO `yh_orders` (`id`, `number`, `status`, `name`, `email`, `country`, `amount`, `price`, `recipient_name`, `recipient_company_name`, `recipient_address_nation`, `recipient_address_country`, `recipient_address_code`, `recipient_address`, `recipient_tel`, `recipient_email`, `google_drive_folder_id`, `created_at`, `updated_at`) VALUES
-	(1, '20230823231330007', 2, 'dc11', 'tony@gmail.com', 0, 1, 8800, 'dc11', NULL, '亞美尼亞', '瓦約茨佐爾', '1233', 'abcdefghijklmn', '0912345678', 'tony@gmail.com', '1WlkZU2_HMKRPsrTWPR9FYPVYipiULTKH', '1692801916', '1692803610');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

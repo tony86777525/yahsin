@@ -5,7 +5,7 @@ namespace App\Services;
 use Ecpay\Sdk\Factories\Factory;
 use Ecpay\Sdk\Services\UrlService;
 use Ecpay\Sdk\Response\VerifiedArrayResponse;
-use Ecpay\Sdk\Services\AutoSubmitFormService;
+use Carbon\Carbon;
 
 class ECPayService
 {
@@ -48,12 +48,12 @@ class ECPayService
 
         $input = [
             'MerchantID' => env('ECPAY_MERCHANT_ID'),
-            'MerchantTradeNo' => $data['number'],
-            'MerchantTradeDate' => date('Y/m/d H:i:s'),
+            'MerchantTradeNo' => $data->payment_number,
+            'MerchantTradeDate' => Carbon::now()->format('Y/m/d H:i:s'),
             'PaymentType' => 'aio',
             'TotalAmount' => $data['price'],
-            'TradeDesc' => UrlService::ecpayUrlEncode('dcc1'),
-            'ItemName' => 'dcc2',
+            'TradeDesc' => UrlService::ecpayUrlEncode('yahsin'),
+            'ItemName' => 'yahsin',
             'ChoosePayment' => 'Credit',
             'EncryptType' => 1,
             'ReturnURL' => route('user.api.order.pay.ecpay.notify'),

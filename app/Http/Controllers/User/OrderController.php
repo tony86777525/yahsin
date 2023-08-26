@@ -9,6 +9,7 @@ use App\Services\ECPayService;
 use App\Services\MailService;
 use App\Services\OrderService;
 use App\Services\UploadToGoogleDrive;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -33,6 +34,7 @@ class OrderController extends BasicController
                 'name' => $orderData['name'],
                 'email' => $orderData['email'],
                 'country' => $orderData['country'],
+                'created_at_date' => Carbon::now()->format('Ymd'),
             ]);
 
             $filesData = $request->file('files');
@@ -84,6 +86,8 @@ class OrderController extends BasicController
                 DB::beginTransaction();
 
                 try {
+                    $orderData->payment_times += 1;
+                    $orderData->payment_number = $orderData->number . 'yahsin' . $orderData->payment_times;
                     $orderData->amount = $inputData['amount'];
                     $orderData->price = $orderData->amount * Order::PRICE;
                     $orderData->recipient_name = $inputData['recipient_name'];
@@ -136,9 +140,9 @@ class OrderController extends BasicController
         $ECPayService = new ECPayService;
         $payResult = $ECPayService->checkoutResponse($data);
 
-        $orderNumber = $payResult['MerchantTradeNo'];
+        $orderPaymentNumber = $payResult['MerchantTradeNo'];
 
-        $orderData = Order::firstWhere('number', $orderNumber);
+        $orderData = Order::firstWhere('payment_number', $orderPaymentNumber);
 
         if (empty($orderData)) {
             return redirect()->route('user.index');

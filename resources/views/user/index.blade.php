@@ -368,7 +368,7 @@
         </div>
     </section>
     <div class="docking">
-        <a href="#landing" data-js-item="anchor"><img src="/img/img-fixedBtn_zh-TW.png" alt="開始訂購"></a>
+        <a href="#landing" data-js-item="anchor"><img src="/img/img-fixedBtn_{{ session()->get('webLanguage') }}.png" alt="開始訂購"></a>
     </div>
 @endsection
 

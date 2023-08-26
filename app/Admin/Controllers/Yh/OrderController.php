@@ -33,6 +33,7 @@ class OrderController extends AdminController
 
 //        $grid->column('id', __('Id'));
         $grid->column('number', __('Number'));
+        $grid->column('payment_number', __('Payment Number'));
         $grid->column('status', __('Status'))
             ->display(function($status) {
                 return Order::STATUS_OPTIONS[$status];
@@ -40,29 +41,33 @@ class OrderController extends AdminController
         $grid->column('name', __('Name'));
         $grid->column('email', __('Email'));
         $grid->column('country', __('Country'));
-        $grid->column('recipient_address', __('Recipient'))
-            ->display(function () {
-                return Str::limit($this->address, 20);
-            })->expand(function ($model) {
-                $style = 'width: 100%;';
-                $style .= 'height: 100px;';
-                $style .= 'box-sizing: border-box;';
-                $style .= 'overflow: auto;';
-                $style .= 'letter-spacing: 1px;';
-                $style .= 'border: 0px;';
-                $style .= 'background: #fff;';
-                $style .= 'font-size: 16px;';
-                $style .= 'margin-bottom: 10px;';
-
-//                return new Table(
-//                    ['Name', 'Email', 'Address'],
-//                    [[$model->name, $model->email, $model->address]]
-//                );
-                return
-//                    "<div style='$style'>$model->name</div>"
-//                    . "<div style='$style'>$model->email</div>"
-                    "<div style='$style'>$model->address</div>";
-            });
+//        $grid->column('recipient_address', __('Recipient'))
+//            ->display(function () {
+//                return Str::limit($this->address, 20);
+//            })->expand(function ($model) {
+//                $style = 'width: 100%;';
+//                $style .= 'box-sizing: border-box;';
+//                $style .= 'overflow: auto;';
+//                $style .= 'letter-spacing: 1px;';
+//                $style .= 'border: 0px;';
+//                $style .= 'background: #fff;';
+//                $style .= 'font-size: 16px;';
+//                $style .= 'margin-bottom: 10px;';
+//
+////                return new Table(
+////                    ['recipient_name', 'recipient_company_name', 'recipient_address_nation', 'recipient_address_country', 'recipient_address'],
+////                    [[$model->recipient_name, $model->recipient_company_name, $model->recipient_address_nation, $model->recipient_address_country, $model->recipient_address]]
+////                );
+////                return
+////                    "<div style='$style'>$model->recipient_name</div>"
+////                    . "<div style='$style'>$model->recipient_company_name</div>"
+////                    . "<div style='$style'>$model->recipient_address_nation</div>"
+////                    . "<div style='$style'>$model->recipient_address_country</div>"
+////                    . "<div style='$style'>$model->recipient_address_code</div>"
+////                    . "<div style='$style'>$model->recipient_address</div>"
+////                    . "<div style='$style'>$model->recipient_tel</div>"
+////                    . "<div style='$style'>$model->recipient_tel</div>";
+//            });
         $grid->column('google_drive_folder_id', __('Google Drive Folder Id'))
             ->display(function($google_drive_folder_id) {
                 if (!empty($google_drive_folder_id)) {
@@ -106,6 +111,7 @@ class OrderController extends AdminController
 
 //        $show->field('id', __('Id'));
         $show->field('number', __('Number'));
+        $show->field('payment_number', __('Payment Number'));
         $show->field('status', __('Status'));
         $show->field('name', __('Name'));
         $show->field('email', __('Email'));
@@ -135,6 +141,7 @@ class OrderController extends AdminController
         $form = new Form(new Order());
 
         $form->display('number', __('Number'));
+        $form->display('payment_number', __('Payment Number'));
         $form->radio('status', __('Status'))->options(Order::STATUS_OPTIONS);
         $form->text('name', __('Name'));
         $form->email('email', __('Email'));
@@ -147,10 +154,12 @@ class OrderController extends AdminController
         $form->text('recipient_address', __('Recipient Address'));
         $form->text('recipient_tel', __('Recipient Tel'));
         $form->text('recipient_email', __('Recipient Email'));
-        $form->text('google_drive_folder_id', __('Google Drive Folder Id'));
+//        $form->text('google_drive_folder_id', __('Google Drive Folder Id'));
 
         $form->saving(function (Form $form) {
-            $form->number = OrderService::getNewNumber();
+            if (!isset($form->model()->number)) {
+                $form->number = OrderService::getNewNumber();
+            }
         });
 
         $form->disableEditingCheck();
@@ -161,6 +170,7 @@ class OrderController extends AdminController
             $tools->disableList();
             $tools->disableDelete();
             $tools->disableView();
+            $tools->disableDelete();
         });
 
         $form->footer(function ($footer) {

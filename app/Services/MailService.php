@@ -9,7 +9,6 @@ class MailService
     public static function sendMail($data)
     {
         try {
-
             $postNoticeMailData = self::getPostNoticeMailData($data['email'], $data['name']);
 
             Mail::send('email.post', $data->toArray(), function($message) use ($postNoticeMailData) {

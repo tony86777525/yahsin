@@ -19,7 +19,7 @@ $(function(){
                         }
                     }
 
-                    document.querySelector('[data-js="price"]').innerHTML = rate * price;
+                    document.querySelector('[data-js="price"]').innerHTML = Math.floor(price / rate);
                 }
 
                 functions = {

@@ -2,6 +2,10 @@
 <br>
 <ol>
     <li>
+        <b>Number</b>
+        <div>{{ $number }}</div>
+    </li>
+    <li>
         <b>Name</b>
         <div>{{ $name }}</div>
     </li>

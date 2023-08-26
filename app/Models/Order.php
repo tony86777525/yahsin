@@ -68,6 +68,7 @@ class Order extends Model
      */
     protected $fillable = [
         'number',
+        'payment_number',
         'status',
         'amount',
         'name',
@@ -82,6 +83,8 @@ class Order extends Model
         'recipient_tel',
         'recipient_email',
         'google_drive_folder_id',
+        'payment_times',
+        'created_at_date',
     ];
 
     const STATUS_NEW = 0;
@@ -106,7 +109,7 @@ class Order extends Model
         self::COUNTRY_OTHER => '其他',
     ];
 
-    const PRICE = 8800;
+    const PRICE = 9800;
 
     public function getCreatedAtAttribute($value)
     {
