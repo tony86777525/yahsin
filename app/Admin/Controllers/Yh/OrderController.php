@@ -33,6 +33,7 @@ class OrderController extends AdminController
 
 //        $grid->column('id', __('Id'));
         $grid->column('number', __('Number'));
+        $grid->column('price', __('Price'));
         $grid->column('payment_number', __('Payment Number'));
         $grid->column('status', __('Status'))
             ->display(function($status) {
@@ -111,6 +112,7 @@ class OrderController extends AdminController
 
 //        $show->field('id', __('Id'));
         $show->field('number', __('Number'));
+        $show->field('price', __('Price'));
         $show->field('payment_number', __('Payment Number'));
         $show->field('status', __('Status'));
         $show->field('name', __('Name'));
@@ -141,6 +143,7 @@ class OrderController extends AdminController
         $form = new Form(new Order());
 
         $form->display('number', __('Number'));
+        $form->display('price', __('Price'));
         $form->display('payment_number', __('Payment Number'));
         $form->radio('status', __('Status'))->options(Order::STATUS_OPTIONS);
         $form->text('name', __('Name'));
