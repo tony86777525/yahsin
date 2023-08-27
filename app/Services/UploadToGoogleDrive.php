@@ -71,10 +71,11 @@ class UploadToGoogleDrive
                 'parents' => [$folder->id]
             ]);
 
+            $fileContent = file_get_contents($uploadFile->getRealPath());
+
             $result[] = $service->files->create($file, [
-                'data' => $uploadFile,
-                'mimeType' => 'application/pdf',
-                'uploadType' => 'media'
+                'data' => $fileContent,
+                'uploadType' => 'multipart'
             ]);
         }
 

@@ -2,8 +2,8 @@ $(function(){
     $(".select2").select2({
         language: "zh-TW"
     });
-    
-    $('[data-input-id="hiddenFile"]').on('change', function(e){        
+
+    $('[data-input-id="hiddenFile"]').on('change', function(e){
         var fileLength = e.currentTarget.files.length;
         let fileText = $(this).data('file-text');
         if(fileLength !== 0) {
@@ -38,89 +38,59 @@ $(function(){
         }
     });
 
-    $('[data-js="refresh-captcha"]').on('click', function(){
-        let button = $(this);
-        let url = button.data('js-url');
+    // $('[data-js="refresh-captcha"]').on('click', function(){
+    //     let button = $(this);
+    //     let url = button.data('js-url');
+    //
+    //     $.ajax({
+    //         headers: {
+    //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    //         },
+    //         type: 'POST',
+    //         url: url,
+    //         dataType: "JSON",
+    //         beforeSend : function() {
+    //             button.attr('disabled', true);
+    //         },
+    //         success: function (res) {
+    //             button.closest('.captcha').find('img').attr('src', res);
+    //         },
+    //         complete: function () {
+    //             button.attr('disabled', false);
+    //         },
+    //         error: function(res) {
+    //             console.log(res);
+    //         }
+    //     });
+    // });$('[data-js="refresh-captcha"]').on('click', function(){
+    //     let button = $(this);
+    //     let url = button.data('js-url');
+    //
+    //     $.ajax({
+    //         headers: {
+    //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    //         },
+    //         type: 'POST',
+    //         url: url,
+    //         dataType: "JSON",
+    //         beforeSend : function() {
+    //             button.attr('disabled', true);
+    //         },
+    //         success: function (res) {
+    //             button.closest('.captcha').find('img').attr('src', res);
+    //         },
+    //         complete: function () {
+    //             button.attr('disabled', false);
+    //         },
+    //         error: function(res) {
+    //             console.log(res);
+    //         }
+    //     });
+    // });
 
-        $.ajax({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            type: 'POST',
-            url: url,
-            dataType: "JSON",
-            beforeSend : function() {
-                button.attr('disabled', true);
-            },
-            success: function (res) {
-                button.closest('.captcha').find('img').attr('src', res);
-            },
-            complete: function () {
-                button.attr('disabled', false);
-            },
-            error: function(res) {
-                console.log(res);
-            }
-        });
-    });
-
-    $('form[data-js-pay="ecpay"]').on('submit', function (event) {
-        event.preventDefault();
-
+    $('form').on('submit', function () {
         let form = $(this);
-        let url = form.attr('action');
-
-        $.ajax({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            type: 'POST',
-            url: url,
-            dataType: "JSON",
-            data: form.serialize(),
-            beforeSend : function() {},
-            success: function (res) {
-                if (res.success === true) {
-                    $('[data-js-pay="result"]').html(res.result);
-                }
-            },
-            complete: function () {
-            },
-            error: function(res) {
-                console.log(res);
-            }
-        });
-    });
-
-    $('form[data-js-search="ecpay"]').on('submit', function (event) {
-        event.preventDefault();
-
-        let form = $(this);
-        let url = form.attr('action');
-
-        $.ajax({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            type: 'POST',
-            url: url,
-            dataType: "JSON",
-            data: form.serialize(),
-            beforeSend : function() {},
-            success: function (res) {
-                if (res.success === true) {
-                    let result = $.map(res.result, function(v, k){
-                        return `${k}:${v}`;
-                    }).join('\n');
-                    alert(result);
-                }
-            },
-            complete: function () {
-            },
-            error: function(res) {
-                console.log(res);
-            }
-        });
+        form.next('.mask').show();
     });
 
     new WOW().init();

@@ -28,7 +28,7 @@ class StoreOrderFirstRequest extends FormRequest
             'country' => 'required',
 //            'captcha' => 'required|captcha',
             'files' => 'required|array',
-            'files.*' => 'required_without_all:files|file|max:102400|mimes:pdf',
+            'files.*' => 'file|max:512000|mimes:pdf,png,jpeg,jpg',
         ];
     }
 

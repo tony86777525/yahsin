@@ -1,5 +1,4 @@
 $(function(){
-
     $(".select2").select2({
         language: "zh-TW"
     });
@@ -8,18 +7,23 @@ $(function(){
         .addEventListener('change',
             function(event) {
                 let currency = event.target.value;
-                const price = event.target.getAttribute('data-default-price');
+                let amount = document.querySelector('[name="amount"]').value;
 
                 let url = 'https://api.finmindtrade.com/api/v3/data'
                 let resolve = (data) => {
-                    let rate = 1;
                     if (data.msg === 'success') {
+                        window.orderPriceRate = 1;
                         if (data.data[0]) {
-                            rate = data.data[0].cash_buy;
+                            window.orderPriceRate = data.data[0].cash_buy;
                         }
                     }
 
-                    document.querySelector('[data-js="price"]').innerHTML = Math.floor(price / rate);
+                    let newPrice = getPrice(window.orderPrice, window.orderPriceRate, 1);
+                    let newTotalPrice = getPrice(window.orderPrice, window.orderPriceRate, amount);
+
+                    document.querySelector('[data-js="price"]').innerHTML = newPrice;
+                    document.querySelector('[data-js="totalPrice"]').innerHTML = newTotalPrice;
+
                 }
 
                 functions = {
@@ -39,6 +43,20 @@ $(function(){
                 apiGet(url, formBody, functions);
             }
         );
+
+    document.querySelector('[data-js-button="amount"]')
+        .addEventListener('click', function(event) {
+            let amountTarget = document.querySelector('[name="amount"]');
+            let amount = amountTarget.value;
+            amount = parseInt(amount);
+            document.querySelector('[name="amount"]').value = amount;
+
+            if (amount > 0 && Number.isInteger(amount) === true) {
+                let newTotalPrice = getPrice(window.orderPrice, window.orderPriceRate, amount);
+
+                document.querySelector('[data-js="totalPrice"]').innerHTML = newTotalPrice;
+            }
+        });
 });
 
 
@@ -75,10 +93,14 @@ function formatDate(date, format) {
     const map = {
         m: (date.getMonth() + 1)
             .toString().padStart(2, '0'),
-        d: (date.getDate() - 1)
+        d: (date.getDate() - 3)
             .toString().padStart(2, '0'),
         Y: date.getFullYear()
     }
 
     return format.replace(/m|d|Y/gi, matched => map[matched])
+}
+
+function getPrice(price, rate, amount) {
+    return Math.floor(parseInt(price) * parseInt(amount) / parseInt(rate));
 }

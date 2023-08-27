@@ -31,7 +31,7 @@
                             <div class="price__bill">
                                 <div class="billSelect">
                                     <div class="fancyWrap fancyWrap--bill">
-                                        <select name="bill" class="fancySelect fancySelect--bill" data-default-price="{{ App\Models\Order::PRICE }}">
+                                        <select name="bill" class="fancySelect fancySelect--bill">
                                             <option value="TWD">NT$</option>
                                             <option value="USD">USD</option>
                                             <option value="CNY">RMB￥</option>
@@ -55,9 +55,12 @@
                                 </div>
                                 <div class="action">
                                     <div class="btnWrap btnWrap--submit">
-                                        <button type="button" class="btn btn--submit"><span class="btn__text">{{ __('user.cart.content.amount.button') }}</span></button>
+                                        <button type="button" class="btn btn--submit" data-js-button="amount"><span class="btn__text">{{ __('user.cart.content.amount.button') }}</span></button>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="amount__price">
+                                總金額<span class="count" data-js="totalPrice">{{ App\Models\Order::PRICE }}</span>
                             </div>
                         </div>
                     </div>
@@ -208,4 +211,8 @@
     <script src="/js/user/cart.js"></script>
     <script src="/languages/geodatasource-cr.min.js"></script>
     <script src="/languages/gettext.js"></script>
+    <script>
+        window.orderPrice = {{ App\Models\Order::PRICE }};
+        window.orderPriceRate = 1;
+    </script>
 @endPush
