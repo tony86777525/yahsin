@@ -23,6 +23,29 @@ $path: '../../images/';
 
     .landingForm {
         background-color: #FFF;
+        position: relative;
+
+        .mask {
+            display: block;
+            position: absolute;
+            z-index: 100;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            
+            &__wrapper {
+                height: 100%;
+                background-color: rgba(52,50,98, .95);
+
+                .loading {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    @include translate(-50%, -50%);
+                }
+            }
+        }
     }
 
     .landingText {
@@ -221,8 +244,10 @@ $path: '../../images/';
                     display: block;
                     position: absolute;
                     left: 0;
+                    top: 50%;
                     background-image: url('#{$path}/deco-check-border.svg');
                     background-repeat: no-repeat;
+                    @include translateY(-50%);
                 }
 
                 span {
@@ -458,9 +483,14 @@ $path: '../../images/';
     z-index: 9999;
 }
 
+
 // ========== Media Queries ==========
 //Small devices (portrait phones, 320 and up)
 @media only screen and (min-width: 320px) {
+    $fs-title: 1.6rem;
+    $fs-topic: 1.2rem;
+    $fs-content: 1rem;
+
     .wrapper {
         padding: 0 2.5rem;
     }
@@ -476,6 +506,10 @@ $path: '../../images/';
             border-radius: 1.6rem 1.6rem 0 0;
             padding: 2rem 2rem 5rem;
             box-shadow: 0.5rem 0.5rem 0.5rem rgba(52,50,98,.5);
+
+            .mask {
+                padding: 1rem;
+            }
         }
 
         .landingText {
@@ -484,7 +518,7 @@ $path: '../../images/';
             padding-right: 0.6rem;
 
             h3 {
-                font-size: 1.6rem;
+                font-size: $fs-title;
             }
 
             ul {
@@ -493,7 +527,7 @@ $path: '../../images/';
                     padding-top: 1rem;
                     padding-bottom: 1rem;
                     padding-left: 1.5rem;
-                    font-size: 1rem;
+                    font-size: $fs-content;
                     background-size: 0.7rem 0.6rem;
 
                     &:before {
@@ -545,10 +579,10 @@ $path: '../../images/';
             .featureItem {
 
                 .featureItem__title {
-                    font-size: 1.6rem;
+                    font-size: $fs-title;
 
                     em {
-                        font-size: 1.1rem;
+                        font-size: $fs-topic;
                     }
 
                     span {
@@ -556,7 +590,7 @@ $path: '../../images/';
                     }
                 }
                 .featureItem__content {
-                    font-size: 1.1rem;
+                    font-size: $fs-topic;
                     margin-top: 0.8rem;
                 }
             }
@@ -568,7 +602,7 @@ $path: '../../images/';
         padding-bottom: 5rem;
 
         &__title {
-            font-size: 1.6rem;
+            font-size: $fs-title;
             line-height: 1.5;
         }
 
@@ -617,6 +651,7 @@ $path: '../../images/';
                 }
 
                 .text {
+                    font-size: $fs-content;
                     width: 1.3rem;
                     letter-spacing: 0.5rem;
                     writing-mode: vertical-rl;
@@ -625,6 +660,7 @@ $path: '../../images/';
                     @include translate(0, -50%);
 
                     em {
+                        font-size: $fs-content;
                         letter-spacing: 0;
 
                         &:last-child {
@@ -668,7 +704,7 @@ $path: '../../images/';
         }
 
         .intro {
-            font-size: 1.2rem;
+            font-size: $fs-topic;
 
             & > span {
                 display: block;
@@ -691,7 +727,7 @@ $path: '../../images/';
                     }
 
                     span {
-                        font-size: 1rem;
+                        font-size: $fs-content;
                     }
                 }
             }
@@ -713,7 +749,7 @@ $path: '../../images/';
 
                 .num,
                 .intro {
-                    font-size: 1.1rem;
+                    font-size: $fs-topic;
                 }
 
                 .intro {
@@ -728,7 +764,7 @@ $path: '../../images/';
         padding-bottom: 6rem;
 
         &__title {
-            font-size: 1.6rem;
+            font-size: $fs-title;
 
             &:after {
                 width: 13.3rem;
@@ -740,7 +776,7 @@ $path: '../../images/';
         &__content {
             .intro {
                 margin-top: 2rem;
-                font-size: 1rem;
+                font-size: $fs-content;
             }
 
             .quite {
@@ -763,7 +799,7 @@ $path: '../../images/';
 
         .quite {
             &__title {
-                font-size: 1.2rem;
+                font-size: $fs-topic;
                 margin-bottom: 2rem;
 
                 &:after {
@@ -778,7 +814,7 @@ $path: '../../images/';
             thead {
                 th {
                     padding: 1rem 0;
-                    font-size: 1.2rem;
+                    font-size: $fs-topic;
                 }
             }
 
@@ -786,7 +822,7 @@ $path: '../../images/';
                 tr {
                     th,td {
                         padding: 0.5rem;
-                        font-size: 1rem;
+                        font-size: $fs-content;
 
                         span {
                             display: block;
@@ -855,12 +891,12 @@ $path: '../../images/';
             }
 
             .sub {
-                font-size: 1.2rem;
+                font-size: $fs-topic;
                 margin-bottom: 1rem;
             }
 
             .topic {
-                font-size: 1.6rem;
+                font-size: $fs-title;
             }
         }
 
@@ -874,7 +910,7 @@ $path: '../../images/';
                 padding-bottom: 1.2rem;
 
                 .question {
-                    font-size: 1.2rem;
+                    font-size: $fs-topic;
 
                     span {
                         display: block;
@@ -882,7 +918,7 @@ $path: '../../images/';
                 }
                 .anwser {
                     margin-top: 0.4rem;
-                    font-size: 1rem;
+                    font-size: $fs-content;
 
                     span {
                         display: block;
@@ -904,7 +940,7 @@ $path: '../../images/';
         padding: 4.5rem 0 2.5rem;
 
         &__title {
-            font-size: 1.6rem;
+            font-size: $fs-title;
         }
         &__content {
             padding-top: 2rem;
@@ -942,6 +978,10 @@ $path: '../../images/';
 
 //Large devices (laptops, 1280 and up)
 @media only screen and (min-width: 1280px) {
+    $fs-title: 36px;
+    $fs-topic: 28px;
+    $fs-content: 20px;
+
     .wrapper {
         padding: 0 50px;
     }
@@ -959,6 +999,10 @@ $path: '../../images/';
             border-radius: 50px 50px 0 0;
             padding: 60px 40px;
             box-shadow: 10px 10px 10px rgba(52,50,98,.5);
+
+            .mask {
+                padding: 20px;
+            }
         }
 
         .landingText {
@@ -969,7 +1013,7 @@ $path: '../../images/';
             padding-right: 0;
 
             h3 {
-                font-size: 36px;
+                font-size: $fs-title;
             }
 
             ul {
@@ -977,7 +1021,7 @@ $path: '../../images/';
                     padding-top: 24px;
                     padding-bottom: 24px;
                     padding-left: 30px;
-                    font-size: 20px;
+                    font-size: $fs-content;
 
                     &:before {
                         width: 21px;
@@ -1044,19 +1088,19 @@ $path: '../../images/';
                 padding: 0 40px;
 
                 .featureItem__title {
-                    font-size: 36px;
+                    font-size: $fs-title;
+
+                    em {
+                        font-size: $fs-topic;
+                    }
 
                     span {
                         width: 85px;
                     }
-
-                    em {
-                        font-size: 24px;
-                    }
                 }
                 
                 .featureItem__content {
-                    font-size: 30px;
+                    font-size: $fs-topic;
                     margin-top: 25px;
                 }
             }
@@ -1068,7 +1112,7 @@ $path: '../../images/';
         padding-bottom: 70px;
 
         &__title {
-            font-size: 36px;
+            font-size: $fs-title;
         }
 
         &__content {
@@ -1126,15 +1170,16 @@ $path: '../../images/';
                 }
 
                 .text {
+                    font-size: $fs-content;
                     width: auto;
                     left: 50%;
-                    font-size: 20px;
                     padding: 0 70px;
                     letter-spacing: 0;
                     writing-mode: horizontal-tb;
                     @include translate(-50%, -50%);
 
                     em {
+                        font-size: $fs-content;
 
                         &:last-child {
                             margin-bottom: 0;
@@ -1197,6 +1242,15 @@ $path: '../../images/';
                         padding-right: 0;
                     }
 
+                    &:nth-child(4) {
+                        padding-left: 0;
+                    }
+
+                    &:nth-child(4),
+                    &:nth-child(5) {
+                        flex: 0 0 40%;
+                    }
+
                     &:last-child {
                         padding-right: 0;
                         background-image: none;
@@ -1213,7 +1267,7 @@ $path: '../../images/';
         }
 
         .intro {
-            font-size: 24px;
+            font-size: $fs-topic;
 
             & > span {
                 display: inline;
@@ -1234,14 +1288,15 @@ $path: '../../images/';
                 td {
                     padding: 18px 0 18px 56px;
 
+                    
+                    &:before {
+                        width: 36px;
+                        height: 36px;
+                        background-size: 36px 36px;
+                    }
+
                     span {
-                        font-size: 20px;
-                        
-                        &:before {
-                            width: 36px;
-                            height: 36px;
-                            background-size: 36px 36px;
-                        }
+                        font-size: $fs-content;
                     }
                 }
             }
@@ -1273,7 +1328,7 @@ $path: '../../images/';
 
                 .num,
                 .intro {
-                    font-size: 24px;
+                    font-size: $fs-topic;
                 }
 
                 .intro {
@@ -1284,15 +1339,15 @@ $path: '../../images/';
     }
 
     .compare {
-        padding-top: 90px;
-        padding-bottom: 150px;
+        padding-top: 60px;
+        padding-bottom: 100px;
 
         .wrapper {
             padding: 0 130px;
         }
 
         &__title {
-            font-size: 36px;
+            font-size: $fs-title;
 
             &:after {
                 width: 280px;
@@ -1303,8 +1358,8 @@ $path: '../../images/';
 
         &__content {
             .intro {
+                font-size: $fs-content;
                 margin-top: 28px;
-                font-size: 20px;
             }
 
             .quite {
@@ -1327,7 +1382,7 @@ $path: '../../images/';
 
         .quite {
             &__title {
-                font-size: 24px;
+                font-size: $fs-topic;
                 margin-bottom: 50px;
     
                 &:after {
@@ -1343,7 +1398,7 @@ $path: '../../images/';
             thead {
                 th {
                     padding: 20px 0;
-                    font-size: 24px;
+                    font-size: $fs-topic;
                 }
             }
 
@@ -1351,7 +1406,7 @@ $path: '../../images/';
                 tr {
                     th,td {
                         padding: 18px 10px;
-                        font-size: 20px;
+                        font-size: $fs-content;
     
                         span {
                             display: inline;
@@ -1374,7 +1429,6 @@ $path: '../../images/';
 
             &:after {
                 width: (443/1250)*100%;
-                height: calc(100% - 6px);
                 border: 10px solid #e86b59;
                 top: -9px;
                 right: -10px;
@@ -1426,12 +1480,12 @@ $path: '../../images/';
             }
 
             .sub {
-                font-size: 28px;
                 margin-bottom: 60px;
+                font-size: $fs-topic;
             }
 
             .topic {
-                font-size: 40px;
+                font-size: $fs-title;
             }
         }
 
@@ -1445,7 +1499,7 @@ $path: '../../images/';
                 padding-bottom: 6px;
 
                 .question {
-                    font-size: 28px;
+                    font-size: $fs-topic;
 
                     span {
                         display: inline;
@@ -1453,7 +1507,7 @@ $path: '../../images/';
                 }
                 .anwser {
                     margin-top: 8px;
-                    font-size: 20px;
+                    font-size: $fs-content;
 
                     span {
                         display: inline;
@@ -1475,8 +1529,9 @@ $path: '../../images/';
         padding: 100px 0 80px;
 
         &__title {
-            font-size: 35px;
+            font-size: $fs-title;
         }
+
         &__content {
             padding-top: 60px;
         }
@@ -1509,6 +1564,10 @@ $path: '../../images/';
 
 //Extra Large devices (laptops and desktop, 1600 and up)
 @media only screen and (min-width: 1600px) {
+    $fs-title: 50px;
+    $fs-topic: 35px;
+    $fs-content: 28px;
+
     .wrapper {
         padding: 0 100px;
     }
@@ -1522,9 +1581,9 @@ $path: '../../images/';
 
         .landingText {
             padding-top: 80px;
-
+            
             h3 {
-                font-size: 50px;
+                font-size: $fs-title;
             }
 
             ul {
@@ -1533,7 +1592,7 @@ $path: '../../images/';
                     padding-top: 33px;
                     padding-bottom: 33px;
                     padding-left: 50px;
-                    font-size: 28px;
+                    font-size: $fs-content;
                 }
             }
         }
@@ -1553,19 +1612,19 @@ $path: '../../images/';
 
             .featureItem {
                 .featureItem__title {
-                    font-size: 50px;
+                    font-size: $fs-title;
+
+                    em {
+                        font-size: $fs-topic;
+                    }
 
                     span {
                         width: 120px;
                     }
-
-                    em {
-                        font-size: 35px;
-                    }
                 }
-                
+
                 .featureItem__content {
-                    font-size: 35px;
+                    font-size: $fs-topic;
                 }
             }
         }
@@ -1576,15 +1635,12 @@ $path: '../../images/';
         padding-bottom: 100px;
 
         &__title {
-            font-size: 50px;
+            font-size: $fs-title;
         }
 
         &__content {
             margin-top: 40px;
 
-            .intro {
-                font-size: 35px;
-            }
             .benefit {
                 margin-top: 40px;
             }
@@ -1598,23 +1654,36 @@ $path: '../../images/';
                     padding: 0 3px;
                 }
             }
+
+            .line {
+                .text {
+                    font-size: $fs-content;
+
+                    em {
+                        font-size: $fs-content;
+                    }
+                }
+            }
+        }
+
+        .intro {
+            font-size: $fs-topic;
         }
 
         .benefit {
             &__table {
 
                 td {
-                    padding: 25px 0;
+                    padding: 25px 0 25px 80px;
 
                     span {
-                        font-size: 28px;
-                        padding-left: 80px;
+                        font-size: $fs-content;
+                    }
 
-                        &:before {
-                            width: 50px;
-                            height: 50px;
-                            background-size: 50px 50px;
-                        }
+                    &:before {
+                        width: 50px;
+                        height: 50px;
+                        background-size: 50px 50px;
                     }
                 }
             }
@@ -1627,10 +1696,9 @@ $path: '../../images/';
             }
 
             &__text {
-
                 .num,
                 .intro {
-                    font-size: 32px;
+                    font-size: $fs-topic;
                 }
             }
 
@@ -1642,15 +1710,15 @@ $path: '../../images/';
     }
 
     .compare {
-        padding-top: 4.5rem;
-        padding-bottom: 6rem;
+        padding-top: 100px;
+        padding-bottom: 150px;
 
         .wrapper {
             padding: 0 260px;
         }
 
         &__title {
-            font-size: 50px;
+            font-size: $fs-title;
 
             &:after {
                 width: 400px;
@@ -1660,8 +1728,8 @@ $path: '../../images/';
 
         &__content {
             .intro {
+                font-size: $fs-content;
                 margin-top: 40px;
-                font-size: 28px;
             }
         }
 
@@ -1680,7 +1748,7 @@ $path: '../../images/';
 
         .quite {
             &__title {
-                font-size: 35px;
+                font-size: $fs-topic;
     
                 &:after {
                     width: 400px;
@@ -1693,7 +1761,7 @@ $path: '../../images/';
             thead {
                 th {
                     padding: 30px 0;
-                    font-size: 35px;
+                    font-size: $fs-topic;
                 }
             }
 
@@ -1701,7 +1769,7 @@ $path: '../../images/';
                 tr {
                     th,td {
                         padding: 25px 10px;
-                        font-size: 28px;
+                        font-size: $fs-content;
                     }
                 }
             }
@@ -1720,12 +1788,12 @@ $path: '../../images/';
             }
 
             .sub {
-                font-size: 35px;
+                font-size: $fs-topic;
                 margin-bottom: 80px;
             }
 
             .topic {
-                font-size: 50px;
+                font-size: $fs-title;
             }
         }
 
@@ -1737,10 +1805,10 @@ $path: '../../images/';
             &__item {
 
                 .question {
-                    font-size: 35px;
+                    font-size: $fs-topic;
                 }
                 .anwser {
-                    font-size: 28px;
+                    font-size: $fs-content;
                 }
             }
         }
@@ -1756,11 +1824,11 @@ $path: '../../images/';
         padding: 145px 0 80px;
 
         &__title {
-            font-size: 50px;
+            font-size: $fs-title;
         }
+
         &__content {
             padding-top: 90px;
-
         }
 
         .coopList {

@@ -113,6 +113,19 @@
                             </ul>
                         </div>
                     </form>
+                    <div class="mask">
+                        <div class="mask__wrapper">
+                            <div class="loading loadingio-spinner-ellipsis-rgbrrjn5xz">
+                                <div class="ldio-qb9fb7iuf6">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="landingText wow fadeIn" data-wow-delay="0.5s">
                     <h3>{{ __('user.landingText.title') }}</h3>

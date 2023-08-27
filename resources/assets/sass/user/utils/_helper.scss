@@ -56,3 +56,69 @@
 		}
 	}
 }
+
+//loading
+@keyframes ldio-qb9fb7iuf6 {
+    0% { transform: translate(12px,80px) scale(0); }
+   25% { transform: translate(12px,80px) scale(0); }
+   50% { transform: translate(12px,80px) scale(1); }
+   75% { transform: translate(80px,80px) scale(1); }
+  100% { transform: translate(148px,80px) scale(1); }
+ }
+ @keyframes ldio-qb9fb7iuf6-r {
+    0% { transform: translate(148px,80px) scale(1); }
+  100% { transform: translate(148px,80px) scale(0); }
+ }
+ @keyframes ldio-qb9fb7iuf6-c {
+    0% { background: #fefefe }
+   25% { background: #ebebeb }
+   50% { background: #ececec }
+   75% { background: #ededed }
+  100% { background: #fefefe }
+ }
+ .ldio-qb9fb7iuf6 div {
+   position: absolute;
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   transform: translate(80px,80px) scale(1);
+   background: #fefefe;
+   animation: ldio-qb9fb7iuf6 1s infinite cubic-bezier(0,0.5,0.5,1);
+ }
+ .ldio-qb9fb7iuf6 div:nth-child(1) {
+   background: #ededed;
+   transform: translate(148px,80px) scale(1);
+   animation: ldio-qb9fb7iuf6-r 0.25s infinite cubic-bezier(0,0.5,0.5,1), ldio-qb9fb7iuf6-c 1s infinite step-start;
+ }
+ .ldio-qb9fb7iuf6 div:nth-child(2) {
+   animation-delay: -0.25s;
+   background: #fefefe;
+ }
+ .ldio-qb9fb7iuf6 div:nth-child(3) {
+   animation-delay: -0.5s;
+   background: #ededed;
+ }
+ .ldio-qb9fb7iuf6 div:nth-child(4) {
+   animation-delay: -0.75s;
+   background: #ececec;
+ }
+ .ldio-qb9fb7iuf6 div:nth-child(5) {
+   animation-delay: -1s;
+   background: #ebebeb;
+}
+.loadingio-spinner-ellipsis-rgbrrjn5xz {
+   width: 200px;
+   height: 200px;
+   display: inline-block;
+   overflow: hidden;
+   background: transparent;
+ }
+ .ldio-qb9fb7iuf6 {
+   width: 100%;
+   height: 100%;
+   position: relative;
+   transform: translateZ(0) scale(1);
+   backface-visibility: hidden;
+   transform-origin: 0 0;
+ }
+ .ldio-qb9fb7iuf6 div { box-sizing: content-box; }

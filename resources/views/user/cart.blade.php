@@ -57,6 +57,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="amount__price">
+                                總金額<span class="count">19,600</span>
+                            </div>
                         </div>
                     </div>
                 </div>
