@@ -48,14 +48,17 @@ $(function(){
         .addEventListener('click', function(event) {
             let amountTarget = document.querySelector('[name="amount"]');
             let amount = amountTarget.value;
-            amount = parseInt(amount);
-            document.querySelector('[name="amount"]').value = amount;
+            amount = Math.abs(parseInt(amount));
 
             if (amount > 0 && Number.isInteger(amount) === true) {
-                let newTotalPrice = getPrice(window.orderPrice, window.orderPriceRate, amount);
-
-                document.querySelector('[data-js="totalPrice"]').innerHTML = newTotalPrice;
+                amount = 1
             }
+
+            document.querySelector('[name="amount"]').value = amount;
+
+            let newTotalPrice = getPrice(window.orderPrice, window.orderPriceRate, amount);
+
+            document.querySelector('[data-js="totalPrice"]').innerHTML = newTotalPrice;
         });
 });
 
