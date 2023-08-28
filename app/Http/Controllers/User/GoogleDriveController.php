@@ -12,7 +12,7 @@ class GoogleDriveController extends Controller
 
         $this->gClient = new \Google_Client();
 
-        $this->gClient->setAuthConfig(public_path('google/google_client_secret.json'));
+        $this->gClient->setAuthConfig(public_path('google/' . env('GOOGLE_CLIENT_SECRET')));
 //        $this->gClient->setAccessToken($this->getAccessToken());
 
 //        $this->gClient->setApplicationName('YahSin upload'); // ADD YOUR AUTH2 APPLICATION NAME (WHEN YOUR GENERATE SECRATE KEY)
