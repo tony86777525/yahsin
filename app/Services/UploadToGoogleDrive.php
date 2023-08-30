@@ -10,6 +10,7 @@ class UploadToGoogleDrive
 {
     private $fileId;
     private $accessToken;
+    private $googleClientSecret;
 //    const GOOGLE_DRIVE_FILE_ID = '1m3WNr1Yr8vUTzBBAMxgbjOFmYvCsryNj';
 //    const ACCESS_TOKEN = [
 //        "access_token" => "ya29.a0AWY7CklXwZrtD0UjcNmKLE2K9HJxIrh41U8hN_Pbc4DoOsF-OMPEXOnwTiYTK3sWz0C33q7x4B2BtMZ_oA0wyMuRMsgXgZrNWzOusmCEGhKp4u1fHV7dfmzrz8qEqJnpATgYxSRBOfhXedkPgf5w0iQESh81aCgYKAbYSARESFQG1tDrpZFPP1VnkyT1zJoqj4fxhTQ0163",
@@ -31,20 +32,28 @@ class UploadToGoogleDrive
             "created" => env('GOOGLE_DRIVE_CREATED'),
             "scope" => env('GOOGLE_DRIVE_SCOPE'),
         ];
+
+        $this->googleClientSecret = env('GOOGLE_CLIENT_SECRET');
     }
 
     public function upload($uploadFiles, $folderName, $filesName)
     {
         $client = new Google_Client();
-        $client->setAuthConfig(public_path('google/' . env('GOOGLE_CLIENT_SECRET')));
-        $client->setAccessToken($this->accessToken);
+        $client->setAuthConfig(public_path('google/' . $this->googleClientSecret));
         $client->setScopes(array(
             'https://www.googleapis.com/auth/drive.file',
             'https://www.googleapis.com/auth/drive'
         ));
         $client->setAccessType("offline");
         $client->setApprovalPrompt("force");
+        $client->setAccessToken($this->accessToken);
 
+//        $newAccessToken = '';
+//dd($client->isAccessTokenExpired());
+//        if ($client->isAccessTokenExpired() === true) {
+//            $newAccessToken = $client->refreshToken($this->accessToken['refresh_token']);
+//        }
+//        dd($newAccessToken);
 
         $service = new \Google_Service_Drive($client);
 

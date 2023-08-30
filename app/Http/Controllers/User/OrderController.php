@@ -6,6 +6,7 @@ use App\Http\Requests\StoreOrderFirstRequest;
 use App\Http\Requests\StoreOrderSecondRequest;
 use App\Models\Order;
 use App\Services\ECPayService;
+use App\Services\PayPalService;
 use App\Services\MailService;
 use App\Services\OrderService;
 use App\Services\UploadToGoogleDrive;
@@ -26,9 +27,9 @@ class OrderController extends BasicController
     {
         $orderData = $request->post();
 
-        DB::beginTransaction();
+//        DB::beginTransaction();
 
-        try {
+//        try {
             $newOrderData = Order::create([
                 'number' => OrderService::getNewNumber(),
                 'name' => $orderData['name'],
@@ -44,15 +45,15 @@ class OrderController extends BasicController
             $newOrderData->google_drive_folder_id = $folderId;
             $newOrderData->save();
 
-            DB::commit();
+//            DB::commit();
 
-            return redirect()
-                ->route('user.order.confirm', [
-                    'orderNumber' => $newOrderData->number
-                ]);
-        } catch (\Exception $e) {
-            DB::rollback();
-        }
+//            return redirect()
+//                ->route('user.order.confirm', [
+//                    'orderNumber' => $newOrderData->number
+//                ]);
+//        } catch (\Exception $e) {
+//            DB::rollback();
+//        }
 
         return redirect()
             ->route('user.index');
@@ -83,9 +84,9 @@ class OrderController extends BasicController
             $orderData = Order::firstWhere('number', $orderNumber);
 
             if (!empty($orderData)) {
-                DB::beginTransaction();
+//                DB::beginTransaction();
 
-                try {
+//                try {
                     $orderData->payment_times += 1;
                     $orderData->payment_number = $orderData->number . 'yahsin' . $orderData->payment_times;
                     $orderData->amount = $inputData['amount'];
@@ -102,18 +103,20 @@ class OrderController extends BasicController
 
                     $orderData->save();
 
-                    DB::commit();
+//                    DB::commit();
 
                     if ($inputData['payment'] === 'creditcard') {
                         $ECPayService = new ECPayService;
                         $result = $ECPayService->payByCredit($orderData);
 
                         return $result;
+                    } elseif ($inputData['payment'] === 'paypal') {
+                        $PayPalService = new PayPalService;
+                        $result = $PayPalService->pay($orderData);
                     }
-
-                } catch (\Exception $e) {
-                    DB::rollback();
-                }
+//                } catch (\Exception $e) {
+//                    DB::rollback();
+//                }
             }
         }
 
@@ -153,6 +156,21 @@ class OrderController extends BasicController
             $orderData->save();
 
             MailService::sendMail($orderData);
+        }
+
+        return view('user.order.pay.result.ecpay', compact('orderData'));
+    }
+
+    public function payByPayPalResult(Request $request)
+    {
+        $data = $request->all();
+
+        $PayPalService = new PayPalService;
+        $response = $PayPalService->payResponse($data['token']);
+
+        dd($response);
+        if (isset($response['status']) && $response['status'] == 'COMPLETED') {
+
         }
 
         return view('user.order.pay.result.ecpay', compact('orderData'));

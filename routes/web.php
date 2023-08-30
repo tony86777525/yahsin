@@ -46,6 +46,8 @@ Route::group([
 //        Route::get('/order/pay/{orderNumber}', [OrderController::class, 'pay'])->name('pay');
 
         Route::post('/order/pay/ecpay/result', [OrderController::class, 'payByECPayCreditResult'])->name('pay.ecpay.result');
+
+        Route::post('/order/pay/paypal/result', [OrderController::class, 'payByPaypalResult'])->name('pay.paypal.result');
     });
 
 //    Route::get('google-drive/file-upload','GoogleDriveController@googleDriveFilePpload')->name('google.drive.file.upload');

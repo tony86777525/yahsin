@@ -11,10 +11,6 @@ class ECPayService
 {
     private $factory;
     private $urlService;
-    const CREDIT_CARD_NO = '4311-9522-2222-2222';
-    const CREDIT_CARD_SAFE_NO = '222';
-    const CREDIT_CARD_VALIDITY_YEAR = '2100';
-    const CREDIT_CARD_VALIDITY_MONTH = '12';
 
     public function __construct()
     {
@@ -52,7 +48,7 @@ class ECPayService
             'MerchantTradeDate' => Carbon::now()->format('Y/m/d H:i:s'),
             'PaymentType' => 'aio',
             'TotalAmount' => $data['price'],
-            'TradeDesc' => UrlService::ecpayUrlEncode('yahsin'),
+            'TradeDesc' => $this->urlService->ecpayUrlEncode('yahsin'),
             'ItemName' => 'yahsin',
             'ChoosePayment' => 'Credit',
             'EncryptType' => 1,
