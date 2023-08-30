@@ -14,5 +14,6 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         'api/order/pay/ecpay/notify',
         'order/pay/ecpay/result',
+        'order/pay/paypal/notify'
     ];
 }
