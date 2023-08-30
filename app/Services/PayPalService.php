@@ -2,34 +2,42 @@
 
 namespace App\Services;
 
+use Google\Exception;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 use Carbon\Carbon;
 
 class PayPalService
 {
+    private $provider;
+    private $paypalToken;
+
     public function __construct()
-    {}
+    {
+        $this->provider = new PayPalClient;
+        $this->paypalToken = $this->provider->getAccessToken();
+    }
 
     public function pay($data)
     {
-        $provider = new PayPalClient;
-        $paypalToken = $provider->getAccessToken();
-
-        $response = $provider->createOrder([
-            "intent" => "CAPTURE",
-            "application_context" => [
-                "return_url" => route('user.order.pay.paypal.result'),
-                "cancel_url" => route('user.index'),
-            ],
-            "purchase_units" => [
-                0 => [
-                    "amount" => [
-                        "currency_code" => "TWD",
-                        "value" => $data->price
+        $response = $this->provider->createOrder(
+            [
+                "intent" => "CAPTURE",
+                "application_context" => [
+                    'brand_name' => env('APP_NAME'),
+                    "return_url" => route('user.order.pay.paypal.complete', ['orderNumber' => $data->number]),
+                    "cancel_url" => route('user.order.pay.paypal.complete', ['orderNumber' => $data->number]),
+                ],
+                "purchase_units" => [
+                    0 => [
+                        "custom_id" => $data->payment_number,
+                        "amount" => [
+                            "currency_code" => "TWD",
+                            "value" => $data->price
+                        ]
                     ]
                 ]
             ]
-        ]);
+        );
 
         if (isset($response['id']) && $response['id'] != null) {
             // redirect to approve href
@@ -40,15 +48,12 @@ class PayPalService
             }
         }
 
-        return redirect()->route('user.index');
+        throw new Exception('It`s Error to pay by Paypay!');
     }
 
     public function payResponse($data)
     {
-        $provider = new PayPalClient;
-        $provider->getAccessToken();
-
-        $response = $provider->capturePaymentOrder($data['token']);
+        $response = $this->provider->capturePaymentOrder($data['PayerID']);
 
         return $response;
     }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Models\Order;
+use Illuminate\Support\Facades\Storage;
 
 class IndexController extends BasicController
 {
