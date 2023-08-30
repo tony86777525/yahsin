@@ -166,32 +166,33 @@ class OrderController extends BasicController
     {
         $data = $request->all();
 
-        if (!isset($_GET['PayerID'])) {
-            throw new Exception('It`s Cancel to pay by Paypay!');
+        $payPalService = new PayPalService;
+        $response = $payPalService->payResponse($data['token']);
+
+        if (isset($response['status']) && $response['status'] == 'COMPLETED') {
+            try {
+                $orderData = Order::firstWhere('payment_number', $orderNumber);
+
+                if (empty($orderData)) {
+                    abort('404');
+                }
+
+                if (!empty($orderData)) {
+                    $orderData->status = Order::STATUS_PAID;
+                    $orderData->save();
+
+                    DB::commit();
+
+                    MailService::sendMail($orderData);
+
+                    return view('user.order.complete', compact('orderNumber'));
+                }
+            } catch (\Exception $e) {
+                DB::rollback();
+            }
         }
 
-        try {
-            $orderData = Order::firstWhere('payment_number', $orderNumber);
-
-            if (empty($orderData)) {
-                abort('404');
-            }
-
-            if (!empty($orderData)) {
-                $orderData->status = Order::STATUS_PAID;
-                $orderData->save();
-
-                DB::commit();
-
-                MailService::sendMail($orderData);
-
-                return view('user.order.complete', compact('orderNumber'));
-            }
-        } catch (\Exception $e) {
-            DB::rollback();
-        }
-
-        return view('user.order.complete', compact('orderNumber'));
+        throw new Exception('It`s Cancel to pay by Paypay!');
     }
 
     public function payByPaypalNotify(Request $request)

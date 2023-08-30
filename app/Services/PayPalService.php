@@ -51,9 +51,9 @@ class PayPalService
         throw new Exception('It`s Error to pay by Paypay!');
     }
 
-    public function payResponse($data)
+    public function payResponse($token)
     {
-        $response = $this->provider->capturePaymentOrder($data['PayerID']);
+        $response = $this->provider->capturePaymentOrder($token);
 
         return $response;
     }
