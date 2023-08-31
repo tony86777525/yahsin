@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Storage;
 
 class IndexController extends BasicController
 {
-
     public function __construct()
     {
     }

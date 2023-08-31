@@ -199,6 +199,11 @@ class OrderController extends BasicController
     {
         $data = $request->all();
         Storage::put('notify_' . date('YmdHis') . '.txt', json_encode($data));
+
+        $payPalService = new PayPalService;
+        $response = $payPalService->verifyIPN($request);
+
+        header("HTTP/1.1 200 OK");
 //        $payPalService = new PayPalService;
 //        $response = $payPalService->payResponse($data);
 //

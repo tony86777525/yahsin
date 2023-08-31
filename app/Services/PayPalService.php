@@ -57,4 +57,11 @@ class PayPalService
 
         return $response;
     }
+
+    public function verifyIPN($request)
+    {
+        $response = $this->provider->verifyIPN($request);
+
+        return $response;
+    }
 }
