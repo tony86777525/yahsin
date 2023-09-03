@@ -87,9 +87,9 @@ class OrderController extends BasicController
         $orderData = Order::firstWhere('number', $orderNumber);
 
         if (!empty($orderData)) {
-//            DB::beginTransaction();
-//
-//            try {
+            DB::beginTransaction();
+
+            try {
                 $orderData->payment_times += 1;
                 $orderData->payment_number = $orderData->number;
                 $orderData->amount = $inputData['amount'];
@@ -106,7 +106,7 @@ class OrderController extends BasicController
 
                 $orderData->save();
 
-//                DB::commit();
+                DB::commit();
 
                 if ($inputData['payment'] === 'creditcard') {
                     $ECPayService = new ECPayService;
@@ -119,9 +119,9 @@ class OrderController extends BasicController
 
                     return $result;
                 }
-//            } catch (\Exception $e) {
-//                DB::rollback();
-//            }
+            } catch (\Exception $e) {
+                DB::rollback();
+            }
         }
 
         return redirect()
@@ -192,9 +192,12 @@ class OrderController extends BasicController
             }
         }
 
-        throw new Exception('It`s Cancel to pay by Paypay!');
+        return 'It`s cancel to pay by Paypay!';
     }
 
+    /*
+     * no use
+     */
     public function payByPaypalNotify(Request $request)
     {
         $data = $request->all();

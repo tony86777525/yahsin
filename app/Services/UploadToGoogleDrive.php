@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\GoogleAccessToken;
 use Google_Client;
 use Google_Service_Drive;
 use Google_Service_Drive_DriveFile;
@@ -11,26 +12,19 @@ class UploadToGoogleDrive
     private $fileId;
     private $accessToken;
     private $googleClientSecret;
-//    const GOOGLE_DRIVE_FILE_ID = '1m3WNr1Yr8vUTzBBAMxgbjOFmYvCsryNj';
-//    const ACCESS_TOKEN = [
-//        "access_token" => "ya29.a0AWY7CklXwZrtD0UjcNmKLE2K9HJxIrh41U8hN_Pbc4DoOsF-OMPEXOnwTiYTK3sWz0C33q7x4B2BtMZ_oA0wyMuRMsgXgZrNWzOusmCEGhKp4u1fHV7dfmzrz8qEqJnpATgYxSRBOfhXedkPgf5w0iQESh81aCgYKAbYSARESFQG1tDrpZFPP1VnkyT1zJoqj4fxhTQ0163",
-//        "expires_in" => 3599,
-//        "refresh_token" => "1//0emAbqXoaIRcHCgYIARAAGA4SNwF-L9IrKsofXkOzF-XzJ9W7ha15UsAUKQLpe6Yu6skM5E9T4eKpXaLvu_Vgh7dNi4Jc-yTRHcM",
-//        "scope" => "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file",
-//        "token_type" => "Bearer",
-//        "created" => 1686887911,
-//    ];
 
     public function __construct()
     {
-        $this->fileId = env('GOOGLE_DRIVE_FILE_ID');
+        $googleAccessToken = GoogleAccessToken::all()->pluck('value', 'key');
+
+        $this->fileId = $googleAccessToken['GOOGLE_DRIVE_FILE_ID'];
         $this->accessToken = [
-            "access_token" => env('GOOGLE_DRIVE_ACCESS_TOKEN'),
-            "expires_in" => env('GOOGLE_DRIVE_EXPIRES_IN'),
-            "refresh_token" => env('GOOGLE_DRIVE_REFRESH_TOKEN'),
-            "token_type" => env('GOOGLE_DRIVE_TOKEN_TYPE'),
-            "created" => env('GOOGLE_DRIVE_CREATED'),
-            "scope" => env('GOOGLE_DRIVE_SCOPE'),
+            "access_token" => $googleAccessToken['GOOGLE_DRIVE_ACCESS_TOKEN'],
+            "expires_in" => $googleAccessToken['GOOGLE_DRIVE_EXPIRES_IN'],
+            "refresh_token" => $googleAccessToken['GOOGLE_DRIVE_REFRESH_TOKEN'],
+            "token_type" => $googleAccessToken['GOOGLE_DRIVE_TOKEN_TYPE'],
+            "created" => $googleAccessToken['GOOGLE_DRIVE_CREATED'],
+            "scope" => $googleAccessToken['GOOGLE_DRIVE_SCOPE'],
         ];
 
         $this->googleClientSecret = env('GOOGLE_CLIENT_SECRET');

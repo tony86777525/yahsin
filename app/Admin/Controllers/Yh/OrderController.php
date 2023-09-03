@@ -88,7 +88,7 @@ class OrderController extends AdminController
         });
 
         $grid->disableBatchActions();
-//        $grid->disableCreateButton();
+        $grid->disableCreateButton();
         $grid->disableExport();
         $grid->disableColumnSelector();
         $grid->disablePagination();

@@ -2,9 +2,7 @@
 
 namespace App\Services;
 
-use Google\Exception;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
-use Carbon\Carbon;
 
 class PayPalService
 {
@@ -48,7 +46,7 @@ class PayPalService
             }
         }
 
-        throw new Exception('It`s Error to pay by Paypay!');
+        return 'It`s Error to pay by Paypay!';
     }
 
     public function payResponse($token)

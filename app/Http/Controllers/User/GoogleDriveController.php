@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\GoogleAccessToken;
 use Illuminate\Http\Request;
 
 class GoogleDriveController extends Controller
@@ -45,16 +46,26 @@ class GoogleDriveController extends Controller
         }
 
         if ($this->gClient->getAccessToken()){
+            $token = $request->session()->get('token');
+            GoogleAccessToken::where('key', 'GOOGLE_DRIVE_ACCESS_TOKEN')
+                ->update(['value' => $token['access_token']]);
 
-            //FOR LOGGED IN USER, GET DETAILS FROM GOOGLE USING ACCES
-//            $user = User::find(1);
-//
-//            $user->access_token = json_encode($request->session()->get('token'));
-//
-//            $user->save();
+            GoogleAccessToken::where('key', 'GOOGLE_DRIVE_REFRESH_TOKEN')
+                ->update(['value' => $token['refresh_token']]);
 
-            dd($request->session()->get('token'));
+            GoogleAccessToken::where('key', 'GOOGLE_DRIVE_CREATED')
+                ->update(['value' => $token['created']]);
 
+            GoogleAccessToken::where('key', 'GOOGLE_DRIVE_EXPIRES_IN')
+                ->update(['value' => $token['expires_in']]);
+
+            GoogleAccessToken::where('key', 'GOOGLE_DRIVE_TOKEN_TYPE')
+                ->update(['value' => $token['token_type']]);
+
+            GoogleAccessToken::where('key', 'GOOGLE_DRIVE_SCOPE')
+                ->update(['value' => $token['scope']]);
+
+            return "Google Drive API set up successfully";
         } else{
 
             // FOR GUEST USER, GET GOOGLE LOGIN URL

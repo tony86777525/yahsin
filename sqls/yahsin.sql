@@ -29,7 +29,8 @@ INSERT INTO `admin_menu` (`id`, `parent_id`, `order`, `title`, `icon`, `uri`, `p
 	(6, 2, 6, 'Menu', 'fa-bars', 'auth/menu', NULL, NULL, NULL),
 	(7, 2, 7, 'Operation log', 'fa-history', 'auth/logs', NULL, NULL, NULL),
 	(8, 0, 8, '資料管理', 'fa-bars', NULL, NULL, '2023-06-22 14:18:24', '2023-06-22 14:18:48'),
-	(9, 8, 0, '訂單管理', 'fa-file-text-o', 'orders', NULL, '2023-06-22 14:19:18', '2023-06-22 14:20:31');
+	(9, 8, 0, '訂單管理', 'fa-file-text-o', 'orders', NULL, '2023-06-22 14:19:18', '2023-06-22 14:20:31'),
+    (10, 8, 0, 'Google Drive API 設定', 'fa-gear', 'google_access_tokens', null, '2023-09-03 22:13:42', '2023-09-03 22:18:59');
 
 CREATE TABLE IF NOT EXISTS `admin_operation_log` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -239,7 +240,27 @@ CREATE TABLE IF NOT EXISTS `yh_orders` (
   `created_at` varchar(255) DEFAULT NULL,
   `updated_at` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+CREATE TABLE IF NOT EXISTS `yh_google_access_tokens` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `key` varchar(255) NOT NULL,
+  `value` varchar(255) DEFAULT NULL,
+  `created_at` varchar(255) DEFAULT NULL,
+  `updated_at` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `yh_google_access_tokens` (`key`, `value`, `created_at`, `updated_at`) VALUES
+    ('GOOGLE_DRIVE_ACCESS_TOKEN', 'ya29.a0AWY7CklXwZrtD0UjcNmKLE2K9HJxIrh41U8hN_Pbc4DoOsF-OMPEXOnwTiYTK3sWz0C33q7x4B2BtMZ_oA0wyMuRMsgXgZrNWzOusmCEGhKp4u1fHV7dfmzrz8qEqJnpATgYxSRBOfhXedkPgf5w0iQESh81aCgYKAbYSARESFQG1tDrpZFPP1VnkyT1zJoqj4fxhTQ0163', now(), now()),
+    ('GOOGLE_DRIVE_REFRESH_TOKEN', '1//0emAbqXoaIRcHCgYIARAAGA4SNwF-L9IrKsofXkOzF-XzJ9W7ha15UsAUKQLpe6Yu6skM5E9T4eKpXaLvu_Vgh7dNi4Jc-yTRHcM', now(), now()),
+    ('GOOGLE_DRIVE_CREATED', '1686887911', now(), now()),
+    ('GOOGLE_DRIVE_EXPIRES_IN', '3599', now(), now()),
+    ('GOOGLE_DRIVE_TOKEN_TYPE', 'Bearer', now(), now()),
+    ('GOOGLE_DRIVE_SCOPE', 'https://www.googleapis.com/auth/drive%20https://www.googleapis.com/auth/drive.file', now(), now()),
+    ('GOOGLE_DRIVE_FILE_ID', '1m3WNr1Yr8vUTzBBAMxgbjOFmYvCsryNj', now(), now());
+
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
