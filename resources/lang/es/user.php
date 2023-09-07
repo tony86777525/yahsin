@@ -11,15 +11,15 @@ return [
 
     // index
     'landingText.title'                   => 'Servicio Online de Apostilla',
-    'landingText.description.paragraph.1' => 'Servicio rápido para la Apostilla de【Copia del Documento】.',
-    'landingText.description.paragraph.2' => 'No es necesario el documento original.',
-    'landingText.description.paragraph.3' => 'Sube su documento electrónico en cualquier formato digital .',
+    'landingText.description.paragraph.1' => 'Servicio rápido para la Apostilla de【Copia del Documento】',
+    'landingText.description.paragraph.2' => 'No es necesario el documento original',
+    'landingText.description.paragraph.3' => 'Sube su documento electrónico en cualquier formato digital',
     'landingText.description.paragraph.4' => 'Confirmamos dentro de 48 horas, tiempo necesario de trabajo【10-12 días de trabajo 】',
     'landingText.description.paragraph.5' => 'Costo Fijo【NTD8800】',
     'landingText.description.paragraph.6' => 'Luego de la Apostilla mandamos a través de SF/DHL EXPRESS a todo el mundo【sin pago extra】',
 
     'landingForm.title'                   => 'Order Your Apostille(s)',
-    'landingForm.notice.1'                => 'Upload your digital copy of your document(s)。',
+    'landingForm.notice.1'                => 'Upload your digital copy of your document(s).',
     'landingForm.notice.2'                => 'You can upload document from your computer, or take a photo with your mobile phone.',
     'landingForm.button.submit'           => 'Order apostille(s)',
     'landingForm.label.name'              => 'Nombre',

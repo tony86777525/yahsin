@@ -50,7 +50,7 @@ $(function(){
             let amount = amountTarget.value;
             amount = Math.abs(parseInt(amount));
 
-            if (amount > 0 && Number.isInteger(amount) === true) {
+            if (!(amount > 0 && Number.isInteger(amount) === true)) {
                 amount = 1
             }
 

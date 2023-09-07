@@ -11,15 +11,15 @@ return [
 
     // index
     'landingText.title'                   => 'Apostille Service Online',
-    'landingText.description.paragraph.1' => 'Fast Service for Apostille【copies of documents】.',
-    'landingText.description.paragraph.2' => 'Not necessary the original document.',
-    'landingText.description.paragraph.3' => 'Upload your document in any digital format .',
+    'landingText.description.paragraph.1' => 'Fast Service for Apostille【copies of documents】',
+    'landingText.description.paragraph.2' => 'Not necessary the original document',
+    'landingText.description.paragraph.3' => 'Upload your document in any digital format',
     'landingText.description.paragraph.4' => 'We confirm within 48 hours, needed【10-12 business days】',
     'landingText.description.paragraph.5' => 'Fixed Fee【NT$8800】per apostille',
     'landingText.description.paragraph.6' => 'After the Apostille we send to you without extra payment【International Free Shipping】',
 
     'landingForm.title'                   => 'Order Your Apostille(s)',
-    'landingForm.notice.1'                => 'Upload your digital copy of your document(s)。',
+    'landingForm.notice.1'                => 'Upload your digital copy of your document(s).',
     'landingForm.notice.2'                => 'You can upload document from your computer, or take a photo with your mobile phone.',
     'landingForm.button.submit'           => 'Order apostille(s)',
     'landingForm.label.name'              => 'Name',
@@ -41,7 +41,7 @@ return [
     'featureBoard.4.paragraph.1'          => 'Affidavit by a Hong Kong',
     'featureBoard.4.paragraph.2'          => 'Notary Public',
 
-    'flow.title'                          => '5 Fast Steps，Without Leaving Home<br>Finish Your Apostille Online at Home.',
+    'flow.title'                          => '5 Fast Steps, Without Leaving Home<br>Finish Your Apostille Online at Home.',
     'flow.content.intro'                  => 'We process quickly the Apostille of any copy document, Fast Apostille service for 【electronic document in any digital format (digital file)】.',
     'flow.content.benefit.1'              => 'Not necessary the original document',
     'flow.content.benefit.2'              => 'Without Leaving Home',
