@@ -32,13 +32,13 @@
                                 <div class="billSelect">
                                     <div class="fancyWrap fancyWrap--bill">
                                         <select name="bill" class="fancySelect fancySelect--bill">
-                                            <option value="twd">NT$</option>
-                                            <option value="usd">USD</option>
-                                            <option value="rmb">RMB￥</option>
+                                            <option value="TWD">NT$</option>
+                                            <option value="USD">USD</option>
+                                            <option value="CNY">RMB￥</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="priceShow">{{ __('user.cart.content.price', ['price' => 8800]) }}</div>
+                                <div class="priceShow">{!! __('user.cart.content.price', ['price' => App\Models\Order::PRICE]) !!}</div>
                             </div>
                             <div class="price__note">{{ __('user.cart.content.price.note') }}</div>
                         </div>
@@ -55,9 +55,12 @@
                                 </div>
                                 <div class="action">
                                     <div class="btnWrap btnWrap--submit">
-                                        <button type="button" class="btn btn--submit"><span class="btn__text">{{ __('user.cart.content.amount.button') }}</span></button>
+                                        <button type="button" class="btn btn--submit" data-js-button="amount"><span class="btn__text">{{ __('user.cart.content.amount.button') }}</span></button>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="amount__price">
+                                總金額<span class="count" data-js="totalPrice">{{ App\Models\Order::PRICE }}</span>
                             </div>
                         </div>
                     </div>
@@ -93,7 +96,7 @@
                                     <input
                                         name="recipient_name"
                                         type="text"
-                                        value="{{ old('recipient_name') ?? !empty($orderData->recipient_name) ? $orderData->recipient_name : $orderData->name }}"
+                                        value="{{ old('recipient_name') ?? '' }}"
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
@@ -105,7 +108,7 @@
                                     <input
                                         name="recipient_company_name"
                                         type="text"
-                                        value="{{ old('recipient_company_name') ?? $orderData->recipient_company_name }}"
+                                        value="{{ old('recipient_company_name') ?? 'veve' }}"
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
@@ -115,7 +118,7 @@
                         <div class="formCol">
                             <span class="formLabel">{{ __('user.delivery.recipient_address_nation') }}</span>
                             <div class="fancyWrap fancyWrap--country">
-                                <select name="recipient_address_nation" class="fancySelect fancySelect--country gds-cr gds-countryflag" id="countrySelection" country-data-region-id="gds-cr-one" data-language="{{ session()->get('webLanguage') }}">
+                                <select name="recipient_address_nation" class="fancySelect fancySelect--country gds-cr gds-countryflag select2" id="countrySelection" country-data-region-id="gds-cr-one" data-language="{{ session()->get('webLanguage') }}">
                                     <option value=""></option>
                                 </select>
                             </div>
@@ -135,7 +138,7 @@
                                     <input
                                         name="recipient_address_code"
                                         type="text"
-                                        value="{{ old('recipient_address_code') ?? $orderData->recipient_address_code }}"
+                                        value="{{ old('recipient_address_code') ?? '104' }}"
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
@@ -149,7 +152,7 @@
                                     <input
                                         name="recipient_address"
                                         type="text"
-                                        value="{{ old('recipient_address') ?? $orderData->recipient_address }}"
+                                        value="{{ old('recipient_address') ?? '台北市台北市台北市台北市' }}"
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
@@ -163,7 +166,7 @@
                                     <input
                                         name="recipient_tel"
                                         type="text"
-                                        value="{{ old('recipient_tel') ?? $orderData->recipient_tel }}"
+                                        value="{{ old('recipient_tel') ?? '0912345678' }}"
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
@@ -175,7 +178,7 @@
                                     <input
                                         name="recipient_email"
                                         type="text"
-                                        value="{{ old('recipient_email') ?? !empty($orderData->recipient_email) ? $orderData->recipient_email : $orderData->email }}"
+                                        value="{{ old('recipient_email') ?? 'tony86777525@gmail.com' }}"
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
@@ -206,6 +209,10 @@
 
 @push('page_script')
     <script src="/js/user/cart.js"></script>
-    <script src="/js/geodatasource-cr.min.js"></script>
-    <script src="/js/gettext.js"></script>
+    <script src="/languages/geodatasource-cr.min.js"></script>
+    <script src="/languages/gettext.js"></script>
+    <script>
+        window.orderPrice = {{ App\Models\Order::PRICE }};
+        window.orderPriceRate = 1;
+    </script>
 @endPush

@@ -38,7 +38,7 @@ class ECPayController
     public function credit(StoreECPayRequest $request): JsonResponse
     {
         $data = $request->all();
-dd($data);
+
         if (!empty($data['number'])) {
             $orderData = Order::firstWhere('number', $data['number']);
 

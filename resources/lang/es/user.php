@@ -11,15 +11,15 @@ return [
 
     // index
     'landingText.title'                   => 'Servicio Online de Apostilla',
-    'landingText.description.paragraph.1' => 'Servicio rápido para la Apostilla de【Copia del Documento】.',
-    'landingText.description.paragraph.2' => 'No es necesario el documento original.',
-    'landingText.description.paragraph.3' => 'Sube su documento electrónico en cualquier formato digital .',
+    'landingText.description.paragraph.1' => 'Servicio rápido para la Apostilla de【Copia del Documento】',
+    'landingText.description.paragraph.2' => 'No es necesario el documento original',
+    'landingText.description.paragraph.3' => 'Sube su documento electrónico en cualquier formato digital',
     'landingText.description.paragraph.4' => 'Confirmamos dentro de 48 horas, tiempo necesario de trabajo【10-12 días de trabajo 】',
     'landingText.description.paragraph.5' => 'Costo Fijo【NTD8800】',
     'landingText.description.paragraph.6' => 'Luego de la Apostilla mandamos a través de SF/DHL EXPRESS a todo el mundo【sin pago extra】',
 
     'landingForm.title'                   => 'Order Your Apostille(s)',
-    'landingForm.notice.1'                => 'Upload your digital copy of your document(s)。',
+    'landingForm.notice.1'                => 'Upload your digital copy of your document(s).',
     'landingForm.notice.2'                => 'You can upload document from your computer, or take a photo with your mobile phone.',
     'landingForm.button.submit'           => 'Order apostille(s)',
     'landingForm.label.name'              => 'Nombre',
@@ -97,7 +97,7 @@ return [
 
     // confirm
     'cart.title'                          => 'Confirm Order Quantity',
-    'cart.content.price'                  => 'NTD $:price',
+    'cart.content.price'                  => '$<span data-js="price">:price</span>',
     'cart.content.price.note'             => 'This is an approximate amount. Due to the exchange rate conversion, foreign consumption is still mainly based on the requested amount.',
     'cart.content.paragraph'              => 'Nuestro servicio de Apostilla:Está incluido la fotocopia en color de su documento,<br>realización de una declaración jurada en inglés por un notario público, y luego enviar al tribunal superior de Hong Kong para sellar la Apostilla.<br>Está inlcuido el pago de Apostilla, tarifa de autoridad pública y otros gastos.<br>Servicio de DHL /SF EXPRESS (sin pago extra) a todo el mundo.<br>No es necesario enviar el documento original, copiamos y escaneamos su documento en color.',
     'cart.content.amount'                 => 'Si ud. envia más de 1 documento, por favor modifique manualmente la siguiente cantidad de documentos:',

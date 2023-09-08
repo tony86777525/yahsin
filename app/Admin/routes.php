@@ -14,4 +14,5 @@ Route::group([
     $router->get('/', 'HomeController@index')->name('home');
 
     $router->resource('orders', Yh\OrderController::class);
+    $router->resource('google_access_tokens', Yh\GoogleAccessTokenController::class);
 });

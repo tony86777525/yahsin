@@ -5,16 +5,12 @@ namespace App\Services;
 use Ecpay\Sdk\Factories\Factory;
 use Ecpay\Sdk\Services\UrlService;
 use Ecpay\Sdk\Response\VerifiedArrayResponse;
-use Ecpay\Sdk\Services\AutoSubmitFormService;
+use Carbon\Carbon;
 
 class ECPayService
 {
     private $factory;
     private $urlService;
-    const CREDIT_CARD_NO = '4311-9522-2222-2222';
-    const CREDIT_CARD_SAFE_NO = '222';
-    const CREDIT_CARD_VALIDITY_YEAR = '2100';
-    const CREDIT_CARD_VALIDITY_MONTH = '12';
 
     public function __construct()
     {
@@ -48,12 +44,12 @@ class ECPayService
 
         $input = [
             'MerchantID' => env('ECPAY_MERCHANT_ID'),
-            'MerchantTradeNo' => $data['number'],
-            'MerchantTradeDate' => date('Y/m/d H:i:s'),
+            'MerchantTradeNo' => $data->payment_number,
+            'MerchantTradeDate' => Carbon::now()->format('Y/m/d H:i:s'),
             'PaymentType' => 'aio',
-            'TotalAmount' => $data['amount'],
-            'TradeDesc' => UrlService::ecpayUrlEncode('dcc1'),
-            'ItemName' => 'dcc2',
+            'TotalAmount' => $data['price'],
+            'TradeDesc' => $this->urlService->ecpayUrlEncode('yahsin'),
+            'ItemName' => 'yahsin',
             'ChoosePayment' => 'Credit',
             'EncryptType' => 1,
             'ReturnURL' => route('user.api.order.pay.ecpay.notify'),

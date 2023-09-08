@@ -6,10 +6,15 @@ use App\Http\Requests\StoreOrderFirstRequest;
 use App\Http\Requests\StoreOrderSecondRequest;
 use App\Models\Order;
 use App\Services\ECPayService;
+use App\Services\PayPalService;
+use App\Services\MailService;
 use App\Services\OrderService;
 use App\Services\UploadToGoogleDrive;
+use Carbon\Carbon;
+use Google\Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class OrderController extends BasicController
 {
@@ -32,6 +37,7 @@ class OrderController extends BasicController
                 'name' => $orderData['name'],
                 'email' => $orderData['email'],
                 'country' => $orderData['country'],
+                'created_at_date' => Carbon::now()->format('Ymd'),
             ]);
 
             $filesData = $request->file('files');
@@ -59,9 +65,11 @@ class OrderController extends BasicController
     {
         $orderData = Order::firstWhere('number', $orderNumber);
 
-        if (empty($orderData)) {
-            return redirect()
-                ->route('user.index');
+        if (
+            empty($orderData)
+            || !in_array($orderData->status, [Order::STATUS_UNPAID, Order::STATUS_NEW])
+        ) {
+            abort('404');
         }
 
         return view('user.order.confirm', compact('orderData'));
@@ -71,46 +79,48 @@ class OrderController extends BasicController
     {
         $inputData = $request->post();
 
-        if (!empty($inputData['number'])) {
-            $orderNumber = $inputData['number'];
+        if (empty($inputData['number'])) {
+            abort('404');
+        }
 
-            $orderData = Order::firstWhere('number', $orderNumber);
+        $orderNumber = $inputData['number'];
+        $orderData = Order::firstWhere('number', $orderNumber);
 
-            if (!empty($orderData)) {
-                DB::beginTransaction();
+        if (!empty($orderData)) {
+            DB::beginTransaction();
 
-                try {
-                    $orderData->amount = $inputData['amount'];
-                    $orderData->price = $orderData->amount * Order::PRICE;
-                    $orderData->recipient_name = $inputData['recipient_name'];
-                    $orderData->recipient_company_name = $inputData['recipient_company_name'];
-                    $orderData->recipient_address_nation = $inputData['recipient_address_nation'];
-                    $orderData->recipient_address_country = $inputData['recipient_address_country'];
-                    $orderData->recipient_address_code = $inputData['recipient_address_code'];
-                    $orderData->recipient_address = $inputData['recipient_address'];
-                    $orderData->recipient_tel = $inputData['recipient_tel'];
-                    $orderData->recipient_email = $inputData['recipient_email'];
-                    $orderData->status = Order::STATUS_UNPAID;
+            try {
+                $orderData->payment_times += 1;
+                $orderData->payment_number = $orderData->number;
+                $orderData->amount = $inputData['amount'];
+                $orderData->price = $orderData->amount * Order::PRICE;
+                $orderData->recipient_name = $inputData['recipient_name'];
+                $orderData->recipient_company_name = $inputData['recipient_company_name'];
+                $orderData->recipient_address_nation = $inputData['recipient_address_nation'];
+                $orderData->recipient_address_country = $inputData['recipient_address_country'];
+                $orderData->recipient_address_code = $inputData['recipient_address_code'];
+                $orderData->recipient_address = $inputData['recipient_address'];
+                $orderData->recipient_tel = $inputData['recipient_tel'];
+                $orderData->recipient_email = $inputData['recipient_email'];
+                $orderData->status = Order::STATUS_UNPAID;
 
-                    $orderData->save();
+                $orderData->save();
 
-                    DB::commit();
+                DB::commit();
 
-                    if ($inputData['payment'] === 'creditcard') {
-                        if (!empty($inputData['number'])) {
-                            $orderData = Order::firstWhere('number', $inputData['number']);
+                if ($inputData['payment'] === 'creditcard') {
+                    $ECPayService = new ECPayService;
+                    $result = $ECPayService->payByCredit($orderData);
 
-                            $ECPayService = new ECPayService;
+                    return $result;
+                } elseif ($inputData['payment'] === 'paypal') {
+                    $payPalService = new PayPalService;
+                    $result = $payPalService->pay($orderData);
 
-                            $result = $ECPayService->payByCredit($orderData);
-
-                            return $result;
-                        }
-                    }
-
-                } catch (\Exception $e) {
-                    DB::rollback();
+                    return $result;
                 }
+            } catch (\Exception $e) {
+                DB::rollback();
             }
         }
 
@@ -118,29 +128,90 @@ class OrderController extends BasicController
             ->route('user.index');
     }
 
-//    public function pay($orderNumber)
-//    {
-//        $orderData = Order::firstWhere('number', $orderNumber);
-//
-//        if (empty($orderData)) {
-//            return redirect()
-//                ->route('user.index');
-//        }
-//
-//        return view('user.order.pay', compact('orderData'));
-//    }
-
-    public function payByECPayCreditResult(Request $request)
+    public function payByECPayCreditComplete($orderNumber, Request $request)
     {
         $data = $request->all();
 
-        $ECPayService = new ECPayService;
-        $payResult = $ECPayService->checkoutResponse($data);
+        DB::beginTransaction();
 
-        $orderNumber = $payResult['MerchantTradeNo'];
+        try {
+            $ECPayService = new ECPayService;
+            $payResult = $ECPayService->checkoutResponse($data);
 
-        $orderData = Order::firstWhere('number', $orderNumber);
+            $orderPaymentNumber = $payResult['MerchantTradeNo'];
+            $orderData = Order::firstWhere('payment_number', $orderPaymentNumber);
 
-        return view('user.order.pay.result.ecpay', compact('orderData'));
+            if (empty($orderData)) {
+                abort('404');
+            }
+
+            if (!empty($orderData)) {
+                $orderData->status = Order::STATUS_PAID;
+                $orderData->save();
+
+                DB::commit();
+
+                MailService::sendMail($orderData);
+
+                return view('user.order.complete', compact('orderNumber'));
+            }
+        } catch (\Exception $e) {
+            DB::rollback();
+        }
+
+        abort('404');
+    }
+
+    public function payByPaypalComplete($orderNumber, Request $request)
+    {
+        $data = $request->all();
+
+        $payPalService = new PayPalService;
+        $response = $payPalService->payResponse($data['token']);
+
+        if (isset($response['status']) && $response['status'] == 'COMPLETED') {
+            try {
+                $orderData = Order::firstWhere('payment_number', $orderNumber);
+
+                if (empty($orderData)) {
+                    abort('404');
+                }
+
+                if (!empty($orderData)) {
+                    $orderData->status = Order::STATUS_PAID;
+                    $orderData->save();
+
+                    DB::commit();
+
+                    MailService::sendMail($orderData);
+
+                    return view('user.order.complete', compact('orderNumber'));
+                }
+            } catch (\Exception $e) {
+                DB::rollback();
+            }
+        }
+
+        return 'It`s cancel to pay by Paypay!';
+    }
+
+    /*
+     * no use
+     */
+    public function payByPaypalNotify(Request $request)
+    {
+        $data = $request->all();
+        Storage::put('notify_' . date('YmdHis') . '.txt', json_encode($data));
+
+        $payPalService = new PayPalService;
+        $response = $payPalService->verifyIPN($request);
+
+        header("HTTP/1.1 200 OK");
+//        $payPalService = new PayPalService;
+//        $response = $payPalService->payResponse($data);
+//
+//        if (isset($response['status']) && $response['status'] == 'COMPLETED') {
+//
+//        }
     }
 }

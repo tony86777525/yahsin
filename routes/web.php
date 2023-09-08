@@ -4,6 +4,7 @@ use App\Http\Controllers\User\Api\CaptchaController;
 use App\Http\Controllers\User\Api\OrderPay\ECPayController;
 use App\Http\Controllers\User\IndexController;
 use App\Http\Controllers\User\OrderController;
+use App\Http\Controllers\User\GoogleDriveController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,20 +38,18 @@ Route::group([
         'as' => 'order.',
     ], function () {
         Route::post('/order/store/first', [OrderController::class, 'storeFirst'])->name('store.first');
-
-        Route::get('/order/confirm/{orderNumber}', [OrderController::class, 'confirm'])->name('confirm');
-
+        Route::get('/order/{orderNumber}/confirm', [OrderController::class, 'confirm'])->name('confirm');
         Route::post('/order/store/second', [OrderController::class, 'storeSecond'])->name('store.second');
+        Route::post('/order/{orderNumber}/pay/ecpay/complete', [OrderController::class, 'payByECPayCreditComplete'])->name('pay.ecpay.complete');
+        Route::get('/order/{orderNumber}/pay/paypal/complete', [OrderController::class, 'payByPaypalComplete'])->name('pay.paypal.complete');
 
-//        Route::get('/order/pay/{orderNumber}', [OrderController::class, 'pay'])->name('pay');
-
-        Route::post('/order/pay/ecpay/result', [OrderController::class, 'payByECPayCreditResult'])->name('pay.ecpay.result');
+        Route::post('/order/pay/paypal/notify', [OrderController::class, 'payByPaypalNotify'])->name('pay.paypal.notify');
     });
 
 //    Route::get('google-drive/file-upload','GoogleDriveController@googleDriveFilePpload')->name('google.drive.file.upload');
 });
 
-Route::get('google/login','GoogleDriveController@googleLogin')->name('google.login');
+Route::get('google/login',[GoogleDriveController::class, 'googleLogin'])->name('google.login');
 
 //Route::get('/', function () {
 //    return view('welcome');

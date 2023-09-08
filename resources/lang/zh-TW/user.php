@@ -97,7 +97,7 @@ return [
 
     // confirm
     'cart.title'                          => '確認訂購份數',
-    'cart.content.price'                  => ':price / 件',
+    'cart.content.price'                  => '<span data-js="price">:price</span> / 件',
     'cart.content.price.note'             => '此為大約金額顯示，國外消費因匯率轉換，實際仍以請款金額為主。',
     'cart.content.paragraph'              => '我們的加簽服務：我們將彩色列印您的文件<br>由公證員英文公證宣誓後，至香港高等法院海牙認證(Apostille)加簽。<br>包括公證費、政府規費及雜支。<br>使用DHL Express / SF Express【免運費】全球快遞送到府。<br>我們將掃描及彩色影印您的文件，您無需郵寄原件',
     'cart.content.amount'                 => '如果您上傳了不止一份文件，請手動更新以下文件數量',

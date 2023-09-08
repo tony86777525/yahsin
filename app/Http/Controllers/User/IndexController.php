@@ -6,7 +6,6 @@ use App\Models\Order;
 
 class IndexController extends BasicController
 {
-
     public function __construct()
     {
     }

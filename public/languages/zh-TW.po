@@ -11318,10 +11318,10 @@ msgid "Nantou_TW"
 msgstr "南投"
 
 msgid "New Taipei_TW"
-msgstr "新台北"
+msgstr "新北"
 
 msgid "Penghu_TW"
-msgstr "蕪湖"
+msgstr "澎湖"
 
 msgid "Pingtung_TW"
 msgstr "屏東"

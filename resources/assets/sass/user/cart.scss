@@ -3,6 +3,7 @@
 		"utils/mixin";
 
 @import "~select2/dist/css/select2.css";
+@import "utils/helper";
 
 $path: '../../images/';
 
@@ -54,6 +55,15 @@ $path: '../../images/';
 					vertical-align: middle;
 				}
 			}
+
+			&__price {
+				color: $sub;
+
+				.count {
+					font-weight: bold;
+					color: $main;
+				}
+			}
 		}
 	}
 }
@@ -69,10 +79,13 @@ $path: '../../images/';
 	}
 }
 
-
 // ========== Media Queries ==========
 //Small devices (portrait phones, 320 and up)
 @media only screen and (min-width: 320px) {
+	$fs-title: 1.6rem;
+	$fs-topic: 1.2rem;
+	$fs-content: 1rem;
+
 	.wrapper {
         padding: 0 2.5rem;
     }
@@ -101,25 +114,25 @@ $path: '../../images/';
 					}
 					.priceShow {
 						margin-left: 2.5rem;
-						font-size: 1.2rem;
+						font-size: $fs-topic;
 					}
 				}
 
 				&__note {
 					margin-top: 1.6rem;
-					font-size: 1rem;
+					font-size: $fs-content;
 				}
 			}
 
 			.paragraph {
 				margin: 3rem 0;
-				font-size: 1rem;
+				font-size: $fs-content;
 			}
 
 			.amount {
 				&__text {
 					margin-bottom: 1.6rem;
-					font-size: 1rem;
+					font-size: $fs-content;
 				}
 
 				&__manual {
@@ -132,6 +145,15 @@ $path: '../../images/';
 						margin-left: 2.5rem;
 					}
 				}
+				&__price {
+					margin-top: 1.6rem;
+					font-size: $fs-content;
+					
+					.count {
+						margin-left: 1rem;
+						font-size: $fs-topic;
+					}
+				}
 			}
 		}
 	}
@@ -139,7 +161,6 @@ $path: '../../images/';
 	.pay {
 		.payList {
 			& > li {
-				width: 5rem;
 				margin: 0 1rem;
 			}
 		}
@@ -153,6 +174,10 @@ $path: '../../images/';
 
 //Large devices (laptops, 1280 and up)
 @media only screen and (min-width: 1280px) {
+	$fs-title: 36px;
+	$fs-topic: 28px;
+	$fs-content: 20px;
+
 	.wrapper {
         padding: 0 50px;
     }
@@ -185,26 +210,26 @@ $path: '../../images/';
 						width: 120px;
 					}
 					.priceShow {
-						font-size: 28px;
+						font-size: $fs-topic;
 						margin-left: 30px;
 					}
 				}
 
 				&__note {
 					margin-top: 20px;
-					font-size: 20px;
+					font-size: $fs-content;
 				}
 			}
 
 			.paragraph {
 				margin: 100px 0;
-				font-size: 20px;
+				font-size: $fs-content;
 			}
 
 			.amount {
 				&__text {
 					margin-bottom: 20px;
-					font-size: 20px;
+					font-size: $fs-content;
 				}
 
 				&__manual {
@@ -217,6 +242,16 @@ $path: '../../images/';
 						margin-left: 30px;
 					}
 				}
+
+				&__price {
+					margin-top: 20px;
+					font-size: $fs-content;
+					
+					.count {
+						margin-left: 10px;
+						font-size: $fs-topic;
+					}
+				}
 			}
 		}
 	}
@@ -224,7 +259,6 @@ $path: '../../images/';
 	.pay {
 		.payList {
 			& > li {
-				width: 100px;
 				margin: 0 12px;
 			}
 		}
@@ -237,6 +271,10 @@ $path: '../../images/';
 
 //Extra Large devices (laptops and desktop, 1600 and up)
 @media only screen and (min-width: 1600px) {
+	$fs-title: 50px;
+	$fs-topic: 35px;
+	$fs-content: 28px;
+
 	.wrapper {
         padding: 0 100px;
     }
@@ -267,26 +305,26 @@ $path: '../../images/';
 						width: 150px;
 					}
 					.priceShow {
-						font-size: 35px;
+						font-size: $fs-topic;
 						margin-left: 50px;
 					}
 				}
 
 				&__note {
 					margin-top: 30px;
-					font-size: 28px;
+					font-size: $fs-content;
 				}
 			}
 
 			.paragraph {
 				margin: 130px 0;
-				font-size: 28px;
+				font-size: $fs-content;
 			}
 
 			.amount {
 				&__text {
 					margin-bottom: 30px;
-					font-size: 28px;
+					font-size: $fs-content;
 				}
 
 				&__manual {
@@ -299,6 +337,16 @@ $path: '../../images/';
 						margin-left: 50px;
 					}
 				}
+
+				&__price {
+					margin-top: 30px;
+					font-size: $fs-content;
+					
+					.count {
+						margin-top: 20px;
+						font-size: $fs-topic;
+					}
+				}
 			}
 		}
 	}
@@ -306,7 +354,6 @@ $path: '../../images/';
 	.pay {
 		.payList {
 			& > li {
-				width: 150px;
 				margin: 0 20px;
 			}
 		}

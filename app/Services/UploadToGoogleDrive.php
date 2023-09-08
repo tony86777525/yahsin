@@ -2,42 +2,60 @@
 
 namespace App\Services;
 
+use App\Models\GoogleAccessToken;
 use Google_Client;
 use Google_Service_Drive;
 use Google_Service_Drive_DriveFile;
 
 class UploadToGoogleDrive
 {
-    const GOOGLE_DRIVE_FILE_ID = '1m3WNr1Yr8vUTzBBAMxgbjOFmYvCsryNj';
-    const ACCESS_TOKEN = [
-        "access_token" => "ya29.a0AWY7CklXwZrtD0UjcNmKLE2K9HJxIrh41U8hN_Pbc4DoOsF-OMPEXOnwTiYTK3sWz0C33q7x4B2BtMZ_oA0wyMuRMsgXgZrNWzOusmCEGhKp4u1fHV7dfmzrz8qEqJnpATgYxSRBOfhXedkPgf5w0iQESh81aCgYKAbYSARESFQG1tDrpZFPP1VnkyT1zJoqj4fxhTQ0163",
-        "expires_in" => 3599,
-        "refresh_token" => "1//0emAbqXoaIRcHCgYIARAAGA4SNwF-L9IrKsofXkOzF-XzJ9W7ha15UsAUKQLpe6Yu6skM5E9T4eKpXaLvu_Vgh7dNi4Jc-yTRHcM",
-        "scope" => "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file",
-        "token_type" => "Bearer",
-        "created" => 1686887911,
-    ];
+    private $fileId;
+    private $accessToken;
+    private $googleClientSecret;
 
-    public static function upload($uploadFiles, $folderName, $filesName)
+    public function __construct()
+    {
+        $googleAccessToken = GoogleAccessToken::all()->pluck('value', 'key');
+
+        $this->fileId = $googleAccessToken['GOOGLE_DRIVE_FILE_ID'];
+        $this->accessToken = [
+            "access_token" => $googleAccessToken['GOOGLE_DRIVE_ACCESS_TOKEN'],
+            "expires_in" => $googleAccessToken['GOOGLE_DRIVE_EXPIRES_IN'],
+            "refresh_token" => $googleAccessToken['GOOGLE_DRIVE_REFRESH_TOKEN'],
+            "token_type" => $googleAccessToken['GOOGLE_DRIVE_TOKEN_TYPE'],
+            "created" => $googleAccessToken['GOOGLE_DRIVE_CREATED'],
+            "scope" => $googleAccessToken['GOOGLE_DRIVE_SCOPE'],
+        ];
+
+        $this->googleClientSecret = env('GOOGLE_CLIENT_SECRET');
+    }
+
+    public function upload($uploadFiles, $folderName, $filesName)
     {
         $client = new Google_Client();
-        $client->setAuthConfig(public_path('google/google_client_secret.json'));
-        $client->setAccessToken(self::ACCESS_TOKEN);
+        $client->setAuthConfig(public_path('google/' . $this->googleClientSecret));
         $client->setScopes(array(
             'https://www.googleapis.com/auth/drive.file',
             'https://www.googleapis.com/auth/drive'
         ));
         $client->setAccessType("offline");
         $client->setApprovalPrompt("force");
+        $client->setAccessToken($this->accessToken);
 
+//        $newAccessToken = '';
+//dd($client->isAccessTokenExpired());
+//        if ($client->isAccessTokenExpired() === true) {
+//            $newAccessToken = $client->refreshToken($this->accessToken['refresh_token']);
+//        }
+//        dd($newAccessToken);
 
         $service = new \Google_Service_Drive($client);
 
         $fileMetadata = new \Google_Service_Drive_DriveFile([
             'name' => $folderName,
             'mimeType' => 'application/vnd.google-apps.folder',
-            'driveId' => self::GOOGLE_DRIVE_FILE_ID,
-            'parents' => array(self::GOOGLE_DRIVE_FILE_ID)
+            'driveId' => $this->fileId,
+            'parents' => array($this->fileId)
         ]);
 
         $optParams = array(
@@ -56,10 +74,11 @@ class UploadToGoogleDrive
                 'parents' => [$folder->id]
             ]);
 
+            $fileContent = file_get_contents($uploadFile->getRealPath());
+
             $result[] = $service->files->create($file, [
-                'data' => $uploadFile,
-                'mimeType' => 'application/pdf',
-                'uploadType' => 'media'
+                'data' => $fileContent,
+                'uploadType' => 'multipart'
             ]);
         }
 
