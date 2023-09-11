@@ -65,7 +65,7 @@
                                 </div>
                             </div>
                             <div class="formCol">
-                                <span class="formLabel">{{ __('user.landingForm.label.file.2') }}</span>
+                                <span class="formLabel">{!! __('user.landingForm.label.file.2') !!}</span>
                                 <div class="fancyWrap fancyWrap--inputFile" data-input-id="elWrap">
                                     <label>
                                         <span class="fancyInput fancyInput--inputFile" data-input-id="uploadFile">{{ __('user.landingForm.file.select') }}</span>
@@ -87,7 +87,7 @@
                                 </div>
                             </div>
                             <div class="formCol">
-                                <span class="formLabel">{{ __('user.landingForm.label.file.3') }}</span>
+                                <span class="formLabel">{!! __('user.landingForm.label.file.3') !!}</span>
                                 <div class="fancyWrap fancyWrap--inputFile" data-input-id="elWrap">
                                     <label>
                                         <span class="fancyInput fancyInput--inputFile" data-input-id="uploadFile">{{ __('user.landingForm.file.select') }}</span>
@@ -278,7 +278,7 @@
                 <div class="intro">{{ __('user.compare.content.intro') }}</div>
                 <div class="quite boxShadow">
                     <div class="boxShadow__content">
-                        <div class="quite__title wow fadeInRight">{{ __('user.compare.content.quite.title') }}</div>
+                        <div class="quite__title wow fadeInRight">{!! __('user.compare.content.quite.title') !!}</div>
                         <div class="quite__table wow fadeInRight">
                             <table class="quiteTable">
                                 <thead>

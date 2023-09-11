@@ -559,19 +559,40 @@ $path: "../../images/";
 
 		&--submit {
 			padding: 12px 16px;
-
-			.btn__text {
-				font-size: $fs-content;
-			}
 		}
 
 		&--originSite,
 		&--line {
 			padding: 20px 0;
+		}
+	}
 
-			.btn__text {
-				font-size: $fs-topic;
+
+	.lang {
+		&--en,
+		&--es {
+			.btn {
+				&--originSite,
+				&--line {
+
+					.btn__text {
+						font-size: 22px;
+					}
+				}
 			}
+		}
+	
+		&--zh-TW,
+		&--zh-CN {
+			.btn {
+				&--originSite,
+				&--line {
+
+					.btn__text {
+						font-size: $fs-topic;
+					}
+				}
+			}	
 		}
 	}
 }
@@ -727,10 +748,34 @@ $path: "../../images/";
 		&--originSite,
 		&--line {
 			padding: 26px 0;
+		}
+	}
 
-			.btn__text {
-				font-size: $fs-topic;
+	.lang {
+		&--en,
+		&--es {
+			.btn {
+				&--originSite,
+				&--line {
+
+					.btn__text {
+						font-size: 24px;
+					}
+				}
 			}
+		}
+	
+		&--zh-TW,
+		&--zh-CN {
+			.btn {
+				&--originSite,
+				&--line {
+
+					.btn__text {
+						font-size: $fs-topic;
+					}
+				}
+			}	
 		}
 	}
 }

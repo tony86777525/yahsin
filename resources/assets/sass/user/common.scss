@@ -264,20 +264,22 @@ html {
 		display: none;
 	}
 
-	.en,
-	.es {
-		.navigation {
-			.mmMenu__link {
-				font-size: 14px;
+	.lang {
+		&--en,
+		&--es {
+			.navigation {
+				.mmMenu__link {
+					font-size: 14px;
+				}
 			}
 		}
-	}
 
-	.zh-TW,
-	.zh-CN {
-		.navigation {
-			.mmMenu__link {
-				font-size: 20px;
+		&--zh-TW,
+		&--zh-CN {
+			.navigation {
+				.mmMenu__link {
+					font-size: 20px;
+				}
 			}
 		}
 	}
@@ -301,21 +303,22 @@ html {
 			font-size: 28px;
 		}
 	}
-
-	.en,
-	.es {
-		.navigation {
-			.mmMenu__link {
-				font-size: 24px;
+	.lang {
+		&--en,
+		&--es {
+			.navigation {
+				.mmMenu__link {
+					font-size: 24px;
+				}
 			}
 		}
-	}
-
-	.zh-TW,
-	.zh-CN {
-		.navigation {
-			.mmMenu__link {
-				font-size: 28px;
+	
+		&--zh-TW,
+		&--zh-CN {
+			.navigation {
+				.mmMenu__link {
+					font-size: 28px;
+				}
 			}
 		}
 	}

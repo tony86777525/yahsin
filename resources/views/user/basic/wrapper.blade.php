@@ -39,7 +39,7 @@
     <!-- End Google Tag Manager -->
     @stack('csrf_token')
 </head>
-<body class="language lang--en">
+<body class="lang lang--{{ session()->get('webLanguage') }}">
 <div class="container">
     @include('user.basic.header')
 

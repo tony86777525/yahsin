@@ -2,6 +2,7 @@
 
 return [
     // Navi
+    'class_name'                          => 'en',
     'web_name'                            => 'YA HSIN TRANSLATION SERVICE',
     'navigation.1'                        => 'About YAHSIN',
     'navigation.2'                        => 'PROCESS',
@@ -29,8 +30,8 @@ return [
     'landingForm.country.option.1'        => 'Asia',
     'landingForm.country.option.2'        => 'other',
     'landingForm.label.file.1'            => 'Upload 1st document to apostille',
-    'landingForm.label.file.2'            => 'Upload 2nd document  (if needed)',
-    'landingForm.label.file.3'            => 'Upload 3rd document  (if needed)',
+    'landingForm.label.file.2'            => 'Upload 2nd document<div>(if needed)</div>',
+    'landingForm.label.file.3'            => 'Upload 3rd document<div>(if needed)</div>',
     'landingForm.file.select'             => 'select file',
 
     'featureBoard.1.paragraph.1'          => '+<span>:number</span><em>件</em>',
@@ -55,11 +56,11 @@ return [
     'flow.step.3'                         => 'Make order',
     'flow.step.4'                         => 'We process<br>Apostille',
     'flow.step.5'                         => 'Receive Apostille',
-    'flow.steps.line'                     => 'business days',
+    'flow.steps.line'                     => ' business days',
 
     'compare.title'                       => 'DIGITAL COPY - APOSTILLE',
     'compare.content.intro'               => 'Generally, the digital document copy apostille is acceptable globally. Its process is very similar to apostille on original document, the main difference exists in that the apostille was through an affidavit made by a notary public about the fidelity of the copy with the original document, but we do not legalize or verify the document content, we offer a more perfect, fast and comfortable online service.',
-    'compare.content.quite.title'         => 'Original Original Verification VS. Digital Copy Verification',
+    'compare.content.quite.title'         => '<div>Original Original Verification</div>VS.<div>Digital Copy Verification</div>',
     'compare.content.quite.original'      => 'Original Documents',
     'compare.content.quite.copy'          => 'Digital Copies',
     'compare.content.quite.label.1'       => '<span>Authentication Means</span>',
@@ -85,11 +86,11 @@ return [
     'faq.list.q.2'                        => 'Q2.To request the Apostille, is it necessary to present it in person?',
     'faq.list.a.2'                        => 'A:No, just send your document from your computer or take a photo from your cell phone.',
     'faq.list.q.3'                        => 'Q3.How much time is necessary for the Apostille process?',
-    'faq.list.a.3'                        => 'A:10-12 business days (not include the mail delivery time)',
+    'faq.list.a.3'                        => 'A:10-12 business days (not include the mail delivery time).',
     'faq.list.q.4'                        => "Q4.What would be the advantages if we authorize 『YASHIN』 for the digital document copy apostille?",
     'faq.list.a.4.content'                => 'A:We offer:',
     'faq.list.a.4.content.1'              => 'Color photocopy documents',
-    'faq.list.a.4.content.2'              => 'Attach the Hong Kong notary public affidavit in English (sealed by the Hong Kong Civil Department).',
+    'faq.list.a.4.content.2'              => 'Attach the Hong Kong notary public affidavit in English (sealed by the Hong Kong Civil Department)',
     'faq.list.a.4.content.3'              => 'Sealed by the Hong Kong High Court clerk and Apostille',
     'faq.list.a.4.content.4'              => 'Additional service of DHL /SF EXPRESS (without extra payment) to the whole world',
 

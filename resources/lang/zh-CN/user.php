@@ -2,6 +2,7 @@
 
 return [
     // Navi
+    'class_name'                          => 'zh-CN',
     'web_name'                            => '雅信翻译社',
     'navigation.1'                        => '关于雅信',
     'navigation.2'                        => '办理流程',

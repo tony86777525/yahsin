@@ -2,6 +2,7 @@
 
 return [
     // Navi
+    'class_name'                          => 'es',
     'web_name'                            => 'YA HSIN TRANSLATION SERVICE',
     'navigation.1'                        => 'YAHSIN',
     'navigation.2'                        => 'PROCESO',
@@ -29,8 +30,8 @@ return [
     'landingForm.country.option.1'        => 'Asia',
     'landingForm.country.option.2'        => 'otro',
     'landingForm.label.file.1'            => 'Sube el 1er documento a la apositlla',
-    'landingForm.label.file.2'            => 'Sube el 2er documento(si lo hay)',
-    'landingForm.label.file.3'            => 'Sube el 3er documento(si lo hay)',
+    'landingForm.label.file.2'            => 'Sube el 2er documento<div>(si lo hay)</div>',
+    'landingForm.label.file.3'            => 'Sube el 3er documento<div>(si lo hay)</div>',
     'landingForm.file.select'             => 'selecciona archivo',
 
     'featureBoard.1.paragraph.1'          => '+<span>:number</span><em>/ documento</em>',
@@ -55,11 +56,11 @@ return [
     'flow.step.3'                         => 'Haga su pedido',
     'flow.step.4'                         => 'Iniciamos el<br>proceso de<br>la Apostilla',
     'flow.step.5'                         => 'Recibir la Apostilla',
-    'flow.steps.line'                     => 'días hábiles',
+    'flow.steps.line'                     => ' días hábiles',
 
     'compare.title'                       => 'Copia Digital - Apostilla',
     'compare.content.intro'               => 'Generalmente, la apostilla de la copia del documento digital es aceptable global . Su proceso es similar que la certificación del documento original, la diferencia principal existe en que la apostilla era a través de una declaración jurada realizada por un notario público sobre la fidelidad de la copia con el documento original, pero no legalizamos o verificamos el contenido del documento, ofrecemos un servicio online más perfecto, rápido y cómodo.',
-    'compare.content.quite.title'         => 'Autentificación del Documento Original VS. Autentificación de Copia Digital',
+    'compare.content.quite.title'         => '<div>Autentificación del Documento Original</div>VS.<div>Autentificación de Copia Digital</div>',
     'compare.content.quite.original'      => 'Autentificación del Documento Original',
     'compare.content.quite.copy'          => 'Autentificación de Copia del Documento',
     'compare.content.quite.label.1'       => '<span>Medios de Autentificación</span>',
@@ -91,7 +92,7 @@ return [
     'faq.list.a.4.content.1'              => 'Fotocopia en color de los documentos',
     'faq.list.a.4.content.2'              => 'Adjuntar la declaración jurada en inglés del notario público de Hong Kong (sellado por el Departamento Civil de Hong Kong)',
     'faq.list.a.4.content.3'              => 'Sellado por el secretario del Tribunal Superior de Hong Kong y sellado por la Apostilla',
-    'faq.list.a.4.content.4'              => 'Servicio adicional de DHL /SF EXPRESS (sin pago extra) a todo el mundo.',
+    'faq.list.a.4.content.4'              => 'Servicio adicional de DHL /SF EXPRESS (sin pago extra) a todo el mundo',
 
     'cooperation.title'                   => 'Unidad Cooperativa',
 
