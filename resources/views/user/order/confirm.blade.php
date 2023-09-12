@@ -6,7 +6,7 @@
 
 @push('page_css')
     <link rel="stylesheet" href="/css/user/cart.css" />
-    <link rel="gettext" type="application/x-po" href="/languages/{{ session()->get('webLanguage') }}.po" />
+    <link rel="gettext" type="application/x-po" href="/languages/{{ app()->getLocale() }}.po" />
 @endPush
 
 @section('main')
@@ -118,7 +118,7 @@
                         <div class="formCol">
                             <span class="formLabel">{{ __('user.delivery.recipient_address_nation') }}</span>
                             <div class="fancyWrap fancyWrap--country">
-                                <select name="recipient_address_nation" class="fancySelect fancySelect--country gds-cr gds-countryflag select2" id="countrySelection" country-data-region-id="gds-cr-one" data-language="{{ session()->get('webLanguage') }}">
+                                <select name="recipient_address_nation" class="fancySelect fancySelect--country gds-cr gds-countryflag select2" id="countrySelection" country-data-region-id="gds-cr-one" data-language="{{ app()->getLocale() }}">
                                     <option value=""></option>
                                 </select>
                             </div>

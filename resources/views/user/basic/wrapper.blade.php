@@ -1,6 +1,6 @@
 @inject('mainPresenter', 'App\Presenters\MainPresenter')
 <!DOCTYPE html>
-<html class="no-js" lang="{{ session()->get('webLanguage') }}">
+<html class="no-js" lang="{{ app()->getLocale() }}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Yahsin</title>
@@ -39,7 +39,7 @@
     <!-- End Google Tag Manager -->
     @stack('csrf_token')
 </head>
-<body class="lang lang--{{ session()->get('webLanguage') }}">
+<body class="lang lang--{{ app()->getLocale() }}">
 <div class="container">
     @include('user.basic.header')
 

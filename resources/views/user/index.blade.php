@@ -17,7 +17,7 @@
             background-size: 30px 30px;
         }
     </style>
-    <link rel="gettext" type="application/x-po" href="/languages/{{ session()->get('webLanguage') }}.po" />
+    <link rel="gettext" type="application/x-po" href="/languages/{{ app()->getLocale() }}.po" />
 @endPush
 
 @section('main')
@@ -78,7 +78,7 @@
                             <div class="formCol">
                                 <span class="formLabel">{{ __('user.landingForm.label.country') }}</span>
                                 <div class="fancyWrap fancyWrap--country">
-                                    <select name="country" class="fancySelect fancySelect--country select2 gds-cr gds-countryflag" country-data-region-id="gds-cr-one" data-language="{{ session()->get('webLanguage') }}">
+                                    <select name="country" class="fancySelect fancySelect--country select2 gds-cr gds-countryflag" country-data-region-id="gds-cr-one" data-language="{{ app()->getLocale() }}">
                                            <option value=""></option>
                                     </select>
                                     <select name="recipient_address_country" class="fancySelect fancySelect--country" id="gds-cr-one" style="display:none;">
@@ -381,7 +381,7 @@
         </div>
     </section>
     <div class="docking">
-        <a href="#landing" data-js-item="anchor"><img src="/img/img-fixedBtn_{{ session()->get('webLanguage') }}.png" alt="開始訂購"></a>
+        <a href="#landing" data-js-item="anchor"><img src="/img/img-fixedBtn_{{ app()->getLocale() }}.png" alt="開始訂購"></a>
     </div>
 @endsection
 

@@ -94,6 +94,7 @@ class OrderController extends BasicController
                 $orderData->payment_number = $orderData->number;
                 $orderData->amount = $inputData['amount'];
                 $orderData->price = $orderData->amount * Order::PRICE;
+                $orderData->lang = app()->getLocale();
                 $orderData->recipient_name = $inputData['recipient_name'];
                 $orderData->recipient_company_name = $inputData['recipient_company_name'];
                 $orderData->recipient_address_nation = $inputData['recipient_address_nation'];
@@ -145,6 +146,9 @@ class OrderController extends BasicController
                 abort('404');
             }
 
+            session()->put('webLanguage', $orderData->lang);
+            app()->setLocale($orderData->lang);
+
             if (!empty($orderData)) {
                 $orderData->status = Order::STATUS_PAID;
                 $orderData->save();
@@ -176,6 +180,9 @@ class OrderController extends BasicController
                 if (empty($orderData)) {
                     abort('404');
                 }
+
+                session()->put('webLanguage', $orderData->lang);
+                app()->setLocale($orderData->lang);
 
                 if (!empty($orderData)) {
                     $orderData->status = Order::STATUS_PAID;

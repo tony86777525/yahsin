@@ -15,7 +15,7 @@
                 @foreach(config('lang.languages') as $key => $name)
                     <option
                         value="{{ url()->current() }}?lang={{ $key }}"
-                        {{ session()->get('webLanguage') === $key ? 'selected' : '' }}
+                        {{ app()->getLocale() === $key ? 'selected' : '' }}
                     >{{ $name }}</option>
                 @endforeach
             </select>

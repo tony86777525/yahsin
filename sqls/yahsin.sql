@@ -226,6 +226,7 @@ CREATE TABLE IF NOT EXISTS `yh_orders` (
   `country` varchar(100) DEFAULT NULL,
   `amount` int(11) DEFAULT '1',
   `price` int(11) DEFAULT '0',
+  `lang` varchar(10) DEFAULT NULL,
   `recipient_name` varchar(50) DEFAULT NULL,
   `recipient_company_name` varchar(255) DEFAULT NULL,
   `recipient_address_nation` varchar(100) DEFAULT NULL,

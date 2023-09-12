@@ -74,6 +74,7 @@ class Order extends Model
         'name',
         'email',
         'country',
+        'lang',
         'recipient_name',
         'recipient_company_name',
         'recipient_address_nation',
