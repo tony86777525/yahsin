@@ -9,8 +9,7 @@ class MailService
     public static function sendMail($data)
     {
         try {
-            $postNoticeMailData = self::getPostNoticeMailData($data['email'], $data['name']);
-
+            $postNoticeMailData = self::getPostNoticeMailData($data['email'], $data['name'], $data['number'], $data['recipient_name']);
             Mail::send('email.post', $data->toArray(), function($message) use ($postNoticeMailData) {
                 $message->to($postNoticeMailData['toMail'], $postNoticeMailData['toName'])
                     ->subject($postNoticeMailData['subject']);
@@ -24,10 +23,10 @@ class MailService
         return false;
     }
 
-    private static function getPostNoticeMailData($email, $name)
+    private static function getPostNoticeMailData($email, $name, $number, $recipient_name)
     {
-        $subject = 'Yahsin Order';
-        $fromName = 'Yahsin';
+        $subject = __('email.subject', ['number' => $number, 'recipient_name' => $recipient_name]);
+        $fromName = __('email.fromName');
         $fromMail = env('MAIL_USERNAME');
         $toName = $name;
         $toMails = [

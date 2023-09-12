@@ -53,7 +53,7 @@ class ECPayService
             'ChoosePayment' => 'Credit',
             'EncryptType' => 1,
             'ReturnURL' => route('user.api.order.pay.ecpay.notify'),
-            'OrderResultURL' => route('user.order.pay.ecpay.result'),
+            'OrderResultURL' => route('user.order.pay.ecpay.complete', ['orderNumber' => $data->number]),
         ];
 
         $action = env('ECPAY_PAY_ACTION');
