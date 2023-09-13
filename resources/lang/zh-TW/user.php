@@ -19,7 +19,7 @@ return [
     'landingText.description.paragraph.2' => '您無須提供文件正本',
     'landingText.description.paragraph.3' => '上傳您的文件電子檔，任何數位格式即可完成',
     'landingText.description.paragraph.4' => '48小時內確認，辦理時間【10-12工作天】',
-    'landingText.description.paragraph.5' => '固定費用【NTD8800元】',
+    'landingText.description.paragraph.5' => '固定費用【NT$:price元】',
     'landingText.description.paragraph.6' => '完成後國際快遞 SF/DHL EXPRESS 全球寄送【免運費】',
 
     'landingForm.title'                   => '開始訂購您的海牙認證',
@@ -105,6 +105,7 @@ return [
     'cart.content.price.note'             => '此為大約金額顯示，國外消費因匯率轉換，實際仍以請款金額為主。',
     'cart.content.paragraph'              => '我們的加簽服務：我們將彩色列印您的文件<br>由公證員英文公證宣誓後，至香港高等法院海牙認證(Apostille)加簽。<br>包括公證費、政府規費及雜支。<br>使用DHL Express / SF Express【免運費】全球快遞送到府。<br>我們將掃描及彩色影印您的文件，您無需郵寄原件',
     'cart.content.amount'                 => '如果您上傳了不止一份文件，請手動更新以下文件數量',
+    'cart.content.amount.total_price'     => '總金額',
     'cart.content.amount.button'          => '變更',
 
     'payment.title'                       => '付款方式',

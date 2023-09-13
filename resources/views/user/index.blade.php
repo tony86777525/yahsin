@@ -134,7 +134,7 @@
                         <li>{{ __('user.landingText.description.paragraph.2') }}</li>
                         <li>{{ __('user.landingText.description.paragraph.3') }}</li>
                         <li>{{ __('user.landingText.description.paragraph.4') }}</li>
-                        <li>{{ __('user.landingText.description.paragraph.5') }}</li>
+                        <li>{{ __('user.landingText.description.paragraph.5', ['price' => App\Models\Order::PRICE]) }}</li>
                         <li>{{ __('user.landingText.description.paragraph.6') }}</li>
                     </ul>
                 </div>
@@ -160,7 +160,7 @@
                         </li>
                         <li>
                             <div class="featureItem">
-                                <div class="featureItem__title" data-js-count="true" data-count="8800">{!! __('user.featureBoard.2.paragraph.1', ['price' => 8800]) !!}</div>
+                                <div class="featureItem__title" data-js-count="true" data-count="{{ App\Models\Order::PRICE }}">{!! __('user.featureBoard.2.paragraph.1', ['price' => App\Models\Order::PRICE]) !!}</div>
                                 <div class="featureItem__content">{{ __('user.featureBoard.2.paragraph.2') }}</div>
                             </div>
                         </li>

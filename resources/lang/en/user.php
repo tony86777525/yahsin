@@ -19,7 +19,7 @@ return [
     'landingText.description.paragraph.2' => 'Not necessary the original document',
     'landingText.description.paragraph.3' => 'Upload your document in any digital format',
     'landingText.description.paragraph.4' => 'We confirm within 48 hours, needed【10-12 business days】',
-    'landingText.description.paragraph.5' => 'Fixed Fee【NT$8800】per apostille',
+    'landingText.description.paragraph.5' => 'Fixed Fee【NT$:price】per apostille',
     'landingText.description.paragraph.6' => 'After the Apostille we send to you without extra payment【International Free Shipping】',
 
     'landingForm.title'                   => 'Order Your Apostille(s)',
@@ -105,6 +105,7 @@ return [
     'cart.content.price.note'             => 'This is an approximate amount. Due to the exchange rate conversion, foreign consumption is still mainly based on the requested amount.',
     'cart.content.paragraph'              => 'Our Apostille service：we will print your documents in color,<br>notarize an affidavit and process the Apostille in Hong Kong High Court.<br>Including the payment of Apostille, public authority fee and other expenses.<br>DHL /SF EXPRESS Service (without extra payment) to the whole world.<br>It is not necessary to send the original document, we copy and scan your document in color.',
     'cart.content.amount'                 => 'If you have uploaded more than one document, please, update manually the number of documents below:',
+    'cart.content.amount.total_price'     => 'Total',
     'cart.content.amount.button'          => 'Update',
 
     'payment.title'                       => 'Payment Method',

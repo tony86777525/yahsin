@@ -19,7 +19,7 @@ return [
     'landingText.description.paragraph.2' => '您无须提供文件正本。',
     'landingText.description.paragraph.3' => '上传您的文件电子文件，任何数字格式即可完成。',
     'landingText.description.paragraph.4' => '48小时内确认，办理时间【10-12工作天】',
-    'landingText.description.paragraph.5' => '固定成本【新唐人8800元】',
+    'landingText.description.paragraph.5' => '固定成本【NT$:price元】',
     'landingText.description.paragraph.6' => '完成后国际快递SF/DHL EXPRESS全球寄送【免运费】',
 
     'landingForm.title'                   => '开始订购您的海牙认证',
@@ -106,6 +106,7 @@ return [
     'cart.content.price.note'             => '此为大约金额显示，国外消费因汇率转换，实际仍以请款金额为主。',
     'cart.content.paragraph'              => '我们的加签服务：我们将彩色打印您的文件<br>由公证员英文公证宣誓后，至香港高等法院海牙认证(Apostille)加签。<br>包括公证费、政府规费及杂支。<br>使用DHL Express / SF Express【免运费】全球快递送到府。<br>我们将扫描及彩色影印您的文件，您无需邮寄原件',
     'cart.content.amount'                 => '如果您上传了不止一份文件，请手动更新以下文件数量',
+    'cart.content.amount.total_price'     => '总金额',
     'cart.content.amount.button'          => '变更',
 
     'payment.title'                       => '付款方式',

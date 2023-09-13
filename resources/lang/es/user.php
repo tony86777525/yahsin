@@ -19,7 +19,7 @@ return [
     'landingText.description.paragraph.2' => 'No es necesario el documento original',
     'landingText.description.paragraph.3' => 'Sube su documento electrónico en cualquier formato digital',
     'landingText.description.paragraph.4' => 'Confirmamos dentro de 48 horas, tiempo necesario de trabajo【10-12 días de trabajo 】',
-    'landingText.description.paragraph.5' => 'Costo Fijo【NTD8800】',
+    'landingText.description.paragraph.5' => 'Costo Fijo【NT$:price】',
     'landingText.description.paragraph.6' => 'Luego de la Apostilla mandamos a través de SF/DHL EXPRESS a todo el mundo【sin pago extra】',
 
     'landingForm.title'                   => 'Order Your Apostille(s)',
@@ -45,7 +45,7 @@ return [
     'featureBoard.4.paragraph.1'          => 'Declaración Jurada por un',
     'featureBoard.4.paragraph.2'          => 'Notario Público de Hong Kong',
 
-    'flow.title'                          => 'Pasos Rápidos，Sin Salir de Casa<br>Terminar su Apostilla Online en Casa.',
+    'flow.title'                          => 'Pasos Rápidos, Sin Salir de Casa<br>Terminar su Apostilla Online en Casa.',
     'flow.content.intro'                  => 'Procesamos rápidamente la Apostilla de cualquier copia del documento Servicio rápido de Apostilla para 【documento electrónico en cualquier formato digital (archivo digital)】.',
     'flow.content.benefit.1'              => 'Sin Documento Original',
     'flow.content.benefit.2'              => 'Sin Salir de Casa',
@@ -105,6 +105,7 @@ return [
     'cart.content.price.note'             => 'This is an approximate amount. Due to the exchange rate conversion, foreign consumption is still mainly based on the requested amount.',
     'cart.content.paragraph'              => 'Nuestro servicio de Apostilla:Está incluido la fotocopia en color de su documento,<br>realización de una declaración jurada en inglés por un notario público, y luego enviar al tribunal superior de Hong Kong para sellar la Apostilla.<br>Está inlcuido el pago de Apostilla, tarifa de autoridad pública y otros gastos.<br>Servicio de DHL /SF EXPRESS (sin pago extra) a todo el mundo.<br>No es necesario enviar el documento original, copiamos y escaneamos su documento en color.',
     'cart.content.amount'                 => 'Si ud. envia más de 1 documento, por favor modifique manualmente la siguiente cantidad de documentos:',
+    'cart.content.amount.total_price'     => 'Total',
     'cart.content.amount.button'          => 'Cambiar',
 
     'payment.title'                       => 'Método de Pago',

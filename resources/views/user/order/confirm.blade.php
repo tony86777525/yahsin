@@ -60,7 +60,7 @@
                                 </div>
                             </div>
                             <div class="amount__price">
-                                總金額<span class="count" data-js="totalPrice">{{ App\Models\Order::PRICE }}</span>
+                                {{ __('user.cart.content.amount.total_price') }}<span class="count" data-js="totalPrice">{{ App\Models\Order::PRICE }}</span>
                             </div>
                         </div>
                     </div>
