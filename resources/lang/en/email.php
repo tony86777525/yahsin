@@ -3,8 +3,7 @@
 return [
     'fromName'                        => 'YAHSIN-Apostille Online Service',
     'subject'                         => ':recipient_name Successful Order Confirmation for YAHSIN-Apostille Online Service(Order No.:number)',
-    'detail'                          => '<div style="width: 640px; margin: 0 auto; color: #333;">
-                                        <div><p style="text-align: center; font-size: 20px; font-weight: bold; color: #343262;">Dear :recipient_name Sir/Madam,Successful Order Confirmation for YAHSIN-Apostille Online.</p>
+    'detail'                          => '<div><p style="text-align: center; font-size: 20px; font-weight: bold; color: #343262;">Dear :recipient_name Sir/Madam,Successful Order Confirmation for YAHSIN-Apostille Online.</p>
                                             <p style="text-align: center; font-size: 20px; font-weight: bold; color: #e86b59;">Order No.:number</p>
                                         </div>
                                         <div><p style="font-size: 16px">Thank you for ordering our Apostille service. Here is important information for your reference：</p></div>
@@ -46,6 +45,5 @@ return [
                                                 <tr><th style="padding: 2px 8px 2px 0; text-align: left;">TEL</th><td style="padding: 2px 8px;">+886 2 23821155</td></tr>
                                                 <tr><th style="padding: 2px 8px 2px 0; text-align: left;">Address</th><td style="padding: 2px 8px;">7F-8, No. 25, Sec. 1, Minsheng E. Rd., Taipei City , Taiwan ,R.O.C(Mon-Fri AM0900-PM0430)</td></tr>
                                             </table>
-                                        </div>
-                                    </div>',
+                                        </div>',
 ];

@@ -43,6 +43,11 @@ Route::group([
         Route::post('/order/{orderNumber}/pay/ecpay/complete', [OrderController::class, 'payByECPayCreditComplete'])->name('pay.ecpay.complete');
         Route::get('/order/{orderNumber}/pay/paypal/complete', [OrderController::class, 'payByPaypalComplete'])->name('pay.paypal.complete');
 
+        Route::get('/order/{orderNumber}/pay/ecpay/complete', function () {
+            return redirect()
+                ->route('user.index');
+        });
+
         Route::post('/order/pay/paypal/notify', [OrderController::class, 'payByPaypalNotify'])->name('pay.paypal.notify');
     });
 

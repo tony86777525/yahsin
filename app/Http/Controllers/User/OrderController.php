@@ -196,10 +196,13 @@ class OrderController extends BasicController
                 }
             } catch (\Exception $e) {
                 DB::rollback();
+
+                return 'It`s cancel to pay by Paypay!';
             }
         }
 
-        return 'It`s cancel to pay by Paypay!';
+        return redirect()
+            ->route('user.index');
     }
 
     /*

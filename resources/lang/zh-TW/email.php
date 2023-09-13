@@ -3,8 +3,7 @@
 return [
     'fromName'                        => '雅信翻譯-海牙認證線上服務',
     'subject'                         => ':recipient_name先生/小姐您好，您已成功訂購雅信-線上海牙認證服務(訂單編號::number)',
-    'detail'                          => '<div style="width: 640px; margin: 0 auto; color: #333;">
-                                        <div><p style="text-align: center; font-size: 20px; font-weight: bold; color: #343262;">:recipient_name 先生/小姐 您好，您已成功訂購雅信-線上海牙認證服務</p>
+    'detail'                          => '<div><p style="text-align: center; font-size: 20px; font-weight: bold; color: #343262;">:recipient_name 先生/小姐 您好，您已成功訂購雅信-線上海牙認證服務</p>
                                             <p style="text-align: center; font-size: 20px; font-weight: bold; color: #e86b59;">訂單編號::number</p>
                                         </div>
                                         <div><p style="font-size: 16px">感謝您訂購我們的認證服務，以下重要的資訊供您參考：</p></div>
@@ -45,6 +44,5 @@ return [
                                                 <tr><th style="padding: 2px 8px 2px 0; text-align: left;">電話</th><td style="padding: 2px 8px;">+886 2 23821155</td></tr>
                                                 <tr><th style="padding: 2px 8px 2px 0; text-align: left;">地址</th><td style="padding: 2px 8px;">台灣台北市中正區忠孝西路一段41號7樓之8(周一-周五AM0900-PM0430)</td></tr>
                                             </table>
-                                        </div>
-                                    </div>',
+                                        </div>',
 ];

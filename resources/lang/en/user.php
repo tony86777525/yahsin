@@ -125,5 +125,5 @@ return [
     // complete
     'complete.title'                      => 'Order Sent',
     'complete.content.order_number'       => 'Order Number',
-    'complete.content.note'               => 'Please take photos, screenshots, or confirm your email, and <span class="highlight">keep the order number</span> for future inquiries',
+    'complete.content.note'               => 'Please take photos, screenshots, or confirm your email, and <span class="highlight">keep the order number</span> for future inquiries.',
 ];

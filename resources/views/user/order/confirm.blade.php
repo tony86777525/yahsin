@@ -108,7 +108,7 @@
                                     <input
                                         name="recipient_company_name"
                                         type="text"
-                                        value="{{ old('recipient_company_name') ?? 'veve' }}"
+                                        value="{{ old('recipient_company_name') ?? '' }}"
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
@@ -138,7 +138,7 @@
                                     <input
                                         name="recipient_address_code"
                                         type="text"
-                                        value="{{ old('recipient_address_code') ?? '104' }}"
+                                        value="{{ old('recipient_address_code') ?? '' }}"
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
@@ -152,7 +152,7 @@
                                     <input
                                         name="recipient_address"
                                         type="text"
-                                        value="{{ old('recipient_address') ?? '台北市台北市台北市台北市' }}"
+                                        value="{{ old('recipient_address') ?? '' }}"
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
@@ -166,7 +166,7 @@
                                     <input
                                         name="recipient_tel"
                                         type="text"
-                                        value="{{ old('recipient_tel') ?? '0912345678' }}"
+                                        value="{{ old('recipient_tel') ?? '' }}"
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
@@ -178,7 +178,7 @@
                                     <input
                                         name="recipient_email"
                                         type="text"
-                                        value="{{ old('recipient_email') ?? 'tony86777525@gmail.com' }}"
+                                        value="{{ old('recipient_email') ?? '' }}"
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
