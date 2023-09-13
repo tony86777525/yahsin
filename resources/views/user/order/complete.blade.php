@@ -11,11 +11,11 @@
     <section class="complete">
         <div class="wrapper">
             <div class="complete__title">
-                <h2>訂單已送出</h2>
+                <h2>{{ __('user.complete.title') }}</h2>
             </div>
             <div class="complete__content">
-                <h3 class="orderNum"><span class="text">訂單編號</span><span class="num">{{ $orderNumber }}</span></h3>
-                <h4 class="note">請拍照、截圖，或確認您的Email，<span class="highlight">保留訂單編號</span>以便日後查詢</h4>
+                <h3 class="orderNum"><span class="text">{{ __('user.complete.content.order_number') }}</span><span class="num">{{ $orderNumber }}</span></h3>
+                <h4 class="note">{!! __('user.complete.content.note') !!}</h4>
                 <div class="decoImg">
                     <img src="/img/img-complete.png" class="image">
                 </div>

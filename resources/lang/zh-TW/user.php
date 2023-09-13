@@ -10,6 +10,9 @@ return [
     'navigation.4'                        => '常見QA',
     'navigation.5'                        => '聯絡我們',
 
+    // foot
+    'foot.copyright'                      => 'COPYRIGHT &copy; 2023 雅信翻譯 ALL RIGHTS RESERVED',
+
     // index
     'landingText.title'                   => '海牙認證線上服務',
     'landingText.description.paragraph.1' => '我們針對【文件副本】快速辦理海牙認證',
@@ -116,6 +119,11 @@ return [
     'delivery.recipient_address_code'     => '郵遞區號',
     'delivery.recipient_address'          => '地址',
     'delivery.recipient_tel'              => '收件人聯絡電話',
-    'delivery.recipient_email'             => '收件人Email',
+    'delivery.recipient_email'            => '收件人Email',
     'cart.submit.button'                  => '前往付款頁面',
+
+    // complete
+    'complete.title'                      => '訂單已送出',
+    'complete.content.order_number'       => '訂單編號',
+    'complete.content.note'               => '請拍照、截圖，或確認您的Email，<span class="highlight">保留訂單編號</span>以便日後查詢',
 ];

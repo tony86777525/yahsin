@@ -10,6 +10,9 @@ return [
     'navigation.4'                        => 'PREGUNTA FRECUENTE',
     'navigation.5'                        => 'CONTACTENOS',
 
+    // foot
+    'foot.copyright'                      => 'COPYRIGHT &copy; 2023 Yaxin Translation TODOS LOS DERECHOS RESERVADOS',
+
     // index
     'landingText.title'                   => 'Servicio Online de Apostilla',
     'landingText.description.paragraph.1' => 'Servicio rápido para la Apostilla de【Copia del Documento】',
@@ -104,18 +107,23 @@ return [
     'cart.content.amount'                 => 'Si ud. envia más de 1 documento, por favor modifique manualmente la siguiente cantidad de documentos:',
     'cart.content.amount.button'          => 'Cambiar',
 
-    'payment.title'                       => 'Payment Method',
-    'payment.type.1'                      => 'Credit Cards',
+    'payment.title'                       => 'Método de Pago',
+    'payment.type.1'                      => 'Tarjeta de Crédito',
     'payment.type.2'                      => 'PayPal',
 
-    'delivery.title'                      => 'Recipient information',
-    'delivery.recipient_name'             => 'Name',
-    'delivery.recipient_company_name'     => 'Company name (optional)',
-    'delivery.recipient_address_nation'   => 'Country',
-    'delivery.recipient_address_country'  => 'Region',
-    'delivery.recipient_address_code'     => 'Postcode ',
-    'delivery.recipient_address'          => 'Address',
-    'delivery.recipient_tel'              => 'Phone',
-    'delivery.recipient_email'             => 'Email address',
-    'cart.submit.button'                  => 'Go to payment page',
+    'delivery.title'                      => 'Información del Destinatario',
+    'delivery.recipient_name'             => 'Nombre del Destinatario',
+    'delivery.recipient_company_name'     => 'Nombre de la Compañía (Opcional)',
+    'delivery.recipient_address_nation'   => 'País',
+    'delivery.recipient_address_country'  => 'Región',
+    'delivery.recipient_address_code'     => 'Código Postal',
+    'delivery.recipient_address'          => 'Dirección',
+    'delivery.recipient_tel'              => 'Número de Teléfono del Destinatario',
+    'delivery.recipient_email'            => 'Correo Electrónico del Destinatario',
+    'cart.submit.button'                  => 'Ir a la Pantalla de Pago',
+
+    // complete
+    'complete.title'                      => 'Pedido Enviado',
+    'complete.content.order_number'       => 'Número de Orden',
+    'complete.content.note'               => 'Tome fotografías, capturas de pantalla o confirme su correo electrónico y <span class="highlight">conserve el número de pedido</span> para futuras consultas.',
 ];

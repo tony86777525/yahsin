@@ -10,6 +10,9 @@ return [
     'navigation.4'                        => 'FAQ',
     'navigation.5'                        => 'CONTACT US',
 
+    // foot
+    'foot.copyright'                      => 'COPYRIGHT &copy; 2023 Yasin Translation ALL RIGHTS RESERVED',
+
     // index
     'landingText.title'                   => 'Apostille Service Online',
     'landingText.description.paragraph.1' => 'Fast Service for Apostille【copies of documents】',
@@ -105,17 +108,22 @@ return [
     'cart.content.amount.button'          => 'Update',
 
     'payment.title'                       => 'Payment Method',
-    'payment.type.1'                      => 'Credit Cards',
+    'payment.type.1'                      => 'Credit Card',
     'payment.type.2'                      => 'PayPal',
 
-    'delivery.title'                      => 'Recipient information',
-    'delivery.recipient_name'             => 'Name',
-    'delivery.recipient_company_name'     => 'Company name (optional)',
+    'delivery.title'                      => "Recipient's Information",
+    'delivery.recipient_name'             => "Recipient's Name",
+    'delivery.recipient_company_name'     => 'Company Name (Optional)',
     'delivery.recipient_address_nation'   => 'Country',
     'delivery.recipient_address_country'  => 'Region',
-    'delivery.recipient_address_code'     => 'Postcode ',
+    'delivery.recipient_address_code'     => 'Zip Code ',
     'delivery.recipient_address'          => 'Address',
-    'delivery.recipient_tel'              => 'Phone',
-    'delivery.recipient_email'             => 'Email address',
-    'cart.submit.button'                  => 'Go to payment page',
+    'delivery.recipient_tel'              => "Recipient's Phone Number",
+    'delivery.recipient_email'            => "Recipient's Email",
+    'cart.submit.button'                  => 'Go to Payment Screen',
+
+    // complete
+    'complete.title'                      => 'Order Sent',
+    'complete.content.order_number'       => 'Order Number',
+    'complete.content.note'               => 'Please take photos, screenshots, or confirm your email, and <span class="highlight">keep the order number</span> for future inquiries',
 ];
