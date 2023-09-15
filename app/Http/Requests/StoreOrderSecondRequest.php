@@ -24,7 +24,7 @@ class StoreOrderSecondRequest extends FormRequest
     {
         return [
             'amount' => 'required|min:1',
-            'payment' => 'required',
+            'payment_type' => 'required',
             'recipient_name' => 'required',
             'recipient_address_nation' => 'required',
             'recipient_address_country' => 'required',

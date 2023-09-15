@@ -92,6 +92,7 @@ class OrderController extends BasicController
             try {
                 $orderData->payment_times += 1;
                 $orderData->payment_number = $orderData->number;
+                $orderData->payment_type = $inputData['payment_type'];
                 $orderData->amount = $inputData['amount'];
                 $orderData->price = $orderData->amount * Order::PRICE;
                 $orderData->lang = app()->getLocale();
@@ -109,12 +110,12 @@ class OrderController extends BasicController
 
                 DB::commit();
 
-                if ($inputData['payment'] === 'creditcard') {
+                if ($inputData['payment_type'] == Order::PAYMENT_TYPE_ECPAY) {
                     $ECPayService = new ECPayService;
                     $result = $ECPayService->payByCredit($orderData);
 
                     return $result;
-                } elseif ($inputData['payment'] === 'paypal') {
+                } elseif ($inputData['payment_type'] == Order::PAYMENT_TYPE_PAYPAL) {
                     $payPalService = new PayPalService;
                     $result = $payPalService->pay($orderData);
 

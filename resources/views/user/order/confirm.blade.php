@@ -74,8 +74,8 @@
                 <div class="form__title"><h2>{{ __('user.payment.title') }}</h2></div>
                 <div class="form__content">
                     <ul class="payList">
-                        <li><input id="payment_creditcard" type="radio" name="payment" value="creditcard" class="fancyInput fancyInput--hidden  fancyInput--radio"><label for="payment_creditcard">{{ __('user.payment.type.1') }}</label></li>
-                        <li><input id="payment_paypal" type="radio" name="payment" value="paypal" class="fancyInput fancyInput--hidden fancyInput--radio"><label for="payment_paypal">{{ __('user.payment.type.2') }}</label></li>
+                        <li><input id="payment_creditcard" type="radio" name="payment_type" value="{{ \App\Models\Order::PAYMENT_TYPE_ECPAY }}" class="fancyInput fancyInput--hidden  fancyInput--radio"><label for="payment_creditcard">{{ __('user.payment.type.1') }}</label></li>
+                        <li><input id="payment_paypal" type="radio" name="payment_type" value="{{ \App\Models\Order::PAYMENT_TYPE_PAYPAL }}" class="fancyInput fancyInput--hidden fancyInput--radio"><label for="payment_paypal">{{ __('user.payment.type.2') }}</label></li>
                     </ul>
                 </div>
             </div>

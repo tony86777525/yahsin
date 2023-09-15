@@ -257,7 +257,7 @@ $path: "../../images/";
 		}
 
 		&--delivery {
-			
+
 			.form__row {
 				flex-direction: column;
 				margin-bottom: 1.2rem;
@@ -323,12 +323,12 @@ $path: "../../images/";
 			& + label {
 				font-size: $fs-content;
 				padding-left: 1.5rem;
-	
+
 				&:before {
 					width: 1rem;
 					height: 1rem;
 				}
-	
+
 				&:after {
 					width: 0.6rem;
 					height: 0.6rem;
@@ -526,12 +526,12 @@ $path: "../../images/";
 				font-size: $fs-content;
 				padding-left: 16;
 				cursor: pointer;
-	
+
 				&:before {
 					width: 16px;
 					height: 16px;
 				}
-	
+
 				&:after {
 					width: 10px;
 					height: 10px;
@@ -559,6 +559,10 @@ $path: "../../images/";
 
 		&--submit {
 			padding: 12px 16px;
+
+            .btn__text {
+                font-size: $fs-content;
+            }
 		}
 
 		&--originSite,
@@ -581,7 +585,7 @@ $path: "../../images/";
 				}
 			}
 		}
-	
+
 		&--zh-TW,
 		&--zh-CN {
 			.btn {
@@ -592,7 +596,7 @@ $path: "../../images/";
 						font-size: $fs-topic;
 					}
 				}
-			}	
+			}
 		}
 	}
 }
@@ -723,12 +727,12 @@ $path: "../../images/";
 		&--radio {
 			& + label {
 				font-size: $fs-content;
-	
+
 				&:before {
 					width: 20px;
 					height: 20px;
 				}
-	
+
 				&:after {
 					width: 14px;
 					height: 14px;
@@ -764,7 +768,7 @@ $path: "../../images/";
 				}
 			}
 		}
-	
+
 		&--zh-TW,
 		&--zh-CN {
 			.btn {
@@ -775,7 +779,7 @@ $path: "../../images/";
 						font-size: $fs-topic;
 					}
 				}
-			}	
+			}
 		}
 	}
 }

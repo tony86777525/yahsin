@@ -69,6 +69,7 @@ class Order extends Model
     protected $fillable = [
         'number',
         'payment_number',
+        'payment_type',
         'status',
         'amount',
         'name',
@@ -98,6 +99,15 @@ class Order extends Model
         self::STATUS_UNPAID => '待付款',
         self::STATUS_PAID => '已付款',
         self::STATUS_CLOSED => '已結單'
+    ];
+
+    const PAYMENT_TYPE_NO = 0;
+    const PAYMENT_TYPE_ECPAY = 1;
+    const PAYMENT_TYPE_PAYPAL = 2;
+    const PAYMENT_TYPE_OPTIONS = [
+        self::PAYMENT_TYPE_NO => '無',
+        self::PAYMENT_TYPE_ECPAY => '綠界',
+        self::PAYMENT_TYPE_PAYPAL => 'Paypal'
     ];
 
     const COUNTRY_CHINESE_CIRCLE = 0;

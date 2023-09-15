@@ -35,12 +35,16 @@ class OrderController extends AdminController
         $grid->column('number', __('Number'));
         $grid->column('price', __('Price'));
         $grid->column('payment_number', __('Payment Number'));
+        $grid->column('payment_type', __('Payment Type'))
+            ->display(function($paymentType) {
+                return Order::PAYMENT_TYPE_OPTIONS[$paymentType];
+            });;
         $grid->column('status', __('Status'))
             ->display(function($status) {
                 return Order::STATUS_OPTIONS[$status];
             });
         $grid->column('name', __('Name'));
-        $grid->column('email', __('Email'));
+        $grid->column('email', __('E-mail'));
         $grid->column('country', __('Country'));
 //        $grid->column('recipient_address', __('Recipient'))
 //            ->display(function () {
@@ -116,7 +120,7 @@ class OrderController extends AdminController
         $show->field('payment_number', __('Payment Number'));
         $show->field('status', __('Status'));
         $show->field('name', __('Name'));
-        $show->field('email', __('Email'));
+        $show->field('email', __('E-mail'));
         $show->field('country', __('Country'));
         $show->field('recipient_name', __('Recipient Name'));
         $show->field('recipient_company_name', __('Recipient Company Name'));
@@ -125,7 +129,7 @@ class OrderController extends AdminController
         $show->field('recipient_address_code', __('Recipient Address Code'));
         $show->field('recipient_address', __('Recipient Address'));
         $show->field('recipient_tel', __('Recipient Tel'));
-        $show->field('recipient_email', __('Recipient Email'));
+        $show->field('recipient_email', __('Recipient E-mail'));
         $show->field('google_drive_folder_id', __('Google Drive Folder Id'));
         $show->field('created_at', __('Created at'));
 //        $show->field('updated_at', __('Updated at'));
@@ -147,7 +151,7 @@ class OrderController extends AdminController
         $form->display('payment_number', __('Payment Number'));
         $form->radio('status', __('Status'))->options(Order::STATUS_OPTIONS);
         $form->text('name', __('Name'));
-        $form->email('email', __('Email'));
+        $form->email('email', __('E-mail'));
         $form->text('country', __('Country'));
         $form->text('recipient_name', __('Recipient Name'));
         $form->text('recipient_company_name', __('Recipient Company Name'));
@@ -156,7 +160,7 @@ class OrderController extends AdminController
         $form->text('recipient_address_code', __('Recipient Address Code'));
         $form->text('recipient_address', __('Recipient Address'));
         $form->text('recipient_tel', __('Recipient Tel'));
-        $form->text('recipient_email', __('Recipient Email'));
+        $form->text('recipient_email', __('Recipient E-mail'));
 //        $form->text('google_drive_folder_id', __('Google Drive Folder Id'));
 
         $form->saving(function (Form $form) {

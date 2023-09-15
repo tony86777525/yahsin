@@ -220,6 +220,7 @@ CREATE TABLE IF NOT EXISTS `yh_orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `number` varchar(255) NOT NULL,
   `payment_number` varchar(255) DEFAULT NULL,
+  `payment_type` tinyint(1) DEFAULT '0',
   `status` tinyint(1) NOT NULL DEFAULT '0',
   `name` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
