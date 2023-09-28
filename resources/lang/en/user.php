@@ -111,6 +111,7 @@ return [
     'payment.title'                       => 'Payment Method',
     'payment.type.1'                      => 'Credit Card',
     'payment.type.2'                      => 'PayPal',
+    'payment.type.3'                      => 'Bank Transfer',
 
     'delivery.title'                      => "Recipient's Information",
     'delivery.recipient_name'             => "Recipient's Name",

@@ -111,6 +111,7 @@ return [
     'payment.title'                       => '付款方式',
     'payment.type.1'                      => '信用卡',
     'payment.type.2'                      => 'PayPal',
+    'payment.type.3'                      => '銀行轉帳',
 
     'delivery.title'                      => '收件者資訊',
     'delivery.recipient_name'             => '收件人姓名',

@@ -16,6 +16,9 @@
             <div class="complete__content">
                 <h3 class="orderNum"><span class="text">{{ __('user.complete.content.order_number') }}</span><span class="num">{{ $orderNumber }}</span></h3>
                 <h4 class="note">{!! __('user.complete.content.note') !!}</h4>
+                <h4 class="note">{{ $bankTransferData['name'] }}</h4>
+                <h4 class="note">{{ $bankTransferData['code'] }}</h4>
+                <h4 class="note">{{ $bankTransferData['account'] }}</h4>
                 <div class="decoImg">
                     <img src="/img/img-complete.png" class="image">
                 </div>

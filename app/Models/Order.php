@@ -104,10 +104,13 @@ class Order extends Model
     const PAYMENT_TYPE_NO = 0;
     const PAYMENT_TYPE_ECPAY = 1;
     const PAYMENT_TYPE_PAYPAL = 2;
+    const PAYMENT_TYPE_BANK_TRANSFER = 3;
+
     const PAYMENT_TYPE_OPTIONS = [
         self::PAYMENT_TYPE_NO => '無',
         self::PAYMENT_TYPE_ECPAY => '綠界',
-        self::PAYMENT_TYPE_PAYPAL => 'Paypal'
+        self::PAYMENT_TYPE_PAYPAL => 'Paypal',
+        self::PAYMENT_TYPE_BANK_TRANSFER => '銀行轉帳'
     ];
 
     const COUNTRY_CHINESE_CIRCLE = 0;

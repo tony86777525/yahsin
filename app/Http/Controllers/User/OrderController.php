@@ -120,6 +120,9 @@ class OrderController extends BasicController
                     $result = $payPalService->pay($orderData);
 
                     return $result;
+                } elseif ($inputData['payment_type'] == Order::PAYMENT_TYPE_BANK_TRANSFER) {
+                    return redirect()
+                        ->route('user.order.pay.banktransfer.complete', ['orderNumber' => $orderNumber]);
                 }
             } catch (\Exception $e) {
                 DB::rollback();
@@ -200,6 +203,39 @@ class OrderController extends BasicController
 
                 return 'It`s cancel to pay by Paypay!';
             }
+        }
+
+        return redirect()
+            ->route('user.index');
+    }
+
+    public function payByBankTransferComplete($orderNumber)
+    {
+        try {
+            $orderData = Order::firstWhere('number', $orderNumber);
+
+            if (empty($orderData)) {
+                abort('404');
+            }
+
+            session()->put('webLanguage', $orderData->lang);
+            app()->setLocale($orderData->lang);
+
+            DB::commit();
+
+            MailService::sendMail($orderData);
+
+            $bankTransferData = [
+                'name' => env('BANKTRANSFER_BANK_NAME'),
+                'code' => env('BANKTRANSFER_BANK_CODE'),
+                'account' => env('BANKTRANSFER_BANK_ACCOUNT')
+            ];
+
+            return view('user.order.complete', compact('orderNumber', 'bankTransferData'));
+        } catch (\Exception $e) {
+            DB::rollback();
+
+            return 'It`s cancel to pay by Bank Transfer!';
         }
 
         return redirect()

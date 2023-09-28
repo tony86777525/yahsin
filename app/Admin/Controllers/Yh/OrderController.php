@@ -38,7 +38,7 @@ class OrderController extends AdminController
         $grid->column('payment_type', __('Payment Type'))
             ->display(function($paymentType) {
                 return Order::PAYMENT_TYPE_OPTIONS[$paymentType];
-            });;
+            });
         $grid->column('status', __('Status'))
             ->display(function($status) {
                 return Order::STATUS_OPTIONS[$status];

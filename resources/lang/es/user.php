@@ -111,6 +111,7 @@ return [
     'payment.title'                       => 'Método de Pago',
     'payment.type.1'                      => 'Tarjeta de Crédito',
     'payment.type.2'                      => 'PayPal',
+    'payment.type.3'                      => 'Bank Transfer',
 
     'delivery.title'                      => 'Información del Destinatario',
     'delivery.recipient_name'             => 'Nombre del Destinatario',
