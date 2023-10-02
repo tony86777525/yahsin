@@ -225,13 +225,9 @@ class OrderController extends BasicController
 
             MailService::sendMail($orderData);
 
-            $bankTransferData = [
-                'name' => env('BANKTRANSFER_BANK_NAME'),
-                'code' => env('BANKTRANSFER_BANK_CODE'),
-                'account' => env('BANKTRANSFER_BANK_ACCOUNT')
-            ];
+            $isBankTransfer = true;
 
-            return view('user.order.complete', compact('orderNumber', 'bankTransferData'));
+            return view('user.order.complete', compact('orderNumber', 'isBankTransfer'));
         } catch (\Exception $e) {
             DB::rollback();
 

@@ -16,4 +16,12 @@ class IndexController extends BasicController
 
         return view('user.index', compact('countryOptions'));
     }
+
+    public function test()
+    {
+        $orderNumber = '1234';
+        $isBankTransfer = true;
+
+        return view('user.order.complete', compact('orderNumber', 'isBankTransfer'));
+    }
 }

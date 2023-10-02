@@ -24,6 +24,9 @@ Route::group([
     'middleware' => ['set.web.language'],
 ], function () {
     Route::get('/', [IndexController::class, 'index'])->name('index');
+
+    Route::get('/test', [IndexController::class, 'test'])->name('test');
+
     Route::view('/cart', 'user.cart')
             ->name('user.cart');
     Route::view('/complete', 'user.complete')

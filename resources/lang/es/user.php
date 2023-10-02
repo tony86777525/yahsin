@@ -128,4 +128,12 @@ return [
     'complete.title'                      => 'Pedido Enviado',
     'complete.content.order_number'       => 'Número de Orden',
     'complete.content.note'               => 'Tome fotografías, capturas de pantalla o confirme su correo electrónico y <span class="highlight">conserve el número de pedido</span> para futuras consultas.',
+    'complete.bankTransfer.content'         => '<table><tbody>
+<tr><td>Bank’s Name</td><td>CTBC Bank CO., LTD.(822)<br>Minsheng Branch(0738)</td></tr>
+<tr><td>Account Name</td><td>LI CHIH YEH</td></tr>
+<tr><td>Account No</td><td>738-131-045329</td></tr>
+<tr><td>Bank address</td><td>1F,No. 58, Section 1, Minsheng East Road,<br>Jhongshan District, Taipei City 104, Taiwan, R.O.C.</td></tr>
+<tr><td>Swift Code</td><td>CTCBTWTP738</td></tr>
+<tr><td>Remittance notes</td><td>Please fill in your name/order number</td></tr>
+</tbody></table>',
 ];

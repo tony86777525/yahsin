@@ -16,9 +16,19 @@
             <div class="complete__content">
                 <h3 class="orderNum"><span class="text">{{ __('user.complete.content.order_number') }}</span><span class="num">{{ $orderNumber }}</span></h3>
                 <h4 class="note">{!! __('user.complete.content.note') !!}</h4>
-                <h4 class="note">{{ $bankTransferData['name'] }}</h4>
-                <h4 class="note">{{ $bankTransferData['code'] }}</h4>
-                <h4 class="note">{{ $bankTransferData['account'] }}</h4>
+                @if (!empty($isBankTransfer))
+                    <div class="backTransfer">
+                        <div class="backTransfer__title">{{ __('user.complete.bankTransfer.title') }}</div>
+                        <div class="backTransfer__subTitle">{{ __('user.complete.bankTransfer.subTitle') }}</div>
+                        <div class="backTransfer__content">
+                            {!! __('user.complete.bankTransfer.content') !!}
+                        </div>
+                        <div class="backTransfer__message">
+                            <div class="backTransfer__message__title">{!! __('user.complete.bankTransfer.message.title') !!}</div>
+                            <div class="backTransfer__message__content">{!! __('user.complete.bankTransfer.message.content') !!}</div>
+                        </div>
+                    </div>
+                @endif
                 <div class="decoImg">
                     <img src="/img/img-complete.png" class="image">
                 </div>

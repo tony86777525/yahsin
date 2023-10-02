@@ -39,12 +39,27 @@ $path: '../../images/';
 				color: #e86b59;
 			}
 		}
+
+        .backTransfer {
+            table {
+                margin: auto;
+                border-collapse: collapse;
+                tbody {
+                    td {
+                        border: 2px solid #dee2e6;
+                    }
+                }
+                tfoot {
+                    text-align: left;
+                }
+            }
+        }
 	}
 }
 
 // ========== Media Queries ==========
 //Small devices (portrait phones, 320 and up)
-@media only screen and (min-width: 320px) {	
+@media only screen and (min-width: 320px) {
 	$fs-title: 1.6rem;
 	$fs-topic: 1.2rem;
 	$fs-content: 1rem;
@@ -58,7 +73,7 @@ $path: '../../images/';
 
 		&__title {
 			margin-bottom: 2rem;
-			
+
 			h2 {
 				font-size: $fs-title;
 			}
@@ -76,16 +91,47 @@ $path: '../../images/';
 			}
 
 			.note {
-				margin-bottom: 4rem;
+				margin-bottom: 2rem;
 				font-size: $fs-content;
 			}
+
+            .backTransfer {
+                font-size: $fs-content;
+                margin-bottom: 4rem;
+
+                &__content {
+                    margin: 0.5rem auto 0;
+                    table {
+                        tbody {
+                            td {
+                                padding: 0.2rem;
+                            }
+                        }
+                    }
+                }
+
+                &__message {
+                    margin: 1.5rem auto 0;
+
+                    &__content {
+                        margin: 0.5rem auto 0;
+                        table {
+                            tbody {
+                                td {
+                                    padding: 0.2rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 		}
 	}
 }
 
 //Medium devices (portrait tablets,landscape phone, 768px and up)
 @media only screen and (min-width: 768px) {
-	
+
 }
 
 //Large devices (laptops, 1280 and up)
@@ -103,7 +149,7 @@ $path: '../../images/';
 
 		&__title {
 			margin-bottom: 20px;
-			
+
 			h2 {
 				font-size: $fs-title
 			}
@@ -121,9 +167,39 @@ $path: '../../images/';
 			}
 
 			.note {
-				margin-bottom: 80px;
 				font-size: $fs-content;
+                margin-bottom: 40px;
 			}
+
+            .backTransfer {
+                font-size: $fs-content;
+                margin: 10px auto 80px;
+
+                &__content {
+                    margin: 10px auto 0;
+                    table {
+                        tbody {
+                            td {
+                                padding: 5px 10px;
+                            }
+                        }
+                    }
+                }
+
+                &__message {
+                    margin: 30px auto 0;
+                    &__content {
+                        margin: 10px auto 0;
+                        table {
+                            tbody {
+                                td {
+                                    padding: 5px 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
 			.decoImg {
 				width: 880px;
@@ -138,7 +214,7 @@ $path: '../../images/';
 	$fs-title: 50px;
 	$fs-topic: 35px;
 	$fs-content: 28px;
-	
+
 	.complete {
 		padding: 100px 0;
 
@@ -148,7 +224,7 @@ $path: '../../images/';
 
 		&__title {
 			margin-bottom: 30px;
-			
+
 			h2 {
 				font-size: $fs-title;
 			}

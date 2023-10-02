@@ -128,4 +128,22 @@ return [
     'complete.title'                      => '訂單已送出',
     'complete.content.order_number'       => '訂單編號',
     'complete.content.note'               => '請拍照、截圖，或確認您的Email，<span class="highlight">保留訂單編號</span>以便日後查詢',
+    'complete.bankTransfer.title'         => '銀行匯款資訊Bank information',
+    'complete.bankTransfer.subTitle'      => '台灣境內地區(新台幣專用) (For Taiwan area NTD only)',
+    'complete.bankTransfer.content'         => '<table><tbody>
+<tr><td>金融機構<br>Bank’s Name</td><td>永豐銀行</td></tr>
+<tr><td>金融機構代號<br>Bank’s code</td><td>807</td></tr>
+<tr><td>帳號<br>Account No</td><td>112-001-0000239-6</td></tr>
+<tr><td>帳戶名稱<br>Account Name</td><td>雅信翻譯社</td></tr>
+<tr><td>匯款備註<br>Remittance notes</td><td>請填寫 您的姓名/訂單編號<br>Please fill in your name/order number</td></tr>
+</tbody><tfoot>
+<tr><td colspan="100%">◎每件NT$9800元、2件NT$19600元，以此類推。</td></tr>
+</tfoot></table>',
+    'complete.bankTransfer.message.title' => '如有任何訂單及匯款問題，請立即與我們專人聯繫:
+<br>(上班時間-周一至周五AM10:00-PM04:00)',
+    'complete.bankTransfer.message.content' => '<table><tbody>
+<tr><td>TEL</td><td>(02)2382-1155/(02)2382-2255</td><tr>
+<tr><td>E-MAIL</td><td>Yahsin111@gmail.com</td><tr>
+<tr><td>LINE</td><td>Yahsin888</td><tr>
+</tbody></table>',
 ];
