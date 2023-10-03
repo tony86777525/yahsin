@@ -31,7 +31,7 @@ class OrderController extends BasicController
 
         DB::beginTransaction();
 
-        try {
+//        try {
             $newOrderData = Order::create([
                 'number' => OrderService::getNewNumber(),
                 'name' => $orderData['name'],
@@ -47,15 +47,15 @@ class OrderController extends BasicController
             $newOrderData->google_drive_folder_id = $folderId;
             $newOrderData->save();
 
-            DB::commit();
+//            DB::commit();
 
             return redirect()
                 ->route('user.order.confirm', [
                     'orderNumber' => $newOrderData->number
                 ]);
-        } catch (\Exception $e) {
-            DB::rollback();
-        }
+//        } catch (\Exception $e) {
+//            DB::rollback();
+//        }
 
         return redirect()
             ->route('user.index');
