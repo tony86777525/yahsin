@@ -261,7 +261,7 @@ INSERT INTO `yh_google_access_tokens` (`key`, `value`, `created_at`, `updated_at
     ('GOOGLE_DRIVE_EXPIRES_IN', '3599', now(), now()),
     ('GOOGLE_DRIVE_TOKEN_TYPE', 'Bearer', now(), now()),
     ('GOOGLE_DRIVE_SCOPE', 'https://www.googleapis.com/auth/drive%20https://www.googleapis.com/auth/drive.file', now(), now()),
-    ('GOOGLE_DRIVE_FILE_ID', '1m3WNr1Yr8vUTzBBAMxgbjOFmYvCsryNj', now(), now());
+    ('GOOGLE_DRIVE_FILE_ID', '1aSqp_sIKTv33EfnLYmhWXKPMljwztvHs', now(), now());
 
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
