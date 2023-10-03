@@ -41,18 +41,34 @@ $path: '../../images/';
 		}
 
         .backTransfer {
+
+			&__title {
+				color: $main;
+				font-weight: 500;
+			}
+
+			&__subTitle {
+				color: $sub;
+			}
+
             table {
+				color: $sub;
                 margin: auto;
                 border-collapse: collapse;
+				font-size: 16px;
                 tbody {
                     td {
-                        border: 2px solid #dee2e6;
+                        border: 1px solid #dee2e6;
                     }
                 }
                 tfoot {
                     text-align: left;
                 }
             }
+
+			&__message {
+				color: $sub;
+			}
         }
 	}
 }
@@ -175,12 +191,26 @@ $path: '../../images/';
                 font-size: $fs-content;
                 margin: 10px auto 80px;
 
+				&__title {
+					font-size: $fs-topic;
+				}
+
+				&__subTitle {
+					font-size: $fs-content;
+					margin: 8px 0;
+				}
+
                 &__content {
                     margin: 10px auto 0;
                     table {
                         tbody {
                             td {
-                                padding: 5px 10px;
+                                padding: 10px;
+                            }
+                        }
+						tfoot {
+                            td {
+                                padding: 5px 0;
                             }
                         }
                     }
@@ -193,7 +223,7 @@ $path: '../../images/';
                         table {
                             tbody {
                                 td {
-                                    padding: 5px 10px;
+                                    padding: 10px;
                                 }
                             }
                         }
