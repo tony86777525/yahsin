@@ -3,6 +3,11 @@ $(function(){
         language: "zh-TW"
     });
 
+    Date.prototype.addDays = function(days) {
+        this.setDate(this.getDate() + days);
+        return this;
+    }
+
     document.querySelector('[name="bill"]')
         .addEventListener('change',
             function(event) {
@@ -32,7 +37,7 @@ $(function(){
 
                 const today = new Date();
 
-                let nowDate = formatDate(today, 'Y-m-d');
+                let nowDate = formatDate(today.addDays(-3), 'Y-m-d');
 
                 formBody = {
                     "dataset": "TaiwanExchangeRate",
@@ -96,7 +101,7 @@ function formatDate(date, format) {
     const map = {
         m: (date.getMonth() + 1)
             .toString().padStart(2, '0'),
-        d: (date.getDate() - 3)
+        d: (date.getDate())
             .toString().padStart(2, '0'),
         Y: date.getFullYear()
     }
