@@ -74,9 +74,9 @@ return [
     'compare.content.quite.copy.2'        => '<span>Any document</span>',
     'compare.content.quite.label.3'       => '<span>Way</span>',
     'compare.content.quite.original.3'    => '<span>The original paper document is needed</span>',
-    'compare.content.quite.copy.3'        => '<span>Valid forever</span>',
+    'compare.content.quite.copy.3'        => '<span>Upload the Digital Document</span>',
     'compare.content.quite.label.4'       => '<span>Legal Effect</span>',
-    'compare.content.quite.original.4'    => '<span>Upload the Digital Document</span>',
+    'compare.content.quite.original.4'    => '<span>Valid forever</span>',
     'compare.content.quite.copy.4'        => '<span>Valid forever</span>',
 
     'sns.list.origin'                     => 'Original Document- Apostille Service Introduction',

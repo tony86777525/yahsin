@@ -74,9 +74,9 @@ return [
     'compare.content.quite.copy.2'        => '<span>任何文件均可</span>',
     'compare.content.quite.label.3'       => '<span>形式</span>',
     'compare.content.quite.original.3'    => '<span>須提供正本紙本</span>',
-    'compare.content.quite.copy.3'        => '<span>永久有效</span>',
+    'compare.content.quite.copy.3'        => '<span>上傳數位電子檔</span>',
     'compare.content.quite.label.4'       => '<span>法律</span><span>效力</span>',
-    'compare.content.quite.original.4'    => '<span>上傳數位電子檔</span>',
+    'compare.content.quite.original.4'    => '<span>永久有效</span>',
     'compare.content.quite.copy.4'        => '<span>永久有效</span>',
 
     'sns.list.origin'                     => '原始正本-海牙認證服務連結',

@@ -74,9 +74,9 @@ return [
     'compare.content.quite.copy.2'        => '<span>Cualquier Documento</span>',
     'compare.content.quite.label.3'       => '<span>Forma</span>',
     'compare.content.quite.original.3'    => '<span>Se necesita el documento original en paper</span>',
-    'compare.content.quite.copy.3'        => '<span>Válido para siempre</span>',
+    'compare.content.quite.copy.3'        => '<span>Subir el Documento Digital</span>',
     'compare.content.quite.label.4'       => '<span>Efecto Jurídico</span>',
-    'compare.content.quite.original.4'    => '<span>Subir el Documento Digital</span>',
+    'compare.content.quite.original.4'    => '<span>Válido para siempre</span>',
     'compare.content.quite.copy.4'        => '<span>Válido para siempre</span>',
 
     'sns.list.origin'                     => 'Documento Original-Introducción del Servicio de Apostilla',
