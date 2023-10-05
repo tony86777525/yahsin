@@ -54,7 +54,7 @@ html {
 	margin-left: auto;
 
 	&__menu {
-		
+
 	}
 
 	&__language {}
@@ -79,7 +79,7 @@ html {
 	&.is-default {
 		background-image: url('#{$path}/burger-default.svg');
 	}
-	
+
 	&.is-close {
 		background-image: url('#{$path}/burger-close.svg');
 	}
@@ -133,7 +133,7 @@ html {
 		&__language {
 			margin-right: 0.8rem;
 		}
-		
+
 		.mmMenu {
 			flex-direction: column;
 
@@ -158,10 +158,24 @@ html {
 			margin: 0 auto 1.1rem;
 		}
 	}
+
+    .lang {
+        &--es {
+            .quite {
+                &--image {
+                    display: block;
+                }
+
+                &--text {
+                    display: none;
+                }
+            }
+        }
+    }
 }
 //Medium devices (portrait tablets,landscape phone, 768px and up)
 @media only screen and (min-width: 768px) {
-	
+
 }
 
 //Large devices (laptops, 1280 and up)
@@ -274,6 +288,18 @@ html {
 			}
 		}
 
+        &--es {
+            .quite {
+                &--image {
+                    display: none;
+                }
+
+                &--text {
+                    display: block;
+                }
+            }
+        }
+
 		&--zh-TW,
 		&--zh-CN {
 			.navigation {
@@ -292,7 +318,7 @@ html {
 		font-size: 20px;
 		line-height: 1;
 	}
-	
+
 	.header {
 		padding: 50px 60px;
 	}
@@ -312,7 +338,7 @@ html {
 				}
 			}
 		}
-	
+
 		&--zh-TW,
 		&--zh-CN {
 			.navigation {

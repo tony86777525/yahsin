@@ -39,7 +39,7 @@ return [
 
     'featureBoard.1.paragraph.1'          => '+<span>:number</span><em>/ documento</em>',
     'featureBoard.1.paragraph.2'          => 'Servicio de Apostilla',
-    'featureBoard.2.paragraph.1'          => '<em>NTD</em><span>:price</span>',
+    'featureBoard.2.paragraph.1'          => '<em>NT$</em><span>:price</span>',
     'featureBoard.2.paragraph.2'          => 'Costo Fijo',
     'featureBoard.3'                      => 'Sin Pago Extra Para Enviar a Todo el Mundo',
     'featureBoard.4.paragraph.1'          => 'Declaración Jurada por un',

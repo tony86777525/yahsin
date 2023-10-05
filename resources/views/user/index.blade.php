@@ -276,44 +276,49 @@
             <h3 class="compare__title">{{ __('user.compare.title') }}</h3>
             <div class="compare__content">
                 <div class="intro">{{ __('user.compare.content.intro') }}</div>
-                <div class="quite boxShadow">
-                    <div class="boxShadow__content">
-                        <div class="quite__title wow fadeInRight">{!! __('user.compare.content.quite.title') !!}</div>
-                        <div class="quite__table wow fadeInRight">
-                            <table class="quiteTable">
-                                <thead>
-                                <tr>
-                                    <th class="label"></th>
-                                    <th class="original">{{ __('user.compare.content.quite.original') }}</th>
-                                    <th class="copy">{{ __('user.compare.content.quite.copy') }}</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <th class="label">{!! __('user.compare.content.quite.label.1') !!}</th>
-                                    <td class="original">{!! __('user.compare.content.quite.original.1') !!}</td>
-                                    <td class="copy">{!! __('user.compare.content.quite.copy.1') !!}</td>
-                                </tr>
-                                <tr>
-                                    <th class="label">{!! __('user.compare.content.quite.label.2') !!}</th>
-                                    <td class="original">{!! __('user.compare.content.quite.original.2') !!}</td>
-                                    <td class="copy">{!! __('user.compare.content.quite.copy.2') !!}</td>
-                                </tr>
-                                <tr>
-                                    <th class="label">{!! __('user.compare.content.quite.label.3') !!}</th>
-                                    <td class="original">{!! __('user.compare.content.quite.original.3') !!}</td>
-                                    <td class="copy">{!! __('user.compare.content.quite.copy.3') !!}</td>
-                                </tr>
-                                <tr>
-                                    <th class="label">{!! __('user.compare.content.quite.label.4') !!}</th>
-                                    <td class="original">{!! __('user.compare.content.quite.original.4') !!}</td>
-                                    <td class="copy">{!! __('user.compare.content.quite.copy.4') !!}</td>
-                                </tr>
-                                </tbody>
-                            </table>
+                <div class="quite quite--text boxShadow">
+                        <div class="boxShadow__content">
+                            <div class="quite__title wow fadeInRight">{!! __('user.compare.content.quite.title') !!}</div>
+                            <div class="quite__table wow fadeInRight">
+                                <table class="quiteTable">
+                                    <thead>
+                                    <tr>
+                                        <th class="label"></th>
+                                        <th class="original">{{ __('user.compare.content.quite.original') }}</th>
+                                        <th class="copy">{{ __('user.compare.content.quite.copy') }}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th class="label">{!! __('user.compare.content.quite.label.1') !!}</th>
+                                        <td class="original">{!! __('user.compare.content.quite.original.1') !!}</td>
+                                        <td class="copy">{!! __('user.compare.content.quite.copy.1') !!}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="label">{!! __('user.compare.content.quite.label.2') !!}</th>
+                                        <td class="original">{!! __('user.compare.content.quite.original.2') !!}</td>
+                                        <td class="copy">{!! __('user.compare.content.quite.copy.2') !!}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="label">{!! __('user.compare.content.quite.label.3') !!}</th>
+                                        <td class="original">{!! __('user.compare.content.quite.original.3') !!}</td>
+                                        <td class="copy">{!! __('user.compare.content.quite.copy.3') !!}</td>
+                                    </tr>
+                                    <tr>
+                                        <th class="label">{!! __('user.compare.content.quite.label.4') !!}</th>
+                                        <td class="original">{!! __('user.compare.content.quite.original.4') !!}</td>
+                                        <td class="copy">{!! __('user.compare.content.quite.copy.4') !!}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @if (app()->getLocale() === 'es')
+                    <div class="quite quite--image">
+                        <img src="/img/img-compare_es.png" alt="" class="image">
+                    </div>
+                @endif
             </div>
         </div>
     </section>

@@ -3,7 +3,7 @@
 <html class="no-js" lang="{{ app()->getLocale() }}">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Yahsin</title>
+    <title>雅信翻譯 海牙認證線上服務</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="keywords" content="" />
     <meta name="description" content="" />
@@ -13,7 +13,7 @@
     <meta property="og:title" content="Yahsin">
     <meta property="og:type" content="website" />
     <meta property="og:url" content="" />
-    <meta property="og:image" content="{{ asset("images/user/og-image.jpg") }}" />
+    <meta property="og:image" content="{{ asset("img/og-image.png") }}" />
     <meta property="og:site_name" content="" />
     <meta property="og:locale" content="zh_TW" />
     <meta property="og:description" content="">
@@ -24,7 +24,7 @@
     <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
     -->
     <!-- Common CSS file /begin -->
-    <link rel="shortcut icon" href="{{ asset("images/user/favicon.ico") }}" />
+    <link rel="shortcut icon" href="{{ asset("img/favicon.ico") }}" />
     @include('user.basic.common_css')
     <!-- Common CSS file /end -->
     <!-- Page CSS file /begin -->

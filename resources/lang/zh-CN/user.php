@@ -39,7 +39,7 @@ return [
 
     'featureBoard.1.paragraph.1'          => '+<span>:number</span>',
     'featureBoard.1.paragraph.2'          => '我们办理海牙认证',
-    'featureBoard.2.paragraph.1'          => '<span>:price</span><em>元</em>',
+    'featureBoard.2.paragraph.1'          => 'NT$<span>:price</span><em>元</em>',
     'featureBoard.2.paragraph.2'          => '固定成本',
     'featureBoard.3'                      => '全球免运费',
     'featureBoard.4.paragraph.1'          => '香港公证员',
