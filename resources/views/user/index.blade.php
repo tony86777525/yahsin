@@ -314,9 +314,9 @@
                             </div>
                         </div>
                     </div>
-                @if (app()->getLocale() === 'es')
+                @if (app()->getLocale() === 'es' || app()->getLocale() === 'en')
                     <div class="quite quite--image">
-                        <img src="/img/img-compare_es.png" alt="" class="image">
+                        <img src="/img/img-compare_{{ app()->getLocale() }}.png" alt="" class="image">
                     </div>
                 @endif
             </div>
