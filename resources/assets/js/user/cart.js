@@ -45,7 +45,7 @@ $(function(){
                     "date": nowDate,
                 };
 
-                apiGet(url, formBody, functions);
+                apiGet(url, formBody, functions, 'GET');
             }
         );
 
@@ -65,6 +65,77 @@ $(function(){
 
             document.querySelector('[data-js="totalPrice"]').innerHTML = newTotalPrice;
         });
+
+    document.querySelector('[data-form-button="submit"]')
+        .addEventListener('click',
+            function(event) {
+            const formTarget = document.querySelector('form');
+                // event.preventDefault();
+
+                let url = '/api/store/first';
+
+                let beforeSend = () => {
+                    let errorTarget = document.querySelectorAll('form [data-error]');
+                    errorTarget.forEach((item) => {
+                        item.textContent = '';
+                        item.classList.remove("active");
+                    });
+                };
+                let resolve = (data) => {
+                    const errors = data.errors;
+
+                    if (errors) {
+                        let errorMessage = '';
+
+                        for (const name in errors) {
+                            errorMessage = errors[name][0];
+                            document.querySelector(`form [data-error="${name}"]`).textContent = errorMessage;
+                            document.querySelector(`form [data-error="${name}"]`).classList.add("active");
+                        }
+
+                        const targetTop = document.querySelector(`form .active[data-error]`).offsetTop;
+                        const header = document.querySelector(`.header`).offsetHeight;
+                        const scrollTop = targetTop - header - 200;
+                        window.scrollTo({
+                            top: scrollTop > 0 ? scrollTop : 0,
+                            behavior: "smooth",
+                        });
+                    } else {
+                        formTarget.submit();
+                    }
+                };
+                let reject = (error) => {
+                    console.log(error);
+                };
+
+                functions = {
+                    beforeSend,
+                    resolve,
+                    reject,
+                };
+
+                const getData = new FormData(formTarget);
+                // let jsonData = [];
+                // getData.forEach((value, key) => {
+                //     jsonData[key] = value;
+                // });
+                //
+                // let formBody = JSON.stringify(jsonData);
+                const details = Object.fromEntries(getData.entries());
+                let formBody = [];
+                for (let property in details) {
+                    if (property === '_token') continue;
+                    let encodedKey = encodeURIComponent(property);
+                    let encodedValue = encodeURIComponent(details[property]);
+                    formBody.push(encodedKey + "=" + encodedValue);
+                }
+                formBody = formBody.join("&");
+
+
+                apiPost(url, formBody, functions);
+            }
+        );
+
 });
 
 
@@ -72,14 +143,50 @@ $(function(){
 async function apiGet(
     url,
     formBody,
-    functions
+    functions,
+) {
+    functions.beforeSend
+        ? functions.beforeSend()
+        : () => {};
+
+    await fetch(url + '?' + new URLSearchParams(formBody),
+    ).then((response) => {
+        return response.json();
+    }).then((data) => {
+        functions.resolve ?
+            functions.resolve(data)
+            : () => {};
+    }).catch(err => {
+        functions.reject
+            ? functions.reject(err)
+            : () => {};
+    }).finally(() => {
+        functions.final
+            ? functions.final()
+            : () => {};
+    });
+}
+
+async function apiPost(
+    url,
+    formBody,
+    functions,
 ) {
     functions.beforeSend
         ? functions.beforeSend()
         : () => {};
 
     await fetch(
-        url + '?' + new URLSearchParams(formBody)
+        url,
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+                "X-CSRF-Token": $('meta[name="csrf-token"]').attr('content'),
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            body: formBody
+        }
     ).then((response) => {
         return response.json();
     }).then((data) => {
@@ -112,3 +219,4 @@ function formatDate(date, format) {
 function getPrice(price, rate, amount) {
     return Math.floor(parseInt(price) * parseInt(amount) / parseInt(rate));
 }
+

@@ -37,6 +37,7 @@
                                             <option value="CNY">RMB￥</option>
                                         </select>
                                     </div>
+                                    <span class="error"></span>
                                 </div>
                                 <div class="priceShow">{!! __('user.cart.content.price', ['price' => App\Models\Order::PRICE]) !!}</div>
                             </div>
@@ -59,6 +60,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <span class="error" data-error="amount"></span>
                             <div class="amount__price">
                                 {{ __('user.cart.content.amount.total_price') }}<span class="count" data-js="totalPrice">{{ App\Models\Order::PRICE }}</span>
                             </div>
@@ -78,6 +80,7 @@
                         <li><input id="payment_banktransfer" type="radio" name="payment_type" value="{{ \App\Models\Order::PAYMENT_TYPE_BANK_TRANSFER }}" class="fancyInput fancyInput--hidden  fancyInput--radio"><label for="payment_banktransfer">{{ __('user.payment.type.3') }}</label></li>
                         {{--<li><input id="payment_paypal" type="radio" name="payment_type" value="{{ \App\Models\Order::PAYMENT_TYPE_PAYPAL }}" class="fancyInput fancyInput--hidden fancyInput--radio"><label for="payment_paypal">{{ __('user.payment.type.2') }}</label></li>--}}
                     </ul>
+                    <span class="error" data-error="payment_type"></span>
                 </div>
             </div>
         </div>
@@ -101,6 +104,7 @@
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
+                            <span class="error" data-error="recipient_name"></span>
                         </div>
                         <div class="formCol">
                             <span class="formLabel">{{ __('user.delivery.recipient_company_name') }}</span>
@@ -113,6 +117,7 @@
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
+                            <span class="error" data-error="recipient_company_name"></span>
                         </div>
                     </div>
                     <div class="form__row form__row--area">
@@ -123,6 +128,7 @@
                                     <option value=""></option>
                                 </select>
                             </div>
+                            <span class="error" data-error="recipient_address_nation"></span>
                         </div>
                         <div class="formCol">
                             <span class="formLabel">{{ __('user.delivery.recipient_address_country') }}</span>
@@ -131,6 +137,7 @@
                                     <option value=""></option>
                                 </select>
                             </div>
+                            <span class="error" data-error="recipient_address_country"></span>
                         </div>
                         <div class="formCol">
                             <span class="formLabel">{{ __('user.delivery.recipient_address_code') }}</span>
@@ -143,6 +150,7 @@
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
+                            <span class="error" data-error="recipient_address_code"></span>
                         </div>
                     </div>
                     <div class="form__row form__row--address">
@@ -157,6 +165,7 @@
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
+                            <span class="error" data-error="recipient_address"></span>
                         </div>
                     </div>
                     <div class="form__row form__row--default">
@@ -171,6 +180,7 @@
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
+                            <span class="error" data-error="recipient_tel"></span>
                         </div>
                         <div class="formCol">
                             <span class="formLabel">{{ __('user.delivery.recipient_email') }}</span>
@@ -183,6 +193,7 @@
                                         class="fancyInput fancyInput--inputTxt">
                                 </label>
                             </div>
+                            <span class="error" data-error="recipient_email"></span>
                         </div>
                     </div>
                     <div class="form__action">
@@ -197,7 +208,7 @@
                         @endif
                         <ul class="actions">
                             <li class="btnWrap btnWrap--submit">
-                                <button type="submit" class="btn btn--submit"><span class="btn__text">{{ __('user.cart.submit.button') }}</span></button>
+                                <button type="button" class="btn btn--submit" data-form-button="submit"><span class="btn__text">{{ __('user.cart.submit.button') }}</span></button>
                             </li>
                         </ul>
                     </div>

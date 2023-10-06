@@ -80,7 +80,7 @@ return [
     'compare.content.quite.copy.4'        => '<span>永久有效</span>',
 
     'sns.list.origin'                     => '原始正本-海牙認證服務連結',
-    'sns.list.line'                       => '原始正本-海牙認證服務連結',
+    'sns.list.line'                       => '加入官方line與我們聯繫',
 
     'faq.title.1'                         => '雅信【海牙認證】線上服務',
     'faq.title.2'                         => '常見問題QA',

@@ -5,6 +5,7 @@ use App\Http\Controllers\User\Api\OrderPay\ECPayController;
 use App\Http\Controllers\User\IndexController;
 use App\Http\Controllers\User\OrderController;
 use App\Http\Controllers\User\GoogleDriveController;
+use App\Http\Controllers\User\Api\OrderFormController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +37,9 @@ Route::group([
     Route::post('/api/order/pay/ecpay/credit', [ECPayController::class, 'credit'])->name('api.order.pay.ecpay.credit');
     Route::post('/api/order/pay/ecpay/notify', [ECPayController::class, 'notify'])->name('api.order.pay.ecpay.notify');
     Route::post('/api/order/pay/ecpay/search', [ECPayController::class, 'search'])->name('api.order.pay.ecpay.search');
+
+
+    Route::post('/api/store/first', [OrderFormController::class, 'validation'])->name('api.store.first');
 
     Route::group([
         'as' => 'order.',

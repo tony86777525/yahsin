@@ -16,6 +16,9 @@ $path: "../../images/";
 			line-height: 1.8;
 		}
 	}
+    &__content {
+        text-align: center;
+    }
 
 	&__row {
 		display: flex;
@@ -39,6 +42,17 @@ $path: "../../images/";
 			}
 		}
 	}
+
+}
+
+.error {
+    display: none;
+    color: red;
+    margin: 4px auto 0;
+    font-size: 14px;
+    &.active {
+        display: block;
+    }
 }
 
 .formLabel {

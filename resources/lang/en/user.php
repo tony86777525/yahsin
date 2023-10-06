@@ -128,6 +128,8 @@ return [
     'complete.title'                      => 'Order Sent',
     'complete.content.order_number'       => 'Order Number',
     'complete.content.note'               => 'Please take photos, screenshots, or confirm your email, and <span class="highlight">keep the order number</span> for future inquiries.',
+    'complete.bankTransfer.title'         => 'Bank information',
+    'complete.bankTransfer.subTitle'      => 'Non-Taiwan/Overseas areas ( USD only )',
     'complete.bankTransfer.content'         => '<table><tbody>
 <tr><td>Bank’s Name</td><td>CTBC Bank CO., LTD.(822)<br>Minsheng Branch(0738)</td></tr>
 <tr><td>Account Name</td><td>LI CHIH YEH</td></tr>
@@ -135,5 +137,12 @@ return [
 <tr><td>Bank address</td><td>1F,No. 58, Section 1, Minsheng East Road,<br>Jhongshan District, Taipei City 104, Taiwan, R.O.C.</td></tr>
 <tr><td>Swift Code</td><td>CTCBTWTP738</td></tr>
 <tr><td>Remittance notes</td><td>Please fill in your name/order number</td></tr>
+</tbody></table>',
+    'complete.bankTransfer.message.title' => 'If you have any order or remittance issues, please contact us:
+<br>(Working hours - Monday to Friday AM10:00-PM04:00)',
+    'complete.bankTransfer.message.content' => '<table><tbody>
+<tr><td>TEL</td><td>+886 (2)2382-1155</td><tr>
+<tr><td>E-MAIL</td><td>Yahsin111@gmail.com</td><tr>
+<tr><td>LINE</td><td>Yahsin888</td><tr>
 </tbody></table>',
 ];
