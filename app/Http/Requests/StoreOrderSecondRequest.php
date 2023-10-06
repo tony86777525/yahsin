@@ -29,7 +29,7 @@ class StoreOrderSecondRequest extends FormRequest
             'recipient_address_nation' => 'required',
             'recipient_address_country' => 'required',
             'recipient_address_code' => 'required',
-            'recipient_address' => 'required|min:10|max:255',
+            'recipient_address' => 'required|string|between:10,255',
             'recipient_tel' => 'required',
             'recipient_email' => 'required',
         ];
@@ -48,7 +48,7 @@ class StoreOrderSecondRequest extends FormRequest
             'recipient_tel.required' => "We need to know your Recipient's Phone Number.",
             'recipient_email.required' => "We need to know your Recipient's Email.",
             'required' => 'We need to know your :attribute.',
-            'recipient_address.between' => 'The Address must be between :min - :max.',
+            'recipient_address.between' => 'The Address must be between :min - :max words.',
         ];
     }
 }
