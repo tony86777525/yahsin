@@ -68,6 +68,11 @@ $path: '../../images/';
 
 			&__message {
 				color: $sub;
+
+                &__qrcode {
+                    width: 250px;
+                    margin: auto;
+                }
 			}
         }
 	}

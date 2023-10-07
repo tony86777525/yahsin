@@ -43,7 +43,7 @@ class StoreOrderFirstRequest extends FormRequest
             'files.array' => 'Invalid files.',
             'files.*.file' => 'Invalid file.',
             'files.*.max' => 'The file size should not exceed :max KB.',
-            'files.*.mimes' => 'The file must be a PDF.',
+            'files.*.mimes' => 'The file type must be a PDF PNG JPG.',
 //            'captcha' => '驗證碼錯誤, 請重新輸入',
         ];
     }

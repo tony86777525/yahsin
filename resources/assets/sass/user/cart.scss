@@ -72,7 +72,7 @@ $path: '../../images/';
 	.payList {
 		@include list-reset;
 		text-align: center;
-	
+
 		& > li {
 			display: inline-block;
 		}
@@ -148,7 +148,7 @@ $path: '../../images/';
 				&__price {
 					margin-top: 1.6rem;
 					font-size: $fs-content;
-					
+
 					.count {
 						margin-left: 1rem;
 						font-size: $fs-topic;
@@ -169,7 +169,7 @@ $path: '../../images/';
 
 //Medium devices (portrait tablets,landscape phone, 768px and up)
 @media only screen and (min-width: 768px) {
-	
+
 }
 
 //Large devices (laptops, 1280 and up)
@@ -246,7 +246,7 @@ $path: '../../images/';
 				&__price {
 					margin-top: 20px;
 					font-size: $fs-content;
-					
+
 					.count {
 						margin-left: 10px;
 						font-size: $fs-topic;
@@ -341,7 +341,7 @@ $path: '../../images/';
 				&__price {
 					margin-top: 30px;
 					font-size: $fs-content;
-					
+
 					.count {
 						margin-top: 20px;
 						font-size: $fs-topic;

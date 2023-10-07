@@ -26,6 +26,7 @@
                         <div class="backTransfer__message">
                             <div class="backTransfer__message__title">{!! __('user.complete.bankTransfer.message.title') !!}</div>
                             <div class="backTransfer__message__content">{!! __('user.complete.bankTransfer.message.content') !!}</div>
+                            <div class="backTransfer__message__qrcode"><img src="/img/img-qrcode.png" class="image"></div>
                         </div>
                     </div>
                 @endif

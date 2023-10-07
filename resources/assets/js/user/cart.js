@@ -73,14 +73,22 @@ $(function(){
                 // event.preventDefault();
 
                 let url = '/api/store/first';
+                let overlayTarget = document.querySelector('[data-js-form="overlay"]');
+                let errorTarget = document.querySelectorAll('form [data-error]');
 
                 let beforeSend = () => {
-                    let errorTarget = document.querySelectorAll('form [data-error]');
                     errorTarget.forEach((item) => {
                         item.textContent = '';
                         item.classList.remove("active");
                     });
+
+                    overlayTarget.classList.add('active');
                 };
+
+                let final = () => {
+                    overlayTarget.classList.remove('active');
+                }
+
                 let resolve = (data) => {
                     const errors = data.errors;
 
@@ -104,23 +112,14 @@ $(function(){
                         formTarget.submit();
                     }
                 };
-                let reject = (error) => {
-                    console.log(error);
-                };
 
                 functions = {
                     beforeSend,
                     resolve,
-                    reject,
+                    final,
                 };
 
                 const getData = new FormData(formTarget);
-                // let jsonData = [];
-                // getData.forEach((value, key) => {
-                //     jsonData[key] = value;
-                // });
-                //
-                // let formBody = JSON.stringify(jsonData);
                 const details = Object.fromEntries(getData.entries());
                 let formBody = [];
                 for (let property in details) {
@@ -130,7 +129,6 @@ $(function(){
                     formBody.push(encodedKey + "=" + encodedValue);
                 }
                 formBody = formBody.join("&");
-
 
                 apiPost(url, formBody, functions);
             }
