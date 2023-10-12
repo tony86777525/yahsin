@@ -70,8 +70,16 @@ $path: '../../images/';
 				color: $sub;
 
                 &__qrcode {
-                    width: 250px;
-                    margin: auto;
+                    margin: 10px auto 0;
+
+                    .image {
+                        &--qrLine {
+                            width: 250px;
+                        }
+                        &--qrWeixin {
+                            width: 275px;
+                        }
+                    }
                 }
 			}
         }

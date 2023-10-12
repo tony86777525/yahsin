@@ -6,7 +6,7 @@ return [
     ],
 
     'languages' => [
-        'zh-TW' => '繁體中文',
+        'zh-TW' => 'ZH-TW',
         'zh-CN' => '简体中文',
         'en' => 'English',
         'es' => 'Español',

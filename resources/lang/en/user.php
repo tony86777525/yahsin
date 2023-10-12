@@ -79,8 +79,9 @@ return [
     'compare.content.quite.original.4'    => '<span>Valid forever</span>',
     'compare.content.quite.copy.4'        => '<span>Valid forever</span>',
 
-    'sns.list.origin'                     => 'Original Document- Apostille Service Introduction',
-    'sns.list.line'                       => 'Add as friends of our official LINE',
+    'sns.list.origin'                     => 'Original Document-Apostille<br>Service Introduction',
+    'sns.list.line'                       => 'Add as friends of our<br>official LINE',
+    'sns.list.weixin'                       => 'Add as friends of our<br>official WeChat',
 
     'faq.title.1'                         => 'YAHSIN【APOSTILLE】ONLINE',
     'faq.title.2'                         => 'SERVICE-FAQ',
@@ -118,7 +119,7 @@ return [
     'delivery.recipient_company_name'     => 'Company Name (Optional)',
     'delivery.recipient_address_nation'   => 'Country',
     'delivery.recipient_address_country'  => 'Region',
-    'delivery.recipient_address_code'     => 'Zip Code ',
+    'delivery.recipient_address_code'     => 'Zip Code (Optional)',
     'delivery.recipient_address'          => 'Address',
     'delivery.recipient_tel'              => "Recipient's Phone Number",
     'delivery.recipient_email'            => "Recipient's Email",

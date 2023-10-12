@@ -81,6 +81,7 @@ return [
 
     'sns.list.origin'                     => '原始正本-海牙認證服務連結',
     'sns.list.line'                       => '加入官方line與我們聯繫',
+    'sns.list.weixin'                       => '加入官方微信與我們聯繫',
 
     'faq.title.1'                         => '雅信【海牙認證】線上服務',
     'faq.title.2'                         => '常見問題QA',
@@ -118,7 +119,7 @@ return [
     'delivery.recipient_company_name'     => '公司名稱（選擇性）',
     'delivery.recipient_address_nation'   => '國家',
     'delivery.recipient_address_country'  => '地區',
-    'delivery.recipient_address_code'     => '郵遞區號',
+    'delivery.recipient_address_code'     => '郵遞區號（選擇性）',
     'delivery.recipient_address'          => '地址',
     'delivery.recipient_tel'              => '收件人聯絡電話',
     'delivery.recipient_email'            => '收件人Email',

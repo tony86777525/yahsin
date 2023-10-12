@@ -1444,15 +1444,20 @@ $path: '../../images/';
             flex-direction: row;
 
             & > li {
-                flex: 0 0 50%;
                 margin-bottom: 0;
 
-                &:nth-child(odd) {
+                &:first-child {
+                    flex: 2 0 0;
                     padding-right: 25px;
                 }
 
-                &:nth-child(even) {
-                    padding-left: 25px;
+                &:nth-child(2) {
+                    flex: 1 0 0;
+                    padding: 0 25px;
+                }
+
+                &:last-child {
+                    flex: 1 0 0;
                 }
             }
         }

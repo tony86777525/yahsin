@@ -79,8 +79,9 @@ return [
     'compare.content.quite.original.4'    => '<span>Válido para siempre</span>',
     'compare.content.quite.copy.4'        => '<span>Válido para siempre</span>',
 
-    'sns.list.origin'                     => 'Documento Original-Introducción del Servicio de Apostilla',
-    'sns.list.line'                       => 'Agregue como amigos de nuestra LINE oficial',
+    'sns.list.origin'                     => 'Documento Original-Introducción<br>del Servicio de Apostilla',
+    'sns.list.line'                       => 'Agregue como amigos de nuestra<br>LINE oficial',
+    'sns.list.weixin'                     => 'Agregue como amigos de nuestra<br>WeChat oficial',
 
     'faq.title.1'                         => 'YAHSIN【APOSTILLA】SERVICIO ONLINE',
     'faq.title.2'                         => 'PREGUNTA FRECUENTE',
@@ -118,7 +119,7 @@ return [
     'delivery.recipient_company_name'     => 'Nombre de la Compañía (Opcional)',
     'delivery.recipient_address_nation'   => 'País',
     'delivery.recipient_address_country'  => 'Región',
-    'delivery.recipient_address_code'     => 'Código Postal',
+    'delivery.recipient_address_code'     => 'Código Postal (Opcional)',
     'delivery.recipient_address'          => 'Dirección',
     'delivery.recipient_tel'              => 'Número de Teléfono del Destinatario',
     'delivery.recipient_email'            => 'Correo Electrónico del Destinatario',

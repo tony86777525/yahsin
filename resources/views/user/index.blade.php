@@ -325,8 +325,9 @@
     <section class="sns">
         <div class="wrapper">
             <ul class="snsList">
-                <li><div class="btnWrap btnWrap--originSite"><a href="https://yahsin888.com/taiwan-apostille/" target="_blank" class="btn btn--originSite"><span class="btn__text">{{ __('user.sns.list.origin') }}</span></a></div></li>
-                <li><div class="btnWrap btnWrap--line"><a href="https://line.me/ti/p/QBRHoFJqrT#~" target="_blank" class="btn btn--line"><span class="btn__text">{{ __('user.sns.list.line') }}</span></a></div></li>
+                <li><div class="btnWrap btnWrap--originSite"><a href="https://yahsin888.com/taiwan-apostille/" target="_blank" class="btn btn--originSite"><span class="btn__text">{!! __('user.sns.list.origin') !!}</span></a></div></li>
+                <li><div class="btnWrap btnWrap--line"><a href="https://line.me/ti/p/QBRHoFJqrT#~" target="_blank" class="btn btn--line"><span class="btn__text">{!! __('user.sns.list.line') !!}</span></a></div></li>
+                <li><div class="btnWrap btnWrap--weixin"><a href="https://u.wechat.com/kPasqCZDytubQS4saCxVxXw" target="_blank" class="btn btn--weixin"><span class="btn__text">{!! __('user.sns.list.weixin') !!}</span></a></div></li>
             </ul>
         </div>
     </section>

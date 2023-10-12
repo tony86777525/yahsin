@@ -28,8 +28,7 @@ class StoreOrderSecondRequest extends FormRequest
             'recipient_name' => 'required',
             'recipient_address_nation' => 'required',
             'recipient_address_country' => 'required',
-            'recipient_address_code' => 'required',
-            'recipient_address' => 'required|string|between:10,255',
+            'recipient_address' => 'required|string|between:3,255',
             'recipient_tel' => 'required',
             'recipient_email' => 'required',
         ];
@@ -43,7 +42,6 @@ class StoreOrderSecondRequest extends FormRequest
             'recipient_name.required' => "We need to know your Recipient's Name.",
             'recipient_address_nation.required' => 'We need to know your Country.',
             'recipient_address_country.required' => 'We need to know your Region.',
-            'recipient_address_code.required' => 'We need to know your Zip Code.',
             'recipient_address.required' => 'We need to know your Address.',
             'recipient_tel.required' => "We need to know your Recipient's Phone Number.",
             'recipient_email.required' => "We need to know your Recipient's Email.",

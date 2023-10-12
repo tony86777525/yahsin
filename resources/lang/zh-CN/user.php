@@ -81,6 +81,7 @@ return [
 
     'sns.list.origin'                     => '原始正本-海牙认证服务说明',
     'sns.list.line'                       => '加入我们官方线好友',
+    'sns.list.weixin'                     => '加入我们官方微信好友',
 
     'faq.title.1'                         => '雅信【海牙认证】线上服务',
     'faq.title.2'                         => '常见问题QA',
@@ -119,7 +120,7 @@ return [
     'delivery.recipient_company_name'     => '公司名称（选择性）',
     'delivery.recipient_address_nation'   => '国家',
     'delivery.recipient_address_country'  => '地区',
-    'delivery.recipient_address_code'     => '邮递区号',
+    'delivery.recipient_address_code'     => '邮递区号（选择性）',
     'delivery.recipient_address'          => '地址',
     'delivery.recipient_tel'              => '收件人联络电话',
     'delivery.recipient_email'            => '收件人Email',
