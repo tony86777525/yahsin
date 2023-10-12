@@ -73,12 +73,7 @@ $path: '../../images/';
                     margin: 10px auto 0;
 
                     .image {
-                        &--qrLine {
-                            width: 250px;
-                        }
-                        &--qrWeixin {
-                            width: 275px;
-                        }
+                        width: 250px;
                     }
                 }
 			}
