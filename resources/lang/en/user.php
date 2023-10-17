@@ -19,7 +19,7 @@ return [
     'landingText.description.paragraph.2' => 'Not necessary the original document',
     'landingText.description.paragraph.3' => 'Upload your document in any digital format',
     'landingText.description.paragraph.4' => 'We confirm within 48 hours, needed【10-12 business days】',
-    'landingText.description.paragraph.5' => 'Fixed Fee【NT$:price】per apostille',
+    'landingText.description.paragraph.5' => 'Fixed Fee【NT$:price】（About US$320) per apostille',
     'landingText.description.paragraph.6' => 'After the Apostille we send to you without extra payment【International Free Shipping】',
 
     'landingForm.title'                   => 'Order Your Apostille(s)',
@@ -41,7 +41,8 @@ return [
     'featureBoard.1.paragraph.2'          => 'Apostilles processed',
     'featureBoard.2.paragraph.1'          => '<em>NT $</em><span>:price</span>',
     'featureBoard.2.paragraph.2'          => 'Service Fee',
-    'featureBoard.3'                      => 'International Shipping',
+    'featureBoard.2.paragraph.3'          => '<div class="price--usd">（About US$320)</div>',
+    'featureBoard.3'                      => '$0 International Shipping',
     'featureBoard.4.paragraph.1'          => 'Affidavit by a Hong Kong',
     'featureBoard.4.paragraph.2'          => 'Notary Public',
 

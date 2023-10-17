@@ -19,7 +19,7 @@ return [
     'landingText.description.paragraph.2' => '您無須提供文件正本',
     'landingText.description.paragraph.3' => '上傳您的文件電子檔，任何數位格式即可完成',
     'landingText.description.paragraph.4' => '48小時內確認，辦理時間【10-12工作天】',
-    'landingText.description.paragraph.5' => '固定費用【NT$:price元】',
+    'landingText.description.paragraph.5' => '固定費用【NT$:price元】（約US$320)',
     'landingText.description.paragraph.6' => '完成後國際快遞 SF/DHL EXPRESS 全球寄送【免運費】',
 
     'landingForm.title'                   => '開始訂購您的海牙認證',
@@ -41,6 +41,7 @@ return [
     'featureBoard.1.paragraph.2'          => '我們辦理海牙認證',
     'featureBoard.2.paragraph.1'          => '<em>NT$</em><span>:price</span><em>元</em>',
     'featureBoard.2.paragraph.2'          => '固定費用',
+    'featureBoard.2.paragraph.3'          => '<div class="price--usd">（約US$320)</div>',
     'featureBoard.3'                      => '全球免運費',
     'featureBoard.4.paragraph.1'          => '香港公證員',
     'featureBoard.4.paragraph.2'          => '配合宣示',

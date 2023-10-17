@@ -140,6 +140,9 @@ $path: '../../images/';
                     display: inline-block;
                     font-style: normal;
                 }
+                .price--usd {
+                    display: block;
+                }
             }
 
             .featureItem__content {
@@ -573,6 +576,10 @@ $path: '../../images/';
                     &:nth-child(2) {
                         border-bottom: 1px solid $main;
                     }
+
+                    &.trans {
+                        padding: 3rem 1rem;
+                    }
                 }
             }
 
@@ -588,10 +595,21 @@ $path: '../../images/';
                     span {
                         width: 5rem;
                     }
+
+                    .price--usd {
+                        font-size: 1rem;
+                    }
                 }
                 .featureItem__content {
                     font-size: $fs-topic;
                     margin-top: 0.8rem;
+                }
+
+
+                &--price {
+                    .featureItem__content {
+                        margin-top: 0.2rem;
+                    }
                 }
             }
         }
@@ -1060,6 +1078,11 @@ $path: '../../images/';
                     padding: 0;
 
                     &.trans {
+                        padding: 0;
+                        
+                        .featureItem {
+                            padding: 0 20px;
+                        }
                         .featureItem__content {
                             margin-top: 11px;
                         }
@@ -1097,11 +1120,21 @@ $path: '../../images/';
                     span {
                         width: 85px;
                     }
+
+                    .price--usd {
+                        font-size: 20px;
+                    }
                 }
 
                 .featureItem__content {
                     font-size: $fs-topic;
                     margin-top: 25px;
+                }
+
+                &--price {
+                    .featureItem__content {
+                        margin-top: 2px;
+                    }
                 }
             }
         }

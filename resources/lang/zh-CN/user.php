@@ -19,7 +19,7 @@ return [
     'landingText.description.paragraph.2' => '您无须提供文件正本。',
     'landingText.description.paragraph.3' => '上传您的文件电子文件，任何数字格式即可完成。',
     'landingText.description.paragraph.4' => '48小时内确认，办理时间【10-12工作天】',
-    'landingText.description.paragraph.5' => '固定成本【NT$:price元】',
+    'landingText.description.paragraph.5' => '固定成本【NT$:price元】（约US$320)',
     'landingText.description.paragraph.6' => '完成后国际快递SF/DHL EXPRESS全球寄送【免运费】',
 
     'landingForm.title'                   => '开始订购您的海牙认证',
@@ -41,6 +41,7 @@ return [
     'featureBoard.1.paragraph.2'          => '我们办理海牙认证',
     'featureBoard.2.paragraph.1'          => 'NT$<span>:price</span><em>元</em>',
     'featureBoard.2.paragraph.2'          => '固定成本',
+    'featureBoard.2.paragraph.3'          => '<div class="price--usd">（约US$320)</div>',
     'featureBoard.3'                      => '全球免运费',
     'featureBoard.4.paragraph.1'          => '香港公证员',
     'featureBoard.4.paragraph.2'          => '配合宣誓',

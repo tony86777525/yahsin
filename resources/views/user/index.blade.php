@@ -159,8 +159,8 @@
                             </div>
                         </li>
                         <li>
-                            <div class="featureItem">
-                                <div class="featureItem__title" data-js-count="true" data-count="{{ App\Models\Order::PRICE }}">{!! __('user.featureBoard.2.paragraph.1', ['price' => App\Models\Order::PRICE]) !!}</div>
+                            <div class="featureItem featureItem--price">
+                                <div class="featureItem__title" data-js-count="true" data-count="{{ App\Models\Order::PRICE }}">{!! __('user.featureBoard.2.paragraph.1', ['price' => App\Models\Order::PRICE]) !!}{!! __('user.featureBoard.2.paragraph.3') !!}</div>
                                 <div class="featureItem__content">{{ __('user.featureBoard.2.paragraph.2') }}</div>
                             </div>
                         </li>

@@ -19,7 +19,7 @@ return [
     'landingText.description.paragraph.2' => 'No es necesario el documento original',
     'landingText.description.paragraph.3' => 'Sube su documento electrónico en cualquier formato digital',
     'landingText.description.paragraph.4' => 'Confirmamos dentro de 48 horas, tiempo necesario de trabajo【10-12 días de trabajo 】',
-    'landingText.description.paragraph.5' => 'Costo Fijo【NT$:price】',
+    'landingText.description.paragraph.5' => 'Costo Fijo【NT$:price】（About US$320)',
     'landingText.description.paragraph.6' => 'Luego de la Apostilla mandamos a través de SF/DHL EXPRESS a todo el mundo【sin pago extra】',
 
     'landingForm.title'                   => 'Order Your Apostille(s)',
@@ -41,6 +41,7 @@ return [
     'featureBoard.1.paragraph.2'          => 'Servicio de Apostilla',
     'featureBoard.2.paragraph.1'          => '<em>NT$</em><span>:price</span>',
     'featureBoard.2.paragraph.2'          => 'Costo Fijo',
+    'featureBoard.2.paragraph.3'          => '<div class="price--usd">（About US$320)</div>',
     'featureBoard.3'                      => 'Sin Pago Extra Para Enviar a Todo el Mundo',
     'featureBoard.4.paragraph.1'          => 'Declaración Jurada por un',
     'featureBoard.4.paragraph.2'          => 'Notario Público de Hong Kong',
