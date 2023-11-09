@@ -460,6 +460,43 @@ $path: '../../images/';
     }
 }
 
+.contact {
+
+    &__title {
+        font-weight: bold;
+        color: $main;
+        text-align: center
+    }
+
+    &__content {
+        color: $font-black;
+
+        .contactInfo {
+            @include list-reset;
+            text-align: center;
+
+            & > li {
+                &:last-child {
+                    margin-bottom: 0
+                }
+
+                a {
+                    color: $font-black;
+                }
+            }
+        }
+        .contactSns {
+            @include list-reset;
+            display: flex;
+            justify-content: center;
+
+            .text {
+                color: $main;
+            }
+        }
+    }
+}
+
 .cooperation {
 
     &__title {
@@ -950,6 +987,37 @@ $path: '../../images/';
                 background-position-y: 0.6rem;
                 background-size: 0.7rem 0.7rem;
                 padding-left: 1.2rem;
+            }
+        }
+    }
+
+    .contact {
+        padding: 4.5rem 0 0;
+
+        &__title {
+            font-size: $fs-title;
+        }
+        &__content {
+            padding-top: 2rem;
+            font-size: $fs-content;
+        }
+
+        .contactInfo {
+            & > li {
+                margin-bottom: 1rem;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .contactSns {
+            margin-top: 3rem;
+            flex-wrap: wrap;
+
+            & > li {
+                flex: 0 0 50%;
             }
         }
     }
@@ -1563,6 +1631,33 @@ $path: '../../images/';
         }
     }
 
+    .contact {
+        padding: 100px 0 0;
+
+        &__title {
+            font-size: $fs-title;
+        }
+        &__content {
+            padding-top: 60px;
+            font-size: $fs-content;
+        }
+        
+        .contactInfo {
+            & > li {
+                margin-bottom: 20px;
+            }
+        }
+
+        .contactSns {
+            flex-wrap: nowrap;
+            margin-top: 30px;
+
+            & > li {
+                flex: 0 0 320px;
+            }
+        }
+    }
+
     .cooperation {
         padding: 100px 0 80px;
 
@@ -1854,6 +1949,24 @@ $path: '../../images/';
         .serviceList {
             & > li {
                 background-position-y: 17px;
+            }
+        }
+    }
+
+    .contact {
+        padding: 145px 0 0;
+
+        &__title {
+            font-size: $fs-title;
+        }
+        &__content {
+            padding-top: 90px;
+            font-size: $fs-content;
+        }
+        
+        .contactInfo {
+            & > li {
+                margin-bottom: 40px;
             }
         }
     }

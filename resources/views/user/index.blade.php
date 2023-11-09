@@ -369,6 +369,31 @@
             </ul>
         </div>
     </section>
+    <section id="contact" class="contact">
+        <div class="wrapper">
+            <div class="contact__title">{{ __('user.contact.title') }}</div>
+            <div class="contact__content">
+                <ul class="contactInfo">
+                    <li>{{ __('user.contact.company') }}</li>
+                    <li><a href="{{ __('user.contact.address.href') }}" target="_blank"></a>{{ __('user.contact.address.text') }}</li>
+                    <li><a href="{{ __('user.contact.tel.href') }}">{{ __('user.contact.tel.text') }}</a></li>
+                    <li><a href="mailto:{{ __('user.contact.mail.href') }}">{{ __('user.contact.mail.text') }}</a></li>
+                    <li>
+                        <ul class="contactSns">
+                            <li>
+                                <span class="text">LINE ID:yahsin888</span>
+                                <img src="/img/img-qrcode_line.jpg" class="image">
+                            </li>
+                            <li>
+                                <span class="text">Wechat ID:steveyeah168</span>
+                                <img src="/img/img-qrcode_weixin.jpg" class="image">
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
     <section class="cooperation">
         <div class="wrapper">
             <h3 class="cooperation__title">{{ __('user.cooperation.title') }}</h3>

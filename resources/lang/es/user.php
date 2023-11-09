@@ -99,6 +99,15 @@ return [
     'faq.list.a.4.content.3'              => 'Sellado por el secretario del Tribunal Superior de Hong Kong y sellado por la Apostilla',
     'faq.list.a.4.content.4'              => 'Servicio adicional de DHL /SF EXPRESS (sin pago extra) a todo el mundo',
 
+    'contact.title'                       => 'Contact US',
+    'contact.company'                     => 'Company Name: YAHSIN Translation Service',
+    'contact.address.href'                => 'https://maps.app.goo.gl/j4eYfZSnrsm2tymB7',
+    'contact.address.text'                => 'Address: 7F-8, No. 41, Section 1, Zhongxiao West Road, Zhongzheng District, Taipei City 10041, Taiwan R.O.C.',
+    'contact.tel.href'                    => '+886223821155',
+    'contact.tel.text'                    => 'TEL: +886 2 23821155',
+    'contact.mail.href'                   => 'Yahsin888@gmail.com',
+    'contact.mail.text'                   => 'mail: Yahsin888@gmail.com',
+    
     'cooperation.title'                   => 'Unidad Cooperativa',
 
     // confirm

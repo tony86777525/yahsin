@@ -99,6 +99,15 @@ return [
     'faq.list.a.4.content.3'              => '香港高等法院书记官签章及海牙认证加签（Apostille）',
     'faq.list.a.4.content.4'              => 'DHL /SF EXPRESS【免运费】全球送达增值服务。',
 
+    'contact.title'                       => '联络资讯',
+    'contact.company'                     => '公司名称: 雅信翻译社',
+    'contact.address.href'                => 'https://maps.app.goo.gl/j4eYfZSnrsm2tymB7',
+    'contact.address.text'                => '地址: 台湾(10041)台北市中正区忠孝西路一段41号7楼之8',
+    'contact.tel.href'                    => '+886223821155',
+    'contact.tel.text'                    => '电话: +886 2 23821155',
+    'contact.mail.href'                   => 'Yahsin888@gmail.com',
+    'contact.mail.text'                   => 'Email: Yahsin888@gmail.com',
+
     'cooperation.title'                   => '合作单位',
 
 
