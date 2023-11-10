@@ -101,7 +101,7 @@ return [
 
     'contact.title'                       => '联络资讯',
     'contact.company'                     => '公司名称: 雅信翻译社',
-    'contact.address.href'                => 'https://maps.app.goo.gl/j4eYfZSnrsm2tymB7',
+    'contact.address.href'                => 'https://maps.app.goo.gl/qGQf8KdS8hCsqqwSA',
     'contact.address.text'                => '地址: 台湾(10041)台北市中正区忠孝西路一段41号7楼之8',
     'contact.tel.href'                    => '+886223821155',
     'contact.tel.text'                    => '电话: +886 2 23821155',

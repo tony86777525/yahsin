@@ -375,8 +375,8 @@
             <div class="contact__content">
                 <ul class="contactInfo">
                     <li>{{ __('user.contact.company') }}</li>
-                    <li><a href="{{ __('user.contact.address.href') }}" target="_blank"></a>{{ __('user.contact.address.text') }}</li>
-                    <li><a href="{{ __('user.contact.tel.href') }}">{{ __('user.contact.tel.text') }}</a></li>
+                    <li><a href="{{ __('user.contact.address.href') }}" target="_blank">{{ __('user.contact.address.text') }}</a></li>
+                    <li><a href="tel:{{ __('user.contact.tel.href') }}">{{ __('user.contact.tel.text') }}</a></li>
                     <li><a href="mailto:{{ __('user.contact.mail.href') }}">{{ __('user.contact.mail.text') }}</a></li>
                     <li>
                         <ul class="contactSns">

@@ -98,16 +98,16 @@ return [
     'faq.list.a.4.content.2'              => 'Attach the Hong Kong notary public affidavit in English (sealed by the Hong Kong Civil Department)',
     'faq.list.a.4.content.3'              => 'Sealed by the Hong Kong High Court clerk and Apostille',
     'faq.list.a.4.content.4'              => 'Additional service of DHL /SF EXPRESS (without extra payment) to the whole world',
-    
+
     'contact.title'                       => 'Contact US',
     'contact.company'                     => 'Company Name: YAHSIN Translation Service',
-    'contact.address.href'                => 'https://maps.app.goo.gl/j4eYfZSnrsm2tymB7',
+    'contact.address.href'                => 'https://maps.app.goo.gl/qGQf8KdS8hCsqqwSA',
     'contact.address.text'                => 'Address: 7F-8, No. 41, Section 1, Zhongxiao West Road, Zhongzheng District, Taipei City 10041, Taiwan R.O.C.',
     'contact.tel.href'                    => '+886223821155',
     'contact.tel.text'                    => 'TEL: +886 2 23821155',
     'contact.mail.href'                   => 'Yahsin888@gmail.com',
-    'contact.mail.text'                   => 'mail: Yahsin888@gmail.com',
-    
+    'contact.mail.text'                   => 'E-mail: Yahsin888@gmail.com',
+
     'cooperation.title'                   => 'Cooperative Unit',
 
     // confirm
