@@ -106,7 +106,7 @@ return [
     'contact.tel.href'                    => '+886223821155',
     'contact.tel.text'                    => '电话: +886 2 23821155',
     'contact.mail.href'                   => 'Yahsin888@gmail.com',
-    'contact.mail.text'                   => 'Email: Yahsin888@gmail.com',
+    'contact.mail.text'                   => 'E-mail: Yahsin888@gmail.com',
 
     'cooperation.title'                   => '合作单位',
 
