@@ -40,6 +40,9 @@ html {
 
 //=============== footer ===============//
 .footer {
+    &__pay {
+        text-align: center;
+    }
 	&__copyright {
 		text-align: center;
 		background-color: #333333;
@@ -105,6 +108,11 @@ html {
 	}
 
 	.footer {
+        &__pay {
+            img {
+                width: 15rem;
+            }
+        }
 		&__copyright {
 			padding: 0.6rem 0;
 			font-size: 1rem;
@@ -200,6 +208,11 @@ html {
 	}
 
 	.footer {
+        &__pay {
+            img {
+                width: 20vw;
+            }
+        }
 		&__copyright {
 			padding: 12px 0;
 			font-size: 20px;
