@@ -113,7 +113,7 @@ $(function(){
                     }
                 };
 
-                functions = {
+                let functions = {
                     beforeSend,
                     resolve,
                     final,
