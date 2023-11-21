@@ -381,11 +381,11 @@
                     <li>
                         <ul class="contactSns">
                             <li>
-                                <span class="text">LINE ID:yahsin888</span>
+                                <span class="text">LINE ID<br>yahsin888</span>
                                 <img src="/img/img-qrcode_line.jpg" class="image">
                             </li>
                             <li>
-                                <span class="text">Wechat ID:steveyeah168</span>
+                                <span class="text">Wechat ID<br>steveyeah168</span>
                                 <img src="/img/img-qrcode_weixin.jpg" class="image">
                             </li>
                         </ul>

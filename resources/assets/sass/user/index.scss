@@ -492,6 +492,7 @@ $path: '../../images/';
 
             .text {
                 color: $main;
+                line-height: 1.5;
             }
         }
     }
@@ -1147,7 +1148,7 @@ $path: '../../images/';
 
                     &.trans {
                         padding: 0;
-                        
+
                         .featureItem {
                             padding: 0 20px;
                         }
@@ -1641,7 +1642,7 @@ $path: '../../images/';
             padding-top: 60px;
             font-size: $fs-content;
         }
-        
+
         .contactInfo {
             & > li {
                 margin-bottom: 20px;
@@ -1963,7 +1964,7 @@ $path: '../../images/';
             padding-top: 90px;
             font-size: $fs-content;
         }
-        
+
         .contactInfo {
             & > li {
                 margin-bottom: 40px;
