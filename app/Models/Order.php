@@ -123,7 +123,7 @@ class Order extends Model
         self::COUNTRY_OTHER => '其他',
     ];
 
-    const PRICE = 9800;
+    const PRICE = 12500;
 
     public function getCreatedAtAttribute($value)
     {
